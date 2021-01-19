@@ -1,0 +1,38 @@
+# baseURL: "https://gostevedore.github.io/"
+# languageCode: "en-us"
+# title: "stevedore"
+# theme: "syna"
+# params:
+#   author: Aleix Penella
+#   description: Stevedore manages and governs the Docker image's building process
+#   name: gostevedore
+
+baseurl = "https://gostevedore.github.io/"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "Stevedore"
+theme = "syna"
+enableGitInfo = true
+version = "0.17.4"
+disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+ignorefiles = [ "content/dev/.*" ]
+
+[params]
+  name = "stevedore"
+  description = "Stevedore manages and governs the Docker image's building process"
+  author = "Aleix Penella"
+
+  [params.custom]
+    favicon_ico_sizes = "16x16 32x32"
+    favicon_svg = "images/logo_5.svg"
+
+  [params.colors]
+#    primary = "#00838F"
+    primary = "#AA0088"
+    secondary = "#0C090A"
+    success = "#008f54"
+    info = "#00c9dc"
+    warning = "#fdf314"
+    danger = "#dc1200"
+    light = "#f8f9fa"
+    dark = "#343a40"

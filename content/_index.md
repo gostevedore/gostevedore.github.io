@@ -1,7 +1,7 @@
 +++
-title = "Stevedore"
-date = "2021-17-01"
-subtitle = "Stevedore manages and governs the Docker image's building process"
-description = "Stevedore manages and governs the Docker image's building process"
+title = "stevedore"
+date = "2021-01-21"
+subtitle = "A way of manage and govern the Docker image's building process"
+description = "A way of manage and govern the Docker image's building process"
 +++
 

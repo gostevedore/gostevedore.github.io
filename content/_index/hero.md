@@ -1,36 +1,27 @@
 +++
 fragment = "hero"
 #disabled = true
-date = "2016-09-07"
+date = "2021-01-21"
 weight = 110
-background = "light" # can influence the text color
+background = "light"
 particles = true
 
-#title = ""
-#subtitle = ""
+subtitle = "a way of manage and govern the Docker's image building process"
 
 [header]
-  image = "header.jpg"
+  image = "hero_background.svg"
 
 [asset]
-  image = "logo_hero.svg"
-  #width = "600px" # optional - will default to image width
-  height = "200px" # optional - will default to image height
-
-#[[buttons]]
-#  url = "https://github.com/gostevedore/stevedore"
-#  text = "Github"
-#  icon = "fab fa-github"
-#  color = "dark"
+  image = "hero_logo.svg"
+  height = "200px"
 
 [[buttons]]
   text = "Get Started"
   url = "https://github.com/gostevedore/stevedore#quick-start"
   color = "dark" # primary, secondary, success, danger, warning, info, light, dark, link - default: primary
-#
+
 [[buttons]]
   text = "Documentation"
-#  url = "/docs/"
+  url = "https://github.com/gostevedore/stevedore#contents"
   color = "dark"
-
 +++

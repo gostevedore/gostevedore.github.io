@@ -1,7 +1,7 @@
 +++
 fragment = "nav"
 #disabled = true
-date = "2018-05-17"
+date = "2021-01-21"
 weight = 0
 sticky = true
 background = "dark"
@@ -13,7 +13,7 @@ background = "dark"
 
 # Branding options
 [asset]
-  image = "logo.svg"
-  text = "Stevedore"
+  image = "branding_logo.svg"
+  text = "stevedore"
 
 +++

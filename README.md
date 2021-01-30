@@ -1,6 +1,6 @@
 # gostevedore.github.io
 
-This repository holds the Stevedore site's source code. To visit the site click [here](https://gostevedore.github.com)
+This repository holds the Stevedore site's source code. To visit the site click [here](https://gostevedore.github.io/)
 
 The website is built using [Hugo](https://gohugo.io/), as static website generator, and [Syna](https://about.okkur.org/syna/) theme.
 

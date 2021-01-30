@@ -21,6 +21,7 @@ ignorefiles = [ "content/dev/.*" ]
   name = "stevedore"
   description = "A way of manage and govern the Docker image's building process"
   author = "Aleix Penella"
+  image = "images/logo.svg"
 
   [params.custom]
     favicon_ico_sizes = "16x16 32x32 48x48"

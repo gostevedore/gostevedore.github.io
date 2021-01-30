@@ -23,8 +23,10 @@ ignorefiles = [ "content/dev/.*" ]
   author = "Aleix Penella"
 
   [params.custom]
-    favicon = "images/favicon.ico"
     favicon_ico_sizes = "16x16 32x32 48x48"
+    favicon = "images/favicon.ico"
+    favicon_png = "images/favicon.png"
+    favicon_svg = "images/favicon.svg"
 
   [params.colors]
     primary = "#AA0088"

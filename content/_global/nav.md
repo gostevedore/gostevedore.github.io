@@ -1,7 +1,6 @@
 +++
 fragment = "nav"
-#disabled = true
-date = "2021-01-21"
+date = "2021-01-31"
 weight = 0
 sticky = true
 background = "dark"

@@ -1,12 +1,11 @@
 +++
 fragment = "hero"
-#disabled = true
-date = "2021-01-21"
+date = "2021-01-31"
 weight = 110
 background = "light"
 particles = true
 
-subtitle = "a way of manage and govern the Docker image's building process"
+subtitle = "a way to manage and govern the Docker image's building process"
 
 [header]
   image = "hero_background.svg"

@@ -1,16 +1,7 @@
-# baseURL: "https://gostevedore.github.io/"
-# languageCode: "en-us"
-# title: "stevedore"
-# theme: "syna"
-# params:
-#   author: Aleix Penella
-#   description: Stevedore manages and governs the Docker image's building process
-#   name: gostevedore
-
 baseurl = "https://gostevedore.github.io/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = "stevedore"
+title = "gostevedore"
 theme = "syna"
 enableGitInfo = true
 version = "0.17.4"
@@ -18,10 +9,11 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 ignorefiles = [ "content/dev/.*" ]
 
 [params]
-  name = "stevedore"
-  description = "A way of manage and govern the Docker image's building process"
+  name = "gostevedore"
+  title ="stevedore, a way to manage and govern the Docker image's building process"
+  description = "Stevedore is a useful tool when you need to manage a bunch of Docker images in a standardized way, such on a microservices architecture. It lets you to define how to build your Docker images and their parent-child relationship. It builds automatically the children images when parent ones are done. And many other features which improve the Docker image's building process. Is not a Dockerfile's alternative, but how to use them to build your images"
   author = "Aleix Penella"
-  image = "images/logo.svg"
+  image = "images/logo.png"
 
   [params.custom]
     favicon_ico_sizes = "16x16 32x32 48x48"

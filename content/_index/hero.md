@@ -15,12 +15,12 @@ subtitle = "a way to manage and govern the Docker image's building process"
   height = "200px"
 
 [[buttons]]
-  text = "Get Started"
-  url = "https://github.com/gostevedore/stevedore#quick-start"
+  text = "Downloads"
+  url = "https://github.com/gostevedore/stevedore/releases"
   color = "dark" # primary, secondary, success, danger, warning, info, light, dark, link - default: primary
 
 [[buttons]]
   text = "Documentation"
-  url = "https://github.com/gostevedore/stevedore#contents"
+  url = "https://gostevedore.github.io/documentation/"
   color = "dark"
 +++

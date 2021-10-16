@@ -5,7 +5,7 @@ weight = 110
 background = "light"
 particles = true
 
-subtitle = "a way to manage and govern the Docker image's building process"
+subtitle = "The docker images factory"
 
 [header]
   image = "hero_background.svg"

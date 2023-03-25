@@ -1,0 +1,10 @@
+
+// https://www.docsy.dev/docs/adding-content/repository-links/
+// disable link create child page/
+.td-page-meta--child { display: none !important; }
+// disable link edit this page
+.td-page-meta--edit { display: none !important; }
+
+.td-overlay--dark::after {
+    background-color: transparent;
+}

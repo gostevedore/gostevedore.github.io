@@ -1,0 +1,58 @@
++++
+title = "Stevedore"
+linkTitle = "Stevedore"
++++
+
+{{< blocks/cover title="" image_anchor="center" height="min" color="primary" >}}
+<!-- <div class="mx-auto">
+	<a class="btn btn-lg btn-dark mr-3 mb-4" href="{{< relref "/docs" >}}">
+		Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+	</a>
+	<a class="btn btn-lg btn-dark mr-3 mb-4" href="https://github.com/gostevedore/stevedore/releases">
+		Download <i class="fab fa-github ml-2 "></i>
+	</a>
+	<p class="lead mt-5">Stevedore, the Docker images factory</p>
+	{{< blocks/link-down color="primary" >}}
+</div> -->
+{{< /blocks/cover >}}
+
+
+{{% blocks/lead color="dark" %}}
+<div class="mx-auto">
+	<a class="btn btn-lg btn-light mr-3 mb-4" href="{{< relref "/docs" >}}">
+		Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+	</a>
+	<a class="btn btn-lg btn-light mr-3 mb-4" href="https://github.com/gostevedore/stevedore/releases">
+		Download <i class="fab fa-github ml-2 "></i>
+	</a>
+</div>
+
+Stevedore is a tool for building Docker images at scale, and it is not intended to replace Dockerfile or Buildkit. Instead, Stevedore can be used in conjunction with these tools to help streamline the process of building and promoting multiple Docker images.
+{{% /blocks/lead %}}
+
+{{< blocks/section color="light" >}}
+{{% blocks/feature icon="fas fa-copy" title="Standardize" %}}
+Build your Docker images in a standardized way. Create a Dockerfile and reuse it for as many use cases as needed
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fas fa-project-diagram" title="Relatives build" %}}
+Define Docker images relationship and build its relatives images automatically
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fas fa-key" title="Credentials" %}}
+Store credentials to log in to your Docker registry, AWS Elastic Container Registry or git a server
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fas fa-rocket" title="Promote" %}}
+Promote or copy images among Docker registries
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fas fa-file-alt" title="Semver awareness" %}}
+Generate tags automatically when the main tag is semantic version 2.0.0
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="fas fa-box-open" title="Multiple build contexts" %}}
+Build your images using multiple build context sources. Use local files, a git repository or merge several sources
+{{% /blocks/feature %}}
+
+{{< /blocks/section >}}

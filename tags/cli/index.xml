@@ -1,0 +1,505 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Stevedore – cli</title><link>https://gostevedore.github.io/tags/cli/</link><description>Recent content in cli on Stevedore</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://gostevedore.github.io/tags/cli/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs-V0.10: Command line interface</title><link>https://gostevedore.github.io/docs-v0.10/reference-guide/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs-v0.10/reference-guide/cli/</guid><description>
+&lt;h2 id="build">build&lt;/h2>
+&lt;p>Stevedore command to build images&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore build &amp;lt;image&amp;gt; [flags]
+Flags:
+-b, --builder-name string Intermediate builder&amp;#39;s container name [only applies to ansible-playbook builders]
+-C, --cascade Build images on cascade. Children&amp;#39;s image build is started once the image build finishes
+-d, --cascade-depth int Number images levels to build when build on cascade is executed (default -1)
+-L, --connection-local Use local connection for ansible [only applies to ansible-playbook builders]
+--debug Enable debug mode to show build options
+-D, --dry-run Run a dry-run build
+-S, --enable-semver-tags Generate a set of tags for the image based on the semantic version tree when main version is semver 2.0.0 compliance
+-h, --help help for build
+-I, --image-from string Image (FROM) parent&amp;#39;s name
+-N, --image-from-namespace string Image (FROM) parent&amp;#39;s registry namespace
+-R, --image-from-registry string Image (FROM) parent&amp;#39;s registry host
+-V, --image-from-version string Image (FROM) parent&amp;#39;s version
+-i, --image-name string Image name- It overrides image tree image name
+-v, --image-version strings Image versions to be built. One or more image versions could be built
+-H, --inventory string Specify inventory hosts&amp;#39; path or comma separated list of hosts [only applies to Ansible builders]
+-l, --limit string Further limit selected hosts to an additional pattern [only applies to Ansible builders]
+-n, --namespace string Image&amp;#39;s registry namespace where image will be stored
+-P, --no-push Do not push the image to registry once it is built
+-w, --num-workers int Number of workers to execute builds
+-r, --registry string Image&amp;#39;s registry host where image will be stored
+-T, --semver-tags-template strings List templates to generate tags following semantic version expression
+-s, --set strings Set variables to use during the build. The format of each variable must be &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt;
+-p, --set-persistent strings Set persistent variables to use during the build. A persistent variable will be available on child image during its build and could not be overwrite. The format of each variable must be &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt;
+-t, --tag strings Give an extra tag for the docker image
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="completion">completion&lt;/h2>
+&lt;p>Stevedore command to generate shell completions. &lt;a href="https://github.com/spf13/cobra/blob/master/shell_completions.md">Here&lt;/a> you could find more details about completion&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore completion [flags]
+Flags:
+-h, --help help for completion
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="create">create&lt;/h2>
+&lt;p>Stevedore command to create configuration files&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore create [flags]
+stevedore create [command]
+Aliases:
+create, generate
+Available Commands:
+configuration Create stevedore configuration file
+credentials Create stevedore docker registry credentials
+&lt;/code>&lt;/pre>&lt;h3 id="create-configuration">create configuration&lt;/h3>
+&lt;p>Stevedore subcommand to initialize a project with a configuration file and a credential file&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Usage:
+stevedore create configuration [flags]
+Aliases:
+configuration, config
+Flags:
+-C, --build-on-cascade On build, start children images building once an image build is finished. Its default value is &amp;#39;false&amp;#39;
+-b, --builder-path-file string Builders location path. Its default value is &amp;#39;stevedore.yaml&amp;#39;
+-d, --credentials-dir string Location path to store docker registry credentials. Its default value is &amp;#39;credentials&amp;#39;
+-p, --credentials-password credentials-regristry Docker registry password. It is ignored unless credentials-regristry value is defined
+-r, --credentials-registry-host string Docker registry host to register credentials
+-u, --credentials-username credentials-regristry Docker registry username. It is ignored unless credentials-regristry value is defined
+-s, --enable-semver-tags Generate extra tags when the main image tags is semver 2.0.0 compliance. Its default value is &amp;#39;false&amp;#39;
+--force Force to create configuration file when the file already exists
+-h, --help help for configuration
+-l, --log-path-file string Log file location path. Its default value is &amp;#39;/dev/null&amp;#39;
+-P, --no-push-images On build, push images automatically after it finishes. Its default value is &amp;#39;true&amp;#39;
+-w, --num-workers int It defines the number of workers to build images which corresponds to the number of images that can be build concurrently. Its default value is &amp;#39;4&amp;#39; (default -1)
+-T, --semver-tags-template strings List of templates which define those extra tags to generate when &amp;#39;semantic_version_tags_enabled&amp;#39; is enabled. Its default value is &amp;#39;{{ .Major }}.{{ .Minor }}.{{ .Patch }}&amp;#39;
+-t, --tree-path-file string Images tree location path. Its default value is &amp;#39;stevedore.yaml&amp;#39;
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h3 id="create-credentials">create credentials&lt;/h3>
+&lt;p>Stevedore subcommand to create a credentials file&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore create credentials [flags]
+Aliases:
+credentials, auth
+Flags:
+-d, --credentials-dir string Location path to store docker registry credentials (default &amp;#34;/etc/stevedore/credentials&amp;#34;)
+-h, --help help for credentials
+-p, --password string Docker registry password
+-r, --registry-host string Docker registry host to register credentials
+-u, --username string Docker registry username
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="get">get&lt;/h2>
+&lt;p>Stevedore command to get items information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get [flags]
+stevedore get [command]
+Aliases:
+get, list
+Available Commands:
+builders get builders return all builders defined
+configuration get configuration
+credentials get credentials return all credentials defined
+images get images return all images defined
+Flags:
+-h, --help help for get
+Global Flags:
+-c, --config string Configuration file location path
+Use &amp;#34;stevedore get [command] --help&amp;#34; for more information about a command.
+&lt;/code>&lt;/pre>&lt;h3 id="get-builders">get builders&lt;/h3>
+&lt;p>Stevedore subcommand to get builders information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get builders [flags]
+Aliases:
+builders, builder
+Flags:
+-h, --help help for builders
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h3 id="get-configuration">get configuration&lt;/h3>
+&lt;p>Stevedore subcommand to get configuration information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get configuration [flags]
+Aliases:
+configuration, config, conf, cfg
+Flags:
+-h, --help help for configuration
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h3 id="get-credentials">get credentials&lt;/h3>
+&lt;p>Stevedore subcommand to get credentials information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get credentials [flags]
+Aliases:
+credentials, auth, auths, credential
+Flags:
+-h, --help help for credentials
+-w, --wide Show wide docker registry credentials information
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h3 id="get-images">get images&lt;/h3>
+&lt;p>Stevedore subcommand to get images information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get images [flags]
+Aliases:
+images, images
+Flags:
+-h, --help help for images
+-t, --tree Return the output as a tree
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="init">init&lt;/h2>
+&lt;p>Stevedore init command is a shortcut for &amp;lsquo;&lt;a href="https://gostevedore.github.io/docs/reference-guide/cli/#create-configuration">stevedore create configuration&lt;/a>&amp;rsquo;&lt;/p>
+&lt;h2 id="promote">promote&lt;/h2>
+&lt;p>Stevedore command to promote, publish or copy images to a docker registry or namespace&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore promote [flags]
+Aliases:
+promote, publish
+Flags:
+-D, --dry-run Dry run show the promote parameters
+-S, --enable-semver-tags Generate extra tags based on semantic version tree when main version is semver 2.0.0 compliance
+-h, --help help for promote
+-i, --promote-image-name string Name for the image to be promoted
+-n, --promote-image-namespace string Registry&amp;#39;s mamespace for the image to be promoted
+-r, --promote-image-registry string Registry&amp;#39;s host for the image to be promoted
+-t, --promote-image-tag strings Extra tag for the image to be promoted
+-R, --remove-promote-tags Remove remoted tags from local docker host
+-T, --semver-tags-template strings List templates to generate tags following semantic version expression
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="version">version&lt;/h2>
+&lt;p>Stevedore command to print the binary release version&lt;/p></description></item><item><title>Docs-V0.11: Command line interface</title><link>https://gostevedore.github.io/docs-v0.11/reference-guide/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs-v0.11/reference-guide/cli/</guid><description>
+&lt;h2 id="build">build&lt;/h2>
+&lt;p>Stevedore command to build images&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore build &amp;lt;image&amp;gt; [flags]
+Flags:
+-b, --builder-name string Intermediate builder&amp;#39;s container name [only applies to ansible-playbook builders]
+-C, --cascade Build images on cascade. Children&amp;#39;s image build is started once the image build finishes
+-d, --cascade-depth int Number images levels to build when build on cascade is executed (default -1)
+-L, --connection-local Use local connection for ansible [only applies to ansible-playbook builders]
+--debug Enable debug mode to show build options
+-D, --dry-run Run a dry-run build
+-S, --enable-semver-tags Generate a set of tags for the image based on the semantic version tree when main version is semver 2.0.0 compliance
+-h, --help help for build
+-I, --image-from string Image (FROM) parent&amp;#39;s name
+-N, --image-from-namespace string Image (FROM) parent&amp;#39;s registry namespace
+-R, --image-from-registry string Image (FROM) parent&amp;#39;s registry host
+-V, --image-from-version string Image (FROM) parent&amp;#39;s version
+-i, --image-name string Image name- It overrides image tree image name
+-v, --image-version strings Image versions to be built. One or more image versions could be built
+-H, --inventory string Specify inventory hosts&amp;#39; path or comma separated list of hosts [only applies to Ansible builders]
+-l, --limit string Further limit selected hosts to an additional pattern [only applies to Ansible builders]
+-n, --namespace string Image&amp;#39;s registry namespace where image will be stored
+-P, --no-push Do not push the image to registry once it is built
+-w, --num-workers int Number of workers to execute builds
+-r, --registry string Image&amp;#39;s registry host where image will be stored
+-T, --semver-tags-template strings List templates to generate tags following semantic version expression
+-s, --set strings Set variables to use during the build. The format of each variable must be &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt;
+-p, --set-persistent strings Set persistent variables to use during the build. A persistent variable will be available on child image during its build and could not be overwrite. The format of each variable must be &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt;
+-t, --tag strings Give an extra tag for the docker image
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="completion">completion&lt;/h2>
+&lt;p>Stevedore command to generate shell completions. &lt;a href="https://github.com/spf13/cobra/blob/master/shell_completions.md">Here&lt;/a> you could find more details about completion&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore completion [flags]
+Flags:
+-h, --help help for completion
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="create">create&lt;/h2>
+&lt;p>Stevedore command to create configuration files&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore create [flags]
+stevedore create [command]
+Aliases:
+create, generate
+Available Commands:
+configuration Create stevedore configuration file
+credentials Create stevedore docker registry credentials
+&lt;/code>&lt;/pre>&lt;h3 id="create-configuration">create configuration&lt;/h3>
+&lt;p>Stevedore subcommand to initialize a project with a configuration file and a credential file&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Usage:
+stevedore create configuration [flags]
+Aliases:
+configuration, config
+Flags:
+-C, --build-on-cascade On build, start children images building once an image build is finished. Its default value is &amp;#39;false&amp;#39;
+-b, --builder-path-file string Builders location path. Its default value is &amp;#39;stevedore.yaml&amp;#39;
+-d, --credentials-dir string Location path to store docker registry credentials. Its default value is &amp;#39;credentials&amp;#39;
+-p, --credentials-password credentials-regristry Docker registry password. It is ignored unless credentials-regristry value is defined
+-r, --credentials-registry-host string Docker registry host to register credentials
+-u, --credentials-username credentials-regristry Docker registry username. It is ignored unless credentials-regristry value is defined
+-s, --enable-semver-tags Generate extra tags when the main image tags is semver 2.0.0 compliance. Its default value is &amp;#39;false&amp;#39;
+--force Force to create configuration file when the file already exists
+-h, --help help for configuration
+-l, --log-path-file string Log file location path. Its default value is &amp;#39;/dev/null&amp;#39;
+-P, --no-push-images On build, push images automatically after it finishes. Its default value is &amp;#39;true&amp;#39;
+-w, --num-workers int It defines the number of workers to build images which corresponds to the number of images that can be build concurrently. Its default value is &amp;#39;4&amp;#39; (default -1)
+-T, --semver-tags-template strings List of templates which define those extra tags to generate when &amp;#39;semantic_version_tags_enabled&amp;#39; is enabled. Its default value is &amp;#39;{{ .Major }}.{{ .Minor }}.{{ .Patch }}&amp;#39;
+-t, --tree-path-file string Images tree location path. Its default value is &amp;#39;stevedore.yaml&amp;#39;
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h3 id="create-credentials">create credentials&lt;/h3>
+&lt;p>Stevedore subcommand to create a credentials file&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore create credentials [flags]
+Aliases:
+credentials, auth
+Flags:
+-d, --credentials-dir string Location path to store docker registry credentials (default &amp;#34;/etc/stevedore/credentials&amp;#34;)
+-h, --help help for credentials
+-p, --password string Docker registry password
+-r, --registry-host string Docker registry host to register credentials
+-u, --username string Docker registry username
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="get">get&lt;/h2>
+&lt;p>Stevedore command to get items information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get [flags]
+stevedore get [command]
+Aliases:
+get, list
+Available Commands:
+builders get builders return all builders defined
+configuration get configuration
+credentials get credentials return all credentials defined
+images get images return all images defined
+Flags:
+-h, --help help for get
+Global Flags:
+-c, --config string Configuration file location path
+Use &amp;#34;stevedore get [command] --help&amp;#34; for more information about a command.
+&lt;/code>&lt;/pre>&lt;h3 id="get-builders">get builders&lt;/h3>
+&lt;p>Stevedore subcommand to get builders information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get builders [flags]
+Aliases:
+builders, builder
+Flags:
+-h, --help help for builders
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h3 id="get-configuration">get configuration&lt;/h3>
+&lt;p>Stevedore subcommand to get configuration information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get configuration [flags]
+Aliases:
+configuration, config, conf, cfg
+Flags:
+-h, --help help for configuration
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h3 id="get-credentials">get credentials&lt;/h3>
+&lt;p>Stevedore subcommand to get credentials information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get credentials [flags]
+Aliases:
+credentials, auth, auths, credential
+Flags:
+-h, --help help for credentials
+-w, --wide Show wide docker registry credentials information
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h3 id="get-images">get images&lt;/h3>
+&lt;p>Stevedore subcommand to get images information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get images [flags]
+Aliases:
+images, images
+Flags:
+-h, --help help for images
+-t, --tree Return the output as a tree
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="init">init&lt;/h2>
+&lt;p>Stevedore init command is a shortcut for &amp;lsquo;&lt;a href="https://gostevedore.github.io/docs/reference-guide/cli/#create-configuration">stevedore create configuration&lt;/a>&amp;rsquo;&lt;/p>
+&lt;h2 id="promote">promote&lt;/h2>
+&lt;p>Stevedore command to promote, publish or copy images to a docker registry or namespace&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore promote [flags]
+Aliases:
+promote, publish
+Flags:
+-D, --dry-run Dry run show the promote parameters
+-S, --enable-semver-tags Generate extra tags based on semantic version tree when main version is semver 2.0.0 compliance
+-h, --help help for promote
+-i, --promote-image-name string Name for the image to be promoted
+-n, --promote-image-namespace string Registry&amp;#39;s mamespace for the image to be promoted
+-r, --promote-image-registry string Registry&amp;#39;s host for the image to be promoted
+-t, --promote-image-tag strings Extra tag for the image to be promoted
+-R, --remove-promote-tags Remove remoted tags from local docker host
+-T, --semver-tags-template strings List templates to generate tags following semantic version expression
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="version">version&lt;/h2>
+&lt;p>Stevedore command to print the binary release version&lt;/p></description></item><item><title>Docs: Command line interface</title><link>https://gostevedore.github.io/docs/reference-guide/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/reference-guide/cli/</guid><description>
+&lt;h2 id="build">build&lt;/h2>
+&lt;p>Stevedore command to build images&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore build &amp;lt;image&amp;gt; [flags]
+Flags:
+-b, --builder-name string Intermediate builder&amp;#39;s container name [only applies to ansible-playbook builders]
+-C, --cascade Build images on cascade. Children&amp;#39;s image build is started once the image build finishes
+-d, --cascade-depth int Number images levels to build when build on cascade is executed (default -1)
+-L, --connection-local Use local connection for ansible [only applies to ansible-playbook builders]
+--debug Enable debug mode to show build options
+-D, --dry-run Run a dry-run build
+-S, --enable-semver-tags Generate a set of tags for the image based on the semantic version tree when main version is semver 2.0.0 compliance
+-h, --help help for build
+-I, --image-from string Image (FROM) parent&amp;#39;s name
+-N, --image-from-namespace string Image (FROM) parent&amp;#39;s registry namespace
+-R, --image-from-registry string Image (FROM) parent&amp;#39;s registry host
+-V, --image-from-version string Image (FROM) parent&amp;#39;s version
+-i, --image-name string Image name- It overrides image tree image name
+-v, --image-version strings Image versions to be built. One or more image versions could be built
+-H, --inventory string Specify inventory hosts&amp;#39; path or comma separated list of hosts [only applies to Ansible builders]
+-l, --limit string Further limit selected hosts to an additional pattern [only applies to Ansible builders]
+-n, --namespace string Image&amp;#39;s registry namespace where image will be stored
+-P, --no-push Do not push the image to registry once it is built
+-w, --num-workers int Number of workers to execute builds
+-r, --registry string Image&amp;#39;s registry host where image will be stored
+-T, --semver-tags-template strings List templates to generate tags following semantic version expression
+-s, --set strings Set variables to use during the build. The format of each variable must be &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt;
+-p, --set-persistent strings Set persistent variables to use during the build. A persistent variable will be available on child image during its build and could not be overwrite. The format of each variable must be &amp;lt;key&amp;gt;=&amp;lt;value&amp;gt;
+-t, --tag strings Give an extra tag for the docker image
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="completion">completion&lt;/h2>
+&lt;p>Stevedore command to generate shell completions. &lt;a href="https://github.com/spf13/cobra/blob/master/shell_completions.md">Here&lt;/a> you could find more details about completion&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore completion [flags]
+Flags:
+-h, --help help for completion
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="create">create&lt;/h2>
+&lt;p>Stevedore command to create configuration files&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore create [flags]
+stevedore create [command]
+Aliases:
+create, generate
+Available Commands:
+configuration Create stevedore configuration file
+credentials Create stevedore docker registry credentials
+&lt;/code>&lt;/pre>&lt;h3 id="create-configuration">create configuration&lt;/h3>
+&lt;p>Stevedore subcommand to initialize a project with a configuration file and a credential file&lt;/p>
+&lt;pre tabindex="0">&lt;code>
+Usage:
+stevedore create configuration [flags]
+Aliases:
+configuration, config
+Flags:
+-C, --build-on-cascade On build, start children images building once an image build is finished. Its default value is &amp;#39;false&amp;#39;
+-b, --builder-path-file string Builders location path. Its default value is &amp;#39;stevedore.yaml&amp;#39;
+-d, --credentials-dir string Location path to store docker registry credentials. Its default value is &amp;#39;credentials&amp;#39;
+-p, --credentials-password credentials-regristry Docker registry password. It is ignored unless credentials-regristry value is defined
+-r, --credentials-registry-host string Docker registry host to register credentials
+-u, --credentials-username credentials-regristry Docker registry username. It is ignored unless credentials-regristry value is defined
+-s, --enable-semver-tags Generate extra tags when the main image tags is semver 2.0.0 compliance. Its default value is &amp;#39;false&amp;#39;
+--force Force to create configuration file when the file already exists
+-h, --help help for configuration
+-l, --log-path-file string Log file location path. Its default value is &amp;#39;/dev/null&amp;#39;
+-P, --no-push-images On build, push images automatically after it finishes. Its default value is &amp;#39;true&amp;#39;
+-w, --num-workers int It defines the number of workers to build images which corresponds to the number of images that can be build concurrently. Its default value is &amp;#39;4&amp;#39; (default -1)
+-T, --semver-tags-template strings List of templates which define those extra tags to generate when &amp;#39;semantic_version_tags_enabled&amp;#39; is enabled. Its default value is &amp;#39;{{ .Major }}.{{ .Minor }}.{{ .Patch }}&amp;#39;
+-t, --tree-path-file string Images tree location path. Its default value is &amp;#39;stevedore.yaml&amp;#39;
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h3 id="create-credentials">create credentials&lt;/h3>
+&lt;p>Stevedore subcommand to create a credentials file&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore create credentials [flags]
+Aliases:
+credentials, auth
+Flags:
+-d, --credentials-dir string Location path to store docker registry credentials (default &amp;#34;/etc/stevedore/credentials&amp;#34;)
+-h, --help help for credentials
+-p, --password string Docker registry password
+-r, --registry-host string Docker registry host to register credentials
+-u, --username string Docker registry username
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="get">get&lt;/h2>
+&lt;p>Stevedore command to get items information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get [flags]
+stevedore get [command]
+Aliases:
+get, list
+Available Commands:
+builders get builders return all builders defined
+configuration get configuration
+credentials get credentials return all credentials defined
+images get images return all images defined
+Flags:
+-h, --help help for get
+Global Flags:
+-c, --config string Configuration file location path
+Use &amp;#34;stevedore get [command] --help&amp;#34; for more information about a command.
+&lt;/code>&lt;/pre>&lt;h3 id="get-builders">get builders&lt;/h3>
+&lt;p>Stevedore subcommand to get builders information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get builders [flags]
+Aliases:
+builders, builder
+Flags:
+-h, --help help for builders
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h3 id="get-configuration">get configuration&lt;/h3>
+&lt;p>Stevedore subcommand to get configuration information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get configuration [flags]
+Aliases:
+configuration, config, conf, cfg
+Flags:
+-h, --help help for configuration
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h3 id="get-credentials">get credentials&lt;/h3>
+&lt;p>Stevedore subcommand to get credentials information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get credentials [flags]
+Aliases:
+credentials, auth, auths, credential
+Flags:
+-h, --help help for credentials
+-w, --wide Show wide docker registry credentials information
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h3 id="get-images">get images&lt;/h3>
+&lt;p>Stevedore subcommand to get images information&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore get images [flags]
+Aliases:
+images, images
+Flags:
+-h, --help help for images
+-t, --tree Return the output as a tree
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="init">init&lt;/h2>
+&lt;p>Stevedore init command is a shortcut for &amp;lsquo;&lt;a href="https://gostevedore.github.io/docs/reference-guide/cli/#create-configuration">stevedore create configuration&lt;/a>&amp;rsquo;&lt;/p>
+&lt;h2 id="promote">promote&lt;/h2>
+&lt;p>Stevedore command to promote, publish or copy images to a docker registry or namespace&lt;/p>
+&lt;pre tabindex="0">&lt;code>Usage:
+stevedore promote [flags]
+Aliases:
+promote, publish
+Flags:
+-D, --dry-run Dry run show the promote parameters
+-S, --enable-semver-tags Generate extra tags based on semantic version tree when main version is semver 2.0.0 compliance
+-h, --help help for promote
+-i, --promote-image-name string Name for the image to be promoted
+-n, --promote-image-namespace string Registry&amp;#39;s mamespace for the image to be promoted
+-r, --promote-image-registry string Registry&amp;#39;s host for the image to be promoted
+-t, --promote-image-tag strings Extra tag for the image to be promoted
+-R, --remove-promote-tags Remove remoted tags from local docker host
+-T, --semver-tags-template strings List templates to generate tags following semantic version expression
+Global Flags:
+-c, --config string Configuration file location path
+&lt;/code>&lt;/pre>&lt;h2 id="version">version&lt;/h2>
+&lt;p>Stevedore command to print the binary release version&lt;/p></description></item></channel></rss>

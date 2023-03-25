@@ -147,7 +147,7 @@ enable = false
 # Add your release versions here
 [[params.versions]]
   version = "latest"
-  url = "http://0.0.0.0:1313/docs"
+  url = "https://gostevedore.github.io/docs/"
 
 # [[params.versions]]
 #   version = "v0.10"

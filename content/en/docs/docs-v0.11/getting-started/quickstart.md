@@ -9,7 +9,7 @@ description: >
 
 ## Download and install stevedore
 
-{{% pageinfo color="secondary" %}}
+{{% pageinfo %}}
 Stevedore has been developed and tested on amd64 architecture and Linux os, for that reason the only available tarball is for amd64-Linux tarball.
 In case you are running another arch or os, you could build it from the source.
 {{% /pageinfo %}}
@@ -107,10 +107,10 @@ Global Flags:
 ```
 
 ## Define builders
-Refer to [builders]({{<ref "/docs/reference-guide/builder/">}}) reference guide
+Refer to [builders]({{<ref "/docs/docs-v0.11/reference-guide/builder/">}}) reference guide
 
 ## Define the images tree
-Refer to [images tree]({{<ref "/docs/reference-guide/images-tree/">}}) reference guide
+Refer to [images tree]({{<ref "/docs/docs-v0.11/reference-guide/images-tree/">}}) reference guide
 
 ## Start building
 ```

@@ -107,10 +107,10 @@ Global Flags:
 ```
 
 ## Define builders
-Refer to [builders]({{<ref "/docs/reference-guide/builder/">}}) reference guide
+Refer to [builders]({{<ref "/docs/docs-v0.10/reference-guide/builder/">}}) reference guide
 
 ## Define the images tree
-Refer to [images tree]({{<ref "/docs/reference-guide/images-tree/">}}) reference guide
+Refer to [images tree]({{<ref "/docs/docs-v0.10/reference-guide/images-tree/">}}) reference guide
 
 ## Start building
 ```

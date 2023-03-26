@@ -1,9 +1,9 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Stevedore – configuration</title><link>https://gostevedore.github.io/tags/configuration/</link><description>Recent content in configuration on Stevedore</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://gostevedore.github.io/tags/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs-V0.10: Configuration</title><link>https://gostevedore.github.io/docs-v0.10/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs-v0.10/getting-started/configuration/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Stevedore – configuration</title><link>https://gostevedore.github.io/tags/configuration/</link><description>Recent content in configuration on Stevedore</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://gostevedore.github.io/tags/configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Configuration</title><link>https://gostevedore.github.io/docs/docs-v0.10/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.10/getting-started/configuration/</guid><description>
 &lt;h2 id="stevedore-configuration">Stevedore configuration&lt;/h2>
 &lt;p>Stevedore can load its configuration either from a local configuration file or environment variables.&lt;/p>
 &lt;h3 id="configuration-from-environment-variables">Configuration from environment variables&lt;/h3>
 &lt;p>When you want to use environment variables to define a Stevedore configuration parameter, you must create an environment variable with the same name as the parameter, and prefix it with &lt;code>STEVEDORE_&lt;/code>. The environment variables must be uppercased.&lt;/p>
-&lt;p>For example, to define the &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#tree_path">tree_path&lt;/a> parameter as an environment variable, you must create the &lt;code>STEVEDORE_TREE_PATH&lt;/code> variable.&lt;/p>
+&lt;p>For example, to define the &lt;a href="https://gostevedore.github.io/docs/docs-v0.10/getting-started/configuration/#tree_path">tree_path&lt;/a> parameter as an environment variable, you must create the &lt;code>STEVEDORE_TREE_PATH&lt;/code> variable.&lt;/p>
 &lt;h3 id="configuration-from-local-configuration-file">Configuration from local configuration file&lt;/h3>
 &lt;p>Stevedore looks for the user configuration on the listed files, and it does following order that appears in the list:&lt;/p>
 &lt;ol>
@@ -17,8 +17,8 @@
 The command &lt;code>stevedore init&lt;/code>, is an alias from the create configuration subcommand that is also available to generate the configuration file.&lt;/p>
 &lt;p>When you use the CLI to generate the configuration file, the outcome configuration is created at &lt;code>./stevedore.yaml&lt;/code> but you can indicate your desired location by the &lt;code>--config&lt;/code> flag.&lt;/p>
 &lt;h3 id="stevedore-credentials">Stevedore credentials&lt;/h3>
-&lt;p>Stevedore could store your Docker registry&amp;rsquo;s credentials and use them on your behalf during the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#build">building&lt;/a> or &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#promote">promoting&lt;/a> processes.&lt;/p>
-&lt;p>The default folder to store the credentials is &lt;code>~/.config/stevedore/credentials&lt;/code>. Nevertheless, you can define where to store the credentials by setting the &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#docker_registry_credentials_dir">docker_registry_credentials_dir&lt;/a> parameter.&lt;/p>
+&lt;p>Stevedore could store your Docker registry&amp;rsquo;s credentials and use them on your behalf during the &lt;a href="https://gostevedore.github.io/docs/docs-v0.10/getting-started/concepts/#build">building&lt;/a> or &lt;a href="https://gostevedore.github.io/docs/docs-v0.10/getting-started/concepts/#promote">promoting&lt;/a> processes.&lt;/p>
+&lt;p>The default folder to store the credentials is &lt;code>~/.config/stevedore/credentials&lt;/code>. Nevertheless, you can define where to store the credentials by setting the &lt;a href="https://gostevedore.github.io/docs/docs-v0.10/getting-started/configuration/#docker_registry_credentials_dir">docker_registry_credentials_dir&lt;/a> parameter.&lt;/p>
 &lt;p>In case you use the CLI to create Stevedore&amp;rsquo;s configuration, you can also request to create Docker&amp;rsquo;s registry credentials.&lt;/p>
 &lt;p>Finally, with the CLI command &lt;code>stevedore create credentials&lt;/code>, you can create as many credentials as you need.&lt;/p>
 &lt;h2 id="configuration-parameters">Configuration parameters&lt;/h2>
@@ -35,7 +35,7 @@ The command &lt;code>stevedore init&lt;/code>, is an alias from the create confi
 &lt;ul>
 &lt;li>Environment variable: &lt;code>STEVEDORE_BUILDERS&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>Stevedore looks for builders definition on the file set at &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#builder_path">builder_path&lt;/a> and loads the builders defined under the &lt;code>builders&lt;/code> key. For further information see the &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/#global-builder">reference guide&lt;/a>.&lt;/p>
+&lt;p>Stevedore looks for builders definition on the file set at &lt;a href="https://gostevedore.github.io/docs/docs-v0.10/getting-started/configuration/#builder_path">builder_path&lt;/a> and loads the builders defined under the &lt;code>builders&lt;/code> key. For further information see the &lt;a href="https://gostevedore.github.io/docs/docs-v0.10/reference-guide/builder/#global-builder">reference guide&lt;/a>.&lt;/p>
 &lt;h3 id="build_on_cascade">&lt;strong>build_on_cascade&lt;/strong>&lt;/h3>
 &lt;p>On build command, indicates whether to start to build children&amp;rsquo;s images once the image build finishes.&lt;/p>
 &lt;ul>
@@ -55,7 +55,7 @@ The command &lt;code>stevedore init&lt;/code>, is an alias from the create confi
 &lt;ul>
 &lt;li>Environment variable: &lt;code>STEVEDORE_IMAGES_TREE&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>Stevedore looks for the images on the file set at &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#tree_path">tree_path&lt;/a> and loads the images defined under the &lt;code>images_tree&lt;/code> key. For further information see the &lt;a href="https://gostevedore.github.io/docs/reference-guide/">reference guide&lt;/a>.&lt;/p>
+&lt;p>Stevedore looks for the images on the file set at &lt;a href="https://gostevedore.github.io/docs/docs-v0.10/getting-started/configuration/#tree_path">tree_path&lt;/a> and loads the images defined under the &lt;code>images_tree&lt;/code> key. For further information see the &lt;a href="https://gostevedore.github.io/docs/docs-v0.10/reference-guide/">reference guide&lt;/a>.&lt;/p>
 &lt;h3 id="log_path">&lt;strong>log_path&lt;/strong>&lt;/h3>
 &lt;p>Is the log file location path.&lt;/p>
 &lt;ul>
@@ -124,12 +124,12 @@ The command &lt;code>stevedore init&lt;/code>, is an alias from the create confi
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">semantic_version_tags_templates&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#4e9a06">&amp;#34;{{ .Major }}.{{ .Minor }}.{{ .Patch }}&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tree_path&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">stevedore.yaml&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs-V0.11: Configuration</title><link>https://gostevedore.github.io/docs-v0.11/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs-v0.11/getting-started/configuration/</guid><description>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Configuration</title><link>https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/</guid><description>
 &lt;h2 id="stevedore-configuration">Stevedore configuration&lt;/h2>
 &lt;p>Stevedore can load its configuration either from a local configuration file or environment variables.&lt;/p>
 &lt;h3 id="configuration-from-environment-variables">Configuration from environment variables&lt;/h3>
 &lt;p>When you want to use environment variables to define a Stevedore configuration parameter, you must create an environment variable with the same name as the parameter, and prefix it with &lt;code>STEVEDORE_&lt;/code>. The environment variables must be uppercased.&lt;/p>
-&lt;p>For example, to define the &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#tree_path">tree_path&lt;/a> parameter as an environment variable, you must create the &lt;code>STEVEDORE_TREE_PATH&lt;/code> variable.&lt;/p>
+&lt;p>For example, to define the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#tree_path">tree_path&lt;/a> parameter as an environment variable, you must create the &lt;code>STEVEDORE_TREE_PATH&lt;/code> variable.&lt;/p>
 &lt;h3 id="configuration-from-local-configuration-file">Configuration from local configuration file&lt;/h3>
 &lt;p>Stevedore looks for the user configuration on the listed files, and it does following order that appears in the list:&lt;/p>
 &lt;ol>
@@ -143,8 +143,8 @@ The command &lt;code>stevedore init&lt;/code>, is an alias from the create confi
 The command &lt;code>stevedore init&lt;/code>, is an alias from the create configuration subcommand that is also available to generate the configuration file.&lt;/p>
 &lt;p>When you use the CLI to generate the configuration file, the outcome configuration is created at &lt;code>./stevedore.yaml&lt;/code> but you can indicate your desired location by the &lt;code>--config&lt;/code> flag.&lt;/p>
 &lt;h3 id="stevedore-credentials">Stevedore credentials&lt;/h3>
-&lt;p>Stevedore could store your Docker registry&amp;rsquo;s credentials and use them on your behalf during the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#build">building&lt;/a> or &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#promote">promoting&lt;/a> processes.&lt;/p>
-&lt;p>The default folder to store the credentials is &lt;code>~/.config/stevedore/credentials&lt;/code>. Nevertheless, you can define where to store the credentials by setting the &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#docker_registry_credentials_dir">docker_registry_credentials_dir&lt;/a> parameter.&lt;/p>
+&lt;p>Stevedore could store your Docker registry&amp;rsquo;s credentials and use them on your behalf during the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#build">building&lt;/a> or &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#promote">promoting&lt;/a> processes.&lt;/p>
+&lt;p>The default folder to store the credentials is &lt;code>~/.config/stevedore/credentials&lt;/code>. Nevertheless, you can define where to store the credentials by setting the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#docker_registry_credentials_dir">docker_registry_credentials_dir&lt;/a> parameter.&lt;/p>
 &lt;p>In case you use the CLI to create Stevedore&amp;rsquo;s configuration, you can also request to create Docker&amp;rsquo;s registry credentials.&lt;/p>
 &lt;p>Finally, with the CLI command &lt;code>stevedore create credentials&lt;/code>, you can create as many credentials as you need.&lt;/p>
 &lt;h2 id="configuration-parameters">Configuration parameters&lt;/h2>
@@ -161,7 +161,7 @@ The command &lt;code>stevedore init&lt;/code>, is an alias from the create confi
 &lt;ul>
 &lt;li>Environment variable: &lt;code>STEVEDORE_BUILDERS&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>Stevedore looks for builders definition on the file set at &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#builder_path">builder_path&lt;/a> and loads the builders defined under the &lt;code>builders&lt;/code> key. For further information see the &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/#global-builder">reference guide&lt;/a>.&lt;/p>
+&lt;p>Stevedore looks for builders definition on the file set at &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#builder_path">builder_path&lt;/a> and loads the builders defined under the &lt;code>builders&lt;/code> key. For further information see the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/builder/#global-builder">reference guide&lt;/a>.&lt;/p>
 &lt;h3 id="build_on_cascade">&lt;strong>build_on_cascade&lt;/strong>&lt;/h3>
 &lt;p>On build command, indicates whether to start to build children&amp;rsquo;s images once the image build finishes.&lt;/p>
 &lt;ul>
@@ -181,7 +181,7 @@ The command &lt;code>stevedore init&lt;/code>, is an alias from the create confi
 &lt;ul>
 &lt;li>Environment variable: &lt;code>STEVEDORE_IMAGES_TREE&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>Stevedore looks for the images on the file set at &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#tree_path">tree_path&lt;/a> and loads the images defined under the &lt;code>images_tree&lt;/code> key. For further information see the &lt;a href="https://gostevedore.github.io/docs/reference-guide/">reference guide&lt;/a>.&lt;/p>
+&lt;p>Stevedore looks for the images on the file set at &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#tree_path">tree_path&lt;/a> and loads the images defined under the &lt;code>images_tree&lt;/code> key. For further information see the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/">reference guide&lt;/a>.&lt;/p>
 &lt;h3 id="log_path">&lt;strong>log_path&lt;/strong>&lt;/h3>
 &lt;p>Is the log file location path.&lt;/p>
 &lt;ul>
@@ -376,9 +376,9 @@ The command &lt;code>stevedore init&lt;/code>, is an alias from the create confi
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">semantic_version_tags_templates&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#4e9a06">&amp;#34;{{ .Major }}.{{ .Minor }}.{{ .Patch }}&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tree_path&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">stevedore.yaml&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs-V0.10: Quickstart</title><link>https://gostevedore.github.io/docs-v0.10/getting-started/quickstart/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs-v0.10/getting-started/quickstart/</guid><description>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Quickstart</title><link>https://gostevedore.github.io/docs/docs-v0.10/getting-started/quickstart/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.10/getting-started/quickstart/</guid><description>
 &lt;h2 id="download-and-install-stevedore">Download and install stevedore&lt;/h2>
-&lt;div class="pageinfo pageinfo-primary">
+&lt;div class="pageinfo pageinfo-secondary">
 &lt;p>Stevedore has been developed and tested on amd64 architecture and Linux os, for that reason the only available tarball is for amd64-Linux tarball.
 In case you are running another arch or os, you could build it from the source.&lt;/p>
 &lt;/div>
@@ -449,9 +449,9 @@ Flags:
 Global Flags:
 -c, --config string Configuration file location path
 &lt;/code>&lt;/pre>&lt;h2 id="define-builders">Define builders&lt;/h2>
-&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/">builders&lt;/a> reference guide&lt;/p>
+&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/docs-v0.10/reference-guide/builder/">builders&lt;/a> reference guide&lt;/p>
 &lt;h2 id="define-the-images-tree">Define the images tree&lt;/h2>
-&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/reference-guide/images-tree/">images tree&lt;/a> reference guide&lt;/p>
+&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/docs-v0.10/reference-guide/images-tree/">images tree&lt;/a> reference guide&lt;/p>
 &lt;h2 id="start-building">Start building&lt;/h2>
 &lt;pre tabindex="0">&lt;code>stevedore build
 &lt;/code>&lt;/pre>&lt;p>&lt;strong>Usage:&lt;/strong>&lt;/p>
@@ -485,7 +485,7 @@ Flags:
 -t, --tag strings Give an extra tag for the docker image
 Global Flags:
 -c, --config string Configuration file location path
-&lt;/code>&lt;/pre></description></item><item><title>Docs-V0.11: Quickstart</title><link>https://gostevedore.github.io/docs-v0.11/getting-started/quickstart/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs-v0.11/getting-started/quickstart/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Quickstart</title><link>https://gostevedore.github.io/docs/docs-v0.11/getting-started/quickstart/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/getting-started/quickstart/</guid><description>
 &lt;h2 id="download-and-install-stevedore">Download and install stevedore&lt;/h2>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>Stevedore has been developed and tested on amd64 architecture and Linux os, for that reason the only available tarball is for amd64-Linux tarball.
@@ -558,9 +558,9 @@ Flags:
 Global Flags:
 -c, --config string Configuration file location path
 &lt;/code>&lt;/pre>&lt;h2 id="define-builders">Define builders&lt;/h2>
-&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/">builders&lt;/a> reference guide&lt;/p>
+&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/builder/">builders&lt;/a> reference guide&lt;/p>
 &lt;h2 id="define-the-images-tree">Define the images tree&lt;/h2>
-&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/reference-guide/images-tree/">images tree&lt;/a> reference guide&lt;/p>
+&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/images-tree/">images tree&lt;/a> reference guide&lt;/p>
 &lt;h2 id="start-building">Start building&lt;/h2>
 &lt;pre tabindex="0">&lt;code>stevedore build
 &lt;/code>&lt;/pre>&lt;p>&lt;strong>Usage:&lt;/strong>&lt;/p>
@@ -596,7 +596,7 @@ Global Flags:
 -c, --config string Configuration file location path
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Quickstart</title><link>https://gostevedore.github.io/docs/getting-started/quickstart/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/getting-started/quickstart/</guid><description>
 &lt;h2 id="download-and-install-stevedore">Download and install stevedore&lt;/h2>
-&lt;div class="pageinfo pageinfo-primary">
+&lt;div class="pageinfo pageinfo-secondary">
 &lt;p>Stevedore has been developed and tested on amd64 architecture and Linux os, for that reason the only available tarball is for amd64-Linux tarball.
 In case you are running another arch or os, you could build it from the source.&lt;/p>
 &lt;/div>

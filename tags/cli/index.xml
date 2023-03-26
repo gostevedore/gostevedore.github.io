@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Stevedore – cli</title><link>https://gostevedore.github.io/tags/cli/</link><description>Recent content in cli on Stevedore</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://gostevedore.github.io/tags/cli/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs-V0.10: Command line interface</title><link>https://gostevedore.github.io/docs-v0.10/reference-guide/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs-v0.10/reference-guide/cli/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Stevedore – cli</title><link>https://gostevedore.github.io/tags/cli/</link><description>Recent content in cli on Stevedore</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://gostevedore.github.io/tags/cli/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Command line interface</title><link>https://gostevedore.github.io/docs/docs-v0.10/reference-guide/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.10/reference-guide/cli/</guid><description>
 &lt;h2 id="build">build&lt;/h2>
 &lt;p>Stevedore command to build images&lt;/p>
 &lt;pre tabindex="0">&lt;code>Usage:
@@ -146,7 +146,7 @@ Flags:
 Global Flags:
 -c, --config string Configuration file location path
 &lt;/code>&lt;/pre>&lt;h2 id="init">init&lt;/h2>
-&lt;p>Stevedore init command is a shortcut for &amp;lsquo;&lt;a href="https://gostevedore.github.io/docs/reference-guide/cli/#create-configuration">stevedore create configuration&lt;/a>&amp;rsquo;&lt;/p>
+&lt;p>Stevedore init command is a shortcut for &amp;lsquo;&lt;a href="https://gostevedore.github.io/docs/docs-v0.10/reference-guide/cli/#create-configuration">stevedore create configuration&lt;/a>&amp;rsquo;&lt;/p>
 &lt;h2 id="promote">promote&lt;/h2>
 &lt;p>Stevedore command to promote, publish or copy images to a docker registry or namespace&lt;/p>
 &lt;pre tabindex="0">&lt;code>Usage:
@@ -166,7 +166,7 @@ Flags:
 Global Flags:
 -c, --config string Configuration file location path
 &lt;/code>&lt;/pre>&lt;h2 id="version">version&lt;/h2>
-&lt;p>Stevedore command to print the binary release version&lt;/p></description></item><item><title>Docs-V0.11: Command line interface</title><link>https://gostevedore.github.io/docs-v0.11/reference-guide/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs-v0.11/reference-guide/cli/</guid><description>
+&lt;p>Stevedore command to print the binary release version&lt;/p></description></item><item><title>Docs: Command line interface</title><link>https://gostevedore.github.io/docs/docs-v0.11/reference-guide/cli/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/reference-guide/cli/</guid><description>
 &lt;h2 id="build">build&lt;/h2>
 &lt;p>Stevedore command to build images&lt;/p>
 &lt;pre tabindex="0">&lt;code>Usage:
@@ -314,7 +314,7 @@ Flags:
 Global Flags:
 -c, --config string Configuration file location path
 &lt;/code>&lt;/pre>&lt;h2 id="init">init&lt;/h2>
-&lt;p>Stevedore init command is a shortcut for &amp;lsquo;&lt;a href="https://gostevedore.github.io/docs/reference-guide/cli/#create-configuration">stevedore create configuration&lt;/a>&amp;rsquo;&lt;/p>
+&lt;p>Stevedore init command is a shortcut for &amp;lsquo;&lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/cli/#create-configuration">stevedore create configuration&lt;/a>&amp;rsquo;&lt;/p>
 &lt;h2 id="promote">promote&lt;/h2>
 &lt;p>Stevedore command to promote, publish or copy images to a docker registry or namespace&lt;/p>
 &lt;pre tabindex="0">&lt;code>Usage:

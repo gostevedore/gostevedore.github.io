@@ -1,6 +1,6 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Stevedore – installation</title><link>https://gostevedore.github.io/tags/installation/</link><description>Recent content in installation on Stevedore</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://gostevedore.github.io/tags/installation/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs-V0.10: Quickstart</title><link>https://gostevedore.github.io/docs-v0.10/getting-started/quickstart/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs-v0.10/getting-started/quickstart/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Stevedore – installation</title><link>https://gostevedore.github.io/tags/installation/</link><description>Recent content in installation on Stevedore</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 05 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://gostevedore.github.io/tags/installation/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Quickstart</title><link>https://gostevedore.github.io/docs/docs-v0.10/getting-started/quickstart/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.10/getting-started/quickstart/</guid><description>
 &lt;h2 id="download-and-install-stevedore">Download and install stevedore&lt;/h2>
-&lt;div class="pageinfo pageinfo-primary">
+&lt;div class="pageinfo pageinfo-secondary">
 &lt;p>Stevedore has been developed and tested on amd64 architecture and Linux os, for that reason the only available tarball is for amd64-Linux tarball.
 In case you are running another arch or os, you could build it from the source.&lt;/p>
 &lt;/div>
@@ -71,9 +71,9 @@ Flags:
 Global Flags:
 -c, --config string Configuration file location path
 &lt;/code>&lt;/pre>&lt;h2 id="define-builders">Define builders&lt;/h2>
-&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/">builders&lt;/a> reference guide&lt;/p>
+&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/docs-v0.10/reference-guide/builder/">builders&lt;/a> reference guide&lt;/p>
 &lt;h2 id="define-the-images-tree">Define the images tree&lt;/h2>
-&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/reference-guide/images-tree/">images tree&lt;/a> reference guide&lt;/p>
+&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/docs-v0.10/reference-guide/images-tree/">images tree&lt;/a> reference guide&lt;/p>
 &lt;h2 id="start-building">Start building&lt;/h2>
 &lt;pre tabindex="0">&lt;code>stevedore build
 &lt;/code>&lt;/pre>&lt;p>&lt;strong>Usage:&lt;/strong>&lt;/p>
@@ -107,7 +107,7 @@ Flags:
 -t, --tag strings Give an extra tag for the docker image
 Global Flags:
 -c, --config string Configuration file location path
-&lt;/code>&lt;/pre></description></item><item><title>Docs-V0.11: Quickstart</title><link>https://gostevedore.github.io/docs-v0.11/getting-started/quickstart/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs-v0.11/getting-started/quickstart/</guid><description>
+&lt;/code>&lt;/pre></description></item><item><title>Docs: Quickstart</title><link>https://gostevedore.github.io/docs/docs-v0.11/getting-started/quickstart/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/getting-started/quickstart/</guid><description>
 &lt;h2 id="download-and-install-stevedore">Download and install stevedore&lt;/h2>
 &lt;div class="pageinfo pageinfo-primary">
 &lt;p>Stevedore has been developed and tested on amd64 architecture and Linux os, for that reason the only available tarball is for amd64-Linux tarball.
@@ -180,9 +180,9 @@ Flags:
 Global Flags:
 -c, --config string Configuration file location path
 &lt;/code>&lt;/pre>&lt;h2 id="define-builders">Define builders&lt;/h2>
-&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/">builders&lt;/a> reference guide&lt;/p>
+&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/builder/">builders&lt;/a> reference guide&lt;/p>
 &lt;h2 id="define-the-images-tree">Define the images tree&lt;/h2>
-&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/reference-guide/images-tree/">images tree&lt;/a> reference guide&lt;/p>
+&lt;p>Refer to &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/images-tree/">images tree&lt;/a> reference guide&lt;/p>
 &lt;h2 id="start-building">Start building&lt;/h2>
 &lt;pre tabindex="0">&lt;code>stevedore build
 &lt;/code>&lt;/pre>&lt;p>&lt;strong>Usage:&lt;/strong>&lt;/p>
@@ -218,7 +218,7 @@ Global Flags:
 -c, --config string Configuration file location path
 &lt;/code>&lt;/pre></description></item><item><title>Docs: Quickstart</title><link>https://gostevedore.github.io/docs/getting-started/quickstart/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/getting-started/quickstart/</guid><description>
 &lt;h2 id="download-and-install-stevedore">Download and install stevedore&lt;/h2>
-&lt;div class="pageinfo pageinfo-primary">
+&lt;div class="pageinfo pageinfo-secondary">
 &lt;p>Stevedore has been developed and tested on amd64 architecture and Linux os, for that reason the only available tarball is for amd64-Linux tarball.
 In case you are running another arch or os, you could build it from the source.&lt;/p>
 &lt;/div>

@@ -365,7 +365,7 @@ The command &lt;code>stevedore init&lt;/code>, is an alias from the create confi
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">tree_path&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">stevedore.yaml&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Quickstart</title><link>https://gostevedore.github.io/docs/getting-started/quickstart/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/getting-started/quickstart/</guid><description>
 &lt;h2 id="download-and-install-stevedore">Download and install stevedore&lt;/h2>
-&lt;div class="pageinfo pageinfo-primary">
+&lt;div class="pageinfo pageinfo-secondary">
 &lt;p>Stevedore has been developed and tested on amd64 architecture and Linux os, for that reason the only available tarball is for amd64-Linux tarball.
 In case you are running another arch or os, you could build it from the source.&lt;/p>
 &lt;/div>

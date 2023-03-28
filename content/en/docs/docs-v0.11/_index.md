@@ -1,9 +1,11 @@
 
 ---
-title: "Documentation"
+title: "Documentation v0.11"
 linkTitle: "Documentation v0.11"
 weight: 20
 toc_hide: true
+description: >
+    Explore the documentation for Stevedore v0.11
 ---
 
 Stevedore is a tool for building Docker images at scale, and it is not intended to replace Dockerfile or Buildkit. Instead, Stevedore can be used in conjunction with these tools to help streamline the process of building and promoting multiple Docker images.
@@ -13,14 +15,7 @@ One of the key benefits of using Stevedore is that it provides a consistent and 
 Overall, Stevedore is a useful tool for anyone who needs to build and manage large numbers of Docker images, and it can help to improve the overall experience of building and promoting Docker images at scale.
 
 ## Why stevedore?
-
-Stevedore is a helpful tool when you need to **build bunches of Docker images** and build them in a **standardized way**. It lets you define how to build your Docker images as well as the relationship between those images. Having that relationship, you can **build automatically the children's images** when the parent image is ready.
-
-To build Docker images, you can use **multiple sources as build context**, for example, building images using a folder from your local host or a git repository. And not only that, but you can also merge several sources to create the ultimate build context.
-
-You can **generate tags automatically** when the main tag is **semantic version 2.0.0**, following the version tree.
-
-Finally, Stevedore provides a **credentials store**. You can store there your credentials and Stevedore uses them to authenticate on your behalf to a Docker registry when you want to push or **promote Docker images**. It also provides the capability to authenticate to AWS ECR.
+Stevedore simplifies the building of Docker images in a standardized way, with the ability to define relationships between them. You can build images from multiple sources, including local files and git repositories, and generate automatic tags for semantic versioning. Stevedore also offers a credentials store for easy authentication to Docker registries and AWS ECR, making image promotion and pushing seamless.
 
 ## Features
 

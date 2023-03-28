@@ -15,31 +15,24 @@ One of the key benefits of using Stevedore is that it provides a consistent and 
 Overall, Stevedore is a useful tool for anyone who needs to build and manage large numbers of Docker images, and it can help to improve the overall experience of building and promoting Docker images at scale.
 
 ## Why stevedore?
-
-Stevedore is a helpful tool when you need to **build bunches of Docker images** and build them in a **standardized way**. It lets you define how to build your Docker images as well as the relationship between those images. Having that relationship, you can **build automatically the children's images** when the parent image is ready.
-
-To build Docker images, you can use **multiple sources as build context**, for example, building images using a folder from your local host or a git repository. And not only that, but you can also merge several sources to create the ultimate build context.
-
-You can **generate tags automatically** when the main tag is **semantic version 2.0.0**, following the version tree.
-
-Finally, Stevedore provides a **credentials store**. You can store there your credentials and Stevedore uses them to authenticate on your behalf to a Docker registry when you want to push or **promote Docker images**. It also provides the capability to authenticate to AWS ECR.
+Stevedore simplifies the building of Docker images in a standardized way, with the ability to define relationships between them. You can build images from multiple sources, including local files and git repositories, and generate automatic tags for semantic versioning. Stevedore also offers a credentials store for easy authentication to Docker registries and AWS ECR, making image promotion and pushing seamless.
 
 ## Features
 
 ### Standardize
-Build your Docker images in a standardized way. Create a Dockerfile and reuse it for as many use cases as you need
+Build your Docker images in a standardized way. Create a Dockerfile and reuse it for as many use cases as needed
 
 ### Relatives build
-Define Docker images relationship and build the relatives images automatically
+Automate the building of related Docker images by defining their relationships and dependencies
 
 ### Credentials
 Store credentials to log in to your Docker registry, AWS Elastic Container Registry or git a server
 
 ### Promote
-Promote or copy images among Docker registries. Promote from and to AWS Elastic Container Registry is also supported
+Easily promote or copy Docker images from one registry to another using Stevedore's image promotion feature
 
 ### Semver awareness
-Generate tags automatically when the main tag is semantic version 2.0.0
+Automatically generate tags for semantic version 2.0.0 when building Docker image
 
 ### Multiple build contexts
 Build your images using multiple build context sources. Use local files, a git repository or merge several sources

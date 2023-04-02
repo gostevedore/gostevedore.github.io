@@ -144,19 +144,20 @@ sidebar_search_disable = false
 [params.ui.readingtime]
 enable = false
 
+prism_syntax_highlighting = true
+
 # Add your release versions here
 [[params.versions]]
   version = "latest"
   url = "https://gostevedore.github.io/docs/"
   #url = "http://0.0.0.0:1313/docs/"
 
-# [[params.versions]]
-#   version = "v0.10"
-#   url = "http://0.0.0.0:1313/docs/docs-v0.10"
-
-# [[params.versions]]
-#   version = "v0.11"
-#   url = "http://0.0.0.0:1313/docs/docs-v0.11"
+[[params.versions]]
+  version = "v0.10"
+  url = "https://gostevedore.github.io/docs//docs-v0.10"
+[[params.versions]]
+  version = "v0.11"
+  url = "https://gostevedore.github.io/docs//docs-v0.10"
 
 # hugo module configuration
 [module]

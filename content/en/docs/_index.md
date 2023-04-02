@@ -15,7 +15,11 @@ One of the key benefits of using Stevedore is that it provides a consistent and 
 Overall, Stevedore is a useful tool for anyone who needs to build and manage large numbers of Docker images, and it can help to improve the overall experience of building and promoting Docker images at scale.
 
 ## Why stevedore?
-Stevedore simplifies the building of Docker images in a standardized way, with the ability to define relationships between them. You can build images from multiple sources, including local files and git repositories, and generate automatic tags for semantic versioning. Stevedore also offers a credentials store for easy authentication to Docker registries and AWS ECR, making image promotion and pushing seamless.
+Stevedore simplifies the building of Docker images in a standardized way, with the ability to define relationships between them.
+
+You can build images from multiple sources, including local files and git repositories, and generate automatic tags for semantic versioning.
+
+Stevedore also offers a credentials store for easy authentication to Docker registries and AWS ECR, making image promotion and pushing seamless.
 
 ## Features
 

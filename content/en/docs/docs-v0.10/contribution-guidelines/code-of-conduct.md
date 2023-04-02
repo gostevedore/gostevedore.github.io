@@ -1,7 +1,7 @@
 ---
 title: Code of conduct
 weight: 9
-description: Stevedore has a code of conduct that all contributors are expected to follow
+Description: Stevedore has a code of conduct that all contributors are expected to follow
 ---
 
 # Stevedore Project Code of Conduct

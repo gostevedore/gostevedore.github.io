@@ -4,7 +4,7 @@ title: "Concepts"
 linkTitle: "Concepts"
 weight: 2
 description: >
-  The following page describes the main Stevedore concepts and terms that appear along that documentation.
+  Know about the Stevedore concepts and terms that appear along that documentation
 ---
 
 ### Build
@@ -50,7 +50,7 @@ simple-go-helloworld:
 {{< /highlight >}}
 
 ### Credentials
-Credentials are those secrets that Stevedore uses to authenticate on your behalf to a Docker registry.
+Credentials allows users to securely store authentication information, such as access keys, tokens, passwords, and SSH keys. These credentials can be used to authenticate with Docker registries and Git servers, allowing users to push and pull images and code securely and with ease.
 
 ### Driver
 Stevedore does not implement a mechanism to build Docker images, but it uses other tools created for that purpose. The driver prepares the build parameters, using the image's definition as well as the builders' ones, and performs the request to build the image.

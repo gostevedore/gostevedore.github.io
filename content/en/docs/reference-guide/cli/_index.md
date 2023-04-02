@@ -2,7 +2,7 @@
 tags: ["reference", "cli"]
 title: "Command line interface"
 linkTitle: "CLI"
-weight: 5
+weight: 9
 description: >
   This page shows the Stevedore's available commands 
 ---

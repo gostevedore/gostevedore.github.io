@@ -13,7 +13,7 @@ Note that an _image_ by itself has no sense, it must be defined within the [imag
 ## Keywords reference
 
 |Keyword|Type|Description|Value|
-|---|---|---|---|
+|---|:---:|---|---|
 |**builder**| string/map | Identifies the [builder]({{<ref "/docs/getting-started/concepts/#builder" >}}) to use to create the image.<br>You can define it as a _string_ when you want to refer to a [global-builder]({{<ref "/docs/reference-guide/builder/#global-builder">}}) already defined.<br>To designate it such an [in-line builder]({{<ref "/docs/reference-guide/builder/#in-line-builder">}}), you must define it as a _yaml data-structure_. In the [builder]({{<ref "/docs/reference-guide/builder/#in-line-builder">}})'s reference guide you find the details to define it.<br>If the builder attribute is not defined, it is used a builder which does not perform actions. | - |
 |**children**| map | It is a map where each key refers to an image within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}) and the value is a list of image versions. | - |
 |**name**| string | It is the image name. | By default its value is defined as the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}})'s image name key |

@@ -51,10 +51,10 @@ simple-go-helloworld:
 {{< /highlight >}}
 
 ### Credentials
-Credentials allows users to securely store authentication information, such as access keys, tokens, passwords, and SSH keys. These credentials can be used to authenticate with Docker registries and Git servers, allowing users to push and pull images and code securely and with ease.
+Credentials allows users to securely store authentication information, such as access keys, tokens, passwords, and SSH keys. These credentials can be used to authenticate with Docker registries and Git servers, allowing users to push and pull images and code securely and with ease. Refer to [reference guide]({{<ref "/docs/reference-guide/credentials/">}}) to know more about the credentials details.
 
 ### Credentials store
-The credential store in Stevedore allows users to securely store and retrieve credentials needed during the Docker image building process.
+The credential store in Stevedore allows users to securely store and retrieve credentials needed during the Docker image building process. Refer to [reference guide]({{<ref "/docs/reference-guide/credentials/credentials-store/">}}) to know more about the credentials store.
 
 ### Driver
 Stevedore relies on existing tools designed for building Docker images rather than implementing its own mechanism. The driver plays a crucial role in this process by preparing the build parameters based on the image and builder definitions and triggering the request to build the image.

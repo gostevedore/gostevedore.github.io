@@ -24,6 +24,22 @@ There you can also set the location to store the credentials. To configure that,
 Local storage allows the credentials encryption. Whenever you set the [encryption_key]({{<ref "/docs/getting-started/configuration/#encryption_key">}}) in the credentials configuration, local storage will be encrypted. Each credential is encrypted individually and stored in a file within the credentials storage path.
 
 ### Envvars storage
+Another option for storing [credentials]({{<ref "/docs/reference-guide/credentials">}}) in Stevedore is using the envvars storage type. To do so, you can set the [storage_type]({{<ref "/docs/getting-started/configuration/#storage_type">}}) attribute in the credential configuration to envvars.
+
+When using envvars storage, credentials are stored as environment variables. This can be particularly useful when working with systems that rely on environment variables, such as continuous integration (CI) or deployment pipelines.
+
+For security concerns, envvars storage encrypts each credentials, therefore it needs you to set the [encryption_key]({{<ref "/docs/getting-started/configuration/#encryption_key">}}) in the credentials configuration.
+
+To create a new credential when using the envvars storage type, you must use the Stevedore CLI [create credentials]({{<ref "/docs/reference-guide/cli/#create-credentials">}}) command. However, please note that this command does not automatically create the corresponding environment variable on your system. Instead, the command will output the environment variable name and value that you will need to create manually.
+
+It's also important to note that credentials stored using envvars storage are not persisted between sessions. This means that if you close your terminal session or restart your machine, you will need to set the credentials again.
+
+Stevedore creates the environment variables to store a credential prefixed by  `STEVEDORE_ENVVARS_CREDENTIALS` and the name is followed by the hash of the credentials id.
+
+That is an examle of and environment variable that stores a credential.
+```sh
+STEVEDORE_ENVVARS_CREDENTIALS_82E99D42EE1191BB42FBFB444920104D=4c1cedd441cd45f8aca66d6e9bfc81...
+```
 
 ## Security
 The credentials store uses [AES-GCM (Galois Counter Mode)](https://en.wikipedia.org/wiki/Galois/Counter_Mode) encryption to securely store each credential before storing it. 

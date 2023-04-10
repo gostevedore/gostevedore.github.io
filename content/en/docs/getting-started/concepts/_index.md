@@ -11,7 +11,7 @@ description: >
 The process to generate a Docker image.
 
 ### Builder
-A Builder arranges a set of parameters to build a Docker image. Among those parameters you can define the [driver]({{<ref "/docs/getting-started/concepts/#driver">}}) to perform the build, the Docker build context or Dockerfile location. 
+A Builder arranges a set of parameters to build a Docker image. Among those parameters, you can define the [driver]({{<ref "/docs/getting-started/concepts/#driver">}}) to perform the build, the Docker build context or the Dockerfile location.
 
 You can define a builder as a **global builder** or an **in-line builder**. 
 
@@ -51,13 +51,13 @@ simple-go-helloworld:
 {{< /highlight >}}
 
 ### Credentials
-Credentials allows users to securely store authentication information, such as access keys, tokens, passwords, and SSH keys. These credentials can be used to authenticate with Docker registries and Git servers, allowing users to push and pull images and code securely and with ease. Refer to [reference guide]({{<ref "/docs/reference-guide/credentials/">}}) to know more about the credentials details.
+Credentials allow users to securely store authentication information, such as access keys, tokens, passwords, and SSH keys. These credentials can be used to authenticate with Docker registries and Git servers, allowing users to push and pull images and code securely and with ease. Refer to the [reference guide]({{<ref "/docs/reference-guide/credentials/">}}) to know more about the credentials details.
 
 ### Credentials store
-The credential store in Stevedore allows users to securely store and retrieve credentials needed during the Docker image building process. Refer to [reference guide]({{<ref "/docs/reference-guide/credentials/credentials-store/">}}) to know more about the credentials store.
+The credential store in Stevedore allows users to securely store and retrieve credentials needed during the Docker images building process. Refer to the [reference guide]({{<ref "/docs/reference-guide/credentials/credentials-store/">}}) to know more about the credentials store.
 
 ### Driver
-Stevedore relies on existing tools designed for building Docker images rather than implementing its own mechanism. The driver plays a crucial role in this process by preparing the build parameters based on the image and builder definitions and triggering the request to build the image.
+Stevedore relies on existing tools designed for building Docker images rather than implementing its mechanism. The driver plays a crucial role in this process by preparing the build parameters based on the image and builder definitions and triggering the request to build the image.
 
 As of today, Stevedore supports the following drivers: 
 - **docker** driver that uses the Docker API. When a builder is defined to use the docker driver, it must provide at least the context, along with other parameters such as Dockerfiles location. For further information refer to [reference guide]({{<ref "/docs/reference-guide/driver/docker">}}).
@@ -88,7 +88,7 @@ my-image-base:
 {{< /highlight >}}
 
 ### Images-tree
-The Images-tree is a data-strucutre contains the definition of the images, as well as the relationship among them.
+The Images-tree is a data structure containing the definition of the images, as well as the relationship among them.
 
 On the snipped below you can see three images defined within the Images-tree: `my-image-base`, at line 2, `my-ms1`, at line 13, and `my-ms2`, at line 35.
 {{< highlight Yaml "linenos=table" >}}

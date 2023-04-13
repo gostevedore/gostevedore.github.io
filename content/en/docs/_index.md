@@ -12,7 +12,7 @@ Stevedore is a tool for building Docker images at scale, and it is not intended 
 
 One of the key benefits of using Stevedore is that it provides a consistent and modular way to build Docker images, which can be helpful when dealing with large and complex projects that require multiple images. By using a set of "workers" to perform specific tasks during the build process, you can create a more efficient and automated process for building and promoting Docker images.
 
-Overall, Stevedore is a useful tool for anyone who needs to build and manage large numbers of Docker images, and it can help to improve the overall experience of building and promoting Docker images at scale.
+Overall, Stevedore is a useful tool for anyone who needs to build and manage large numbers of Docker images, and it can help to improve the experience of building and promoting Docker images at scale.
 
 ## Why stevedore?
 Stevedore simplifies the building of Docker images in a standardized way, with the ability to define relationships between them.

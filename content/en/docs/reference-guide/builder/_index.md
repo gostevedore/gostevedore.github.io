@@ -8,12 +8,14 @@ description: >
 
 A builder provides relevant information about how to build a Docker image. It is defined using a [YAML](https://en.wikipedia.org/wiki/YAML) data structure, and its schema is described on [Keywords reference]({{<ref "/docs/reference-guide/builder/#keywords-reference-for-builder-configuration">}}) for builders configuration.
 
-There are two types of builders: global and in-line. Global builders are defined in the builders configuration file and can be used by any image. Information on how to set the location path for the builders configuration file can be found in the [configuration]({{<ref "/docs/getting-started/configuration/#builder_path">}}) documentation.
+There are two types of builders: _global_ and _in-line_. Global builders are defined in a builders configuration file and can be used by any image. Information on how to set the location path for the builders configuration file can be found in the [configuration]({{<ref "/docs/getting-started/configuration/#builders_path">}}) documentation.
 
 In-line builders, on the other hand, are defined within the image definition itself.
 
 ## Global builder
-A global builder must be defined under the `builders` block inside the Stevedore configuration. It means that Stevedore looks for the `builders` block within the file defined in [builder_path]({{<ref "/docs/getting-started/configuration/#builder_path">}}) configuration parameter.
+A global builder must be defined under the `builders` block inside the Stevedore configuration. It means that Stevedore looks for the `builders` block within the file defined in [builders_path]({{<ref "/docs/getting-started/configuration/#builders_path">}}) configuration parameter.
+
+You can also set a directory on the [builders_path]({{<ref "/docs/getting-started/configuration/#builders_path">}}). There you can define several files with the `builders` block defined on them. In that case, Stevedore loads all the builders.
 
 {{< highlight Yaml "linenos=table" >}}
 builders:
@@ -35,25 +37,29 @@ builders:
 {{</highlight >}}
 The previous example defines three builders: `builder1`, `builder2` and `builder3`, all of them are defined within the `builders` block.
 
-Through Stevedore CLI command, you can retrieve the value of the [builder_path]({{<ref "/docs/getting-started/configuration/#builder_path">}}) configuration parameter.
+Through Stevedore CLI command, you can retrieve the value of the [builders_path]({{<ref "/docs/getting-started/configuration/#builders_path">}}) configuration parameter.
 ```bash
 $ stevedore get configuration
-PARAMETER                           VALUE
-tree_path                           stevedore.yaml
-builder_path                        stevedore.yaml
-log_path                            /dev/null
-num_workers                         4
-push_images                         true
-build_on_cascade                    false
-docker_registry_credentials_dir     ~/.config/stevedore/credentials
-semantic_version_tags_enabled       false
-semantic_version_tags_templates     [{{ .Major }}.{{ .Minor }}.{{ .Patch }}]
+
+ builders_path: stevedore.yaml
+ concurrency: 4
+ semantic_version_tags_enabled: false
+ images_path: stevedore.yaml
+ push_images: false
+ semantic_version_tags_templates:
+   - {{ .Major }}.{{ .Minor }}.{{ .Patch }}
+ credentials:
+   storage_type: local
+   format: json
+   local_storage_path: credentials
+   encryption_key: 12345asdfg
+
 ```
 
 ## In-line builder
 When you want to create an image using an ad-hoc builder, you can provide it in the [image definition]({{<ref "docs/reference-guide/image/">}}) itself. In that case, the builder is known as an in-line builder.
 
-In-line builders are defined following the [Keywords reference]({{<ref "/docs/reference-guide/builder/#keywords-reference-for-builder-configuration">}}) for builders configuration as well.
+In-line builders are defined following the [Keywords reference]({{<ref "/docs/reference-guide/builder/#keywords-reference">}}) for builders' configuration as well.
 
 {{< highlight Yaml "linenos=table" >}}
 my-image-base:
@@ -86,15 +92,15 @@ Builder options are defined in a YAML data structure, and each driver has its ow
 ### Variables-mapping reference
 Stevedore always sends a set of parameters to the driver when building a Docker image. These parameters are organized in a key-value data structure called `variables_mapping`. Importantly, these parameters are sent to the driver by Stevedore regardless of whether they have been explicitly specified in the [image]({{<ref "/docs/reference-guide/image/">}}) definition or as a CLI flag.
 
-When Stevedore sets a parameter, it looks for the corresponding argument-name in the `variables_mapping` block within the builder's definition. Users can override the default value of the argument-name by setting a new value for the argument in the `variables_mapping` block.
+When Stevedore sets a driver parameter based on the `variables_mapping`, it searches for the corresponding _argument-name_ in the `variables_mapping` block of the builder's definition. Users can override the default name of the argument by providing a new name for that argument in the same `variables_mapping` block.
 
 It's important to understand the concepts within the variables-mapping context, such as the _key name_, _argument name_, and _argument value_:
 
-- **key name**: This is used internally by Stevedore to identify the name of the argument to use during the image building process.
-- **argument name**: This is the name of the argument that the driver receives to create a Docker image.  Users can override it in the [builder]({{<ref "/docs/getting-started/concepts/#builder">}}) definition
-- **argument value**: This is the value of the argument that the driver receives to create a Docker image. It can be specified in the [image]({{<ref "/docs/reference-guide/image/">}}) definition or CLI flags.
+- **key name**: This is used internally by Stevedore to identify an argument to create during the image's building process.
+- **argument name**: This is the name of the argument that the driver receives to create a Docker image.  Users can override it in the [builder]({{<ref "/docs/getting-started/concepts/#builder">}}) definition.
+- **argument value**: This is the value of the argument that the driver receives to create a Docker image. It can be specified in the [image]({{<ref "/docs/reference-guide/image/">}}) definition, CLI flags or by Stevedore itself. For more information on how Stevedore sets the argument value using `variables-mapping`, please refer to [variables-mapping for Ansible playbook driver]({{<ref "/docs/reference-guide/builder/ansible-playbook/#variables-mapping-reference">}}) or [variables-mapping for Docker driver]({{<ref "/docs/reference-guide/builder/docker/#variables-mapping-reference">}}).
 
-Each drivers receives a distinct set of parameters comming from variables-mapping. Refer to the following links to know more about variables that each driver receives:
+Each driver receives a distinct set of parameters coming from variables-mapping. Refer to the following links to know more about the variables that each driver receives:
 - [**Variables-mapping for Ansible playbook driver**]({{<ref "/docs/reference-guide/builder/ansible-playbook/#variables-mapping-reference">}})
 - [**Variables-mapping for Docker driver**]({{<ref "/docs/reference-guide/builder/docker/#variables-mapping-reference">}})
 

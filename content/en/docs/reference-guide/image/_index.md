@@ -18,38 +18,36 @@ Note that an _image_ by itself has no sense, it must be defined within the [imag
 |**children**| map | It is a map where each key refers to an image within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}) and the value is a list of image versions. | - |
 |**name**| string | It is the image name. | By default its value is defined as the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}})'s image name key |
 |**namespace**| string | It is the Docker`s registry namespace. | - |
+|**parents**| map | It is a map that provides a reference to its parent images within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}). Each key identifies the parent image name and the value is a list of parent image versions. | - |
 |**persistent_vars**| map | You define there a list of variables required to build the Docker image. That variables are inherit by the children images. | Its value is a key-value data-structure where each key is an _string_ and its value a _yaml data-structure_. | - |
 |**registry**| string | It is the Docker's registry host. | - |
 |**tags**| list | You define a list of additional tags to generate. | - |
 |**vars**| map | You define there a list of variables required to build the Docker image. | Its value is a key-value structure where each key is an _string_ and its value a _yaml data-structure_. | - |
 |**version**| string | It is the Docker's image tag. | By default its value is defined as the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}})'s image version key |
 
-- Example
+### Example
 {{<highlight Yaml "linenos=table">}}
-name: ubuntu
-version: 18.04
+name: base-apps
+version: 3.2.1
 builder:
   driver: docker
   options:
   	context:
-	  path: ./ubuntu
+	  path: ./base-app
 namespace: stable
-registry: myregistry.example.com
+registry: registry.stevedore.test
 tags:
   - latest
 persistent_vars:
-  ubuntu_version: 18.04
+  base_version: {{ .Version }}
 vars:
   os_base: rootfs.tar
-children:
-  app1:
-    - "1.2.3"
-    - "*"
-  app2:
-    - "0.3.1"
-    - "*"
+parents:
+  alpine:
+    - "1.36"
+  ubuntu:
+    - "22.04"
 {{</highlight>}}
-
 
 ## Templating image attributes
 
@@ -59,9 +57,11 @@ To achieve that, Stevedore provides you with the next template variables, which 
 
 |Name|Template|Description|
 |---|---|---|
-| **name** | {{ .Name }} | It provides the image's name within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}) |
-| **version** | {{ .Version }} | It provides the image's version within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}) |
-| **parent** | {{ .Parent }} | It let you to achieve the templating image attributes from the parent image. |
+| **name** | _{{ .Name }}_ | It provides the image's name within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}) |
+| **version** | _{{ .Version }}_ | It provides the image's version within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}) |
+| **parent** | _{{ .Parent }}_ | It let you to achieve the templating image attributes from the parent image. |
+| **date RFC3339** | _{{ . DateRFC3339 }}_ | It stores a date and time value in a string format that conforms to the RFC 3339 standard. The format includes the year, month, day, hour, minute, and second components, and optionally the fraction of a second and the time zone offset. |
+|**date RFC3339 Nano**| _{{ .DateRFC3339Nano }}_ | It refers to a date/time value formatted according to the RFC3339Nano specification, which includes nanosecond precision. This specification defines a standard format for representing dates and times in machine-readable formats, using the ISO 8601 standard. |
 
 {{<highlight Yaml "linenos=table">}}
 name: ubuntu
@@ -72,12 +72,11 @@ builder:
   	context:
 	  path: ./ubuntu
 namespace: stable
-registry: myregistry.example.com
+registry: registry.stevedore.test
 tags:
   - "{{ .Version }}-{{ .Parent.Version }}"
 persistent_vars:
   ubuntu_version: "{{ .Version }}"
+persistent_labels:
+  created_at: "{{ .DateRFC3339Nano }}"
 {{</highlight>}}
-
-
-

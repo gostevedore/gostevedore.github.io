@@ -136,7 +136,7 @@ EOF
 The `persistent_labels` attribute sets in key-value pairs the labels to add on all images built from the parent image. Currently, the `created_at` label sets the current date and time in RFC3339Nano format.
 
 {{% pageinfo color="secondary" %}}
-Stevedore uses Go's `text/template` package to render the image definitions.
+Stevedore uses Go's [text/template](https://pkg.go.dev/text/template) package to render the image definitions.
 {{% /pageinfo %}}
 
 - Specify the images definitions for the application.

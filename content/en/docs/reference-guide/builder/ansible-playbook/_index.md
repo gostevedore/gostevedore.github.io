@@ -15,7 +15,7 @@ The following table describes the attributes that can be configured on the Ansib
 |**inventory**|*string*|It is the  ansible-playbook inventory<br><font color="#AA0088">*mandatory*</font>|It can be either an inventory file or and adhoc inventory, such `127.0.0.1,`|
 
 ## Variables-mapping reference
-`ansible-playbook` driver provides to ansible-playbook the variables-mapping entries as [extra-vars](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables).
+The `ansible-playbook` driver provides to ansible-playbook the variables-mapping entries as [extra-vars](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables).
 
 |Key name|Description|Default<br>argument-name|Default<br>argument-value|
 |---|---|---|---|
@@ -30,3 +30,26 @@ The following table describes the attributes that can be configured on the Ansib
 |**image_registry_host_key**|This is the argument-name that you can use to set the Docker registry host when creating a Docker image|image_registry_host|Stevedore leaves the argument-value empty, which means that the Docker Hub registry host is used|
 |**image_extra_tags_key**|This is the argument-name that you can use to specify additional tags to be applied to the Docker image when it is built using the ansible-playbook driver. You can specify multiple tags providing a [JSON array](https://json-schema.org/understanding-json-schema/reference/array.html)|image_extra_tags_key|-|
 |**push_image_key**|Use this argument-name to specify a variable that controls whether the Docker image should be automatically pushed after it's built|push_image|The argument-value is set as _false_|
+
+## Ansible-playbook driver example
+The goal of the following example is to show you all the configuration options for the ansible-playbook driver.
+
+{{<highlight yaml "linenos=table">}}
+builder:
+  driver: ansible-playbook
+  options:
+    playbook: /src/my-app/site.yml
+    inventory: /src/my-app/inventory.ini
+  variables_mapping:
+    image_builder_label_key: image_builder_label
+    image_from_name_key: image_from_name
+    image_from_registry_host_key: image_from_registry_host
+    image_from_registry_namespace_key: image_from_registry_namespace
+    image_from_tag_key: image_from_tag
+    image_name_key: image_name
+    image_tag_key: image_tag
+    image_registry_namespace_key: image_registry_namespace
+    image_registry_host_key: image_registry_host
+    image_extra_tags_key: image_extra_tags
+    push_image_key: push_image
+{{</highlight >}}

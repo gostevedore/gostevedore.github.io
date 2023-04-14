@@ -15,17 +15,21 @@ Note that an _image_ by itself has no sense, it must be defined within the [imag
 |Keyword|Type|Description|Value|
 |---|:---:|---|---|
 |**builder**| string/map | Identifies the [builder]({{<ref "/docs/getting-started/concepts/#builder" >}}) to use to create the image.<br>You can define it as a _string_ when you want to refer to a [global-builder]({{<ref "/docs/reference-guide/builder/#global-builder">}}) already defined.<br>To designate it such an [in-line builder]({{<ref "/docs/reference-guide/builder/#in-line-builder">}}), you must define it as a _yaml data-structure_. In the [builder]({{<ref "/docs/reference-guide/builder/#in-line-builder">}})'s reference guide you find the details to define it.<br>If the builder attribute is not defined, it is used a builder which does not perform actions. | - |
-|**children**| map | It is a map where each key refers to an image within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}) and the value is a list of image versions. | - |
+|**children**| map | It is a map where each key refers to an image within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}) and the value is a list of image versions. | <br>Example:<br><pre>children:<br>  child1:<br>  - v1<br>  - v2</pre> |
 |**name**| string | It is the image name. | By default its value is defined as the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}})'s image name key |
 |**namespace**| string | It is the Docker`s registry namespace. | - |
-|**parents**| map | It is a map that provides a reference to its parent images within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}). Each key identifies the parent image name and the value is a list of parent image versions. | - |
-|**persistent_vars**| map | You define there a list of variables required to build the Docker image. That variables are inherit by the children images. | Its value is a key-value data-structure where each key is an _string_ and its value a _yaml data-structure_. | - |
+|**parents**| map | It is a map that provides a reference to its parent images within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}). Each key identifies the parent image name and the value is a list of parent image versions. | <br>Example:<br><pre>parents:<br>  parent1:<br>  - v1<br>  - v2</pre> |
+|**persistent_vars**| list(map) | You define there a list of variables required to build the Docker image. That variables are inherit by the children images. | Its value is a key-value data-structure where each key is an _string_ and its value a _yaml data-structure_.<br><br>Example:<br><pre>persistent_vars:<br>  var1: value<br>  var2: value</pre> | - |
 |**registry**| string | It is the Docker's registry host. | - |
-|**tags**| list | You define a list of additional tags to generate. | - |
-|**vars**| map | You define there a list of variables required to build the Docker image. | Its value is a key-value structure where each key is an _string_ and its value a _yaml data-structure_. | - |
+|**tags**| list(string) | You define a list of additional tags to generate. | - |
+|**vars**| list(map) | You define there a list of variables required to build the Docker image. | Its value is a key-value structure where each key is an _string_ and its value a _yaml data-structure_.<br><br>Example:<br><pre>vars:<br>  var1: value<br>  var2: value</pre> | - |
 |**version**| string | It is the Docker's image tag. | By default its value is defined as the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}})'s image version key |
+|**persistent_labels**| list(map) | It is a key-value metadata pair that provides descriptive information about the image. That variables are inherit by the children images. | Its value is a key-value structure where each key is an _string_ and its value a _yaml data-structure_.<br><br>Example:<br><pre>persistent_labels:<br>  label1: value<br>  label2: value</pre> |
+|**labels**| list(map) | It is a key-value metadata pair that provides descriptive information about the image. | Its value is a key-value structure where each key is an _string_ and its value a _yaml data-structure_.<br><br>Example:<br><pre>labels:<br>  label1: value<br>  label2: value</pre> |
 
 ### Example
+The following example is provided for illustrative purposes only and should not be copied and pasted into your configuration.
+
 {{<highlight Yaml "linenos=table">}}
 name: base-apps
 version: 3.2.1
@@ -38,6 +42,11 @@ namespace: stable
 registry: registry.stevedore.test
 tags:
   - latest
+persistent_labels:
+  created_at: "{{ .DateRFC3339Nano }}"
+  created_by: stevedore
+labels:
+  parent_image: {{ .Parent.Name }}:{{ .Parent.Version }}
 persistent_vars:
   base_version: {{ .Version }}
 vars:

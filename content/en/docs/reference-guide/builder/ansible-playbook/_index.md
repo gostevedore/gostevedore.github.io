@@ -32,7 +32,7 @@ The `ansible-playbook` driver provides to ansible-playbook the variables-mapping
 |**push_image_key**|Use this argument-name to specify a variable that controls whether the Docker image should be automatically pushed after it's built|push_image|The argument-value is set as _false_|
 
 ## Ansible-playbook driver example
-The goal of the following example is to show you all the configuration options for the ansible-playbook driver.
+The goal of the following example is to show you all the configuration options for a builder which uses the ansible-playbook driver.
 
 {{<highlight yaml "linenos=table">}}
 builder:

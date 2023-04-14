@@ -37,7 +37,7 @@ builders:
 {{</highlight >}}
 The previous example defines three builders: `builder1`, `builder2` and `builder3`, all of them are defined within the `builders` block.
 
-Through Stevedore CLI command, you can retrieve the value of the [builders_path]({{<ref "/docs/getting-started/configuration/#builders_path">}}) configuration parameter.
+Through Stevedore [CLI]({{<ref "/docs/reference-guide/cli/">}}) command, you can retrieve the value of the [builders_path]({{<ref "/docs/getting-started/configuration/#builders_path">}}) configuration parameter.
 ```bash
 $ stevedore get configuration
 
@@ -90,7 +90,7 @@ Builder options are defined in a YAML data structure, and each driver has its ow
 - [**Keywords reference for Docker driver options**]({{<ref "/docs/reference-guide/builder/docker/#keywords-reference-for-docker-driver">}})
 
 ### Variables-mapping reference
-Stevedore always sends a set of parameters to the driver when building a Docker image. These parameters are organized in a key-value data structure called `variables_mapping`. Importantly, these parameters are sent to the driver by Stevedore regardless of whether they have been explicitly specified in the [image]({{<ref "/docs/reference-guide/image/">}}) definition or as a CLI flag.
+Stevedore always sends a set of parameters to the driver when building a Docker image. These parameters are organized in a key-value data structure called `variables_mapping`. Importantly, these parameters are sent to the driver by Stevedore regardless of whether they have been explicitly specified in the [image]({{<ref "/docs/reference-guide/image/">}}) definition or as a [CLI]({{<ref "/docs/reference-guide/cli/">}}) flag.
 
 When Stevedore sets a driver parameter based on the `variables_mapping`, it searches for the corresponding _argument-name_ in the `variables_mapping` block of the builder's definition. Users can override the default name of the argument by providing a new name for that argument in the same `variables_mapping` block.
 
@@ -98,7 +98,7 @@ It's important to understand the concepts within the variables-mapping context, 
 
 - **key name**: This is used internally by Stevedore to identify an argument to create during the image's building process.
 - **argument name**: This is the name of the argument that the driver receives to create a Docker image.  Users can override it in the [builder]({{<ref "/docs/getting-started/concepts/#builder">}}) definition.
-- **argument value**: This is the value of the argument that the driver receives to create a Docker image. It can be specified in the [image]({{<ref "/docs/reference-guide/image/">}}) definition, CLI flags or by Stevedore itself. For more information on how Stevedore sets the argument value using `variables-mapping`, please refer to [variables-mapping for Ansible playbook driver]({{<ref "/docs/reference-guide/builder/ansible-playbook/#variables-mapping-reference">}}) or [variables-mapping for Docker driver]({{<ref "/docs/reference-guide/builder/docker/#variables-mapping-reference">}}).
+- **argument value**: This is the value of the argument that the driver receives to create a Docker image. It can be specified in the [image]({{<ref "/docs/reference-guide/image/">}}) definition, [CLI]({{<ref "/docs/reference-guide/cli/">}}) flags or by Stevedore itself. For more information on how Stevedore sets the argument value using `variables-mapping`, please refer to [variables-mapping for Ansible playbook driver]({{<ref "/docs/reference-guide/builder/ansible-playbook/#variables-mapping-reference">}}) or [variables-mapping for Docker driver]({{<ref "/docs/reference-guide/builder/docker/#variables-mapping-reference">}}).
 
 Each driver receives a distinct set of parameters coming from variables-mapping. Refer to the following links to know more about the variables that each driver receives:
 - [**Variables-mapping for Ansible playbook driver**]({{<ref "/docs/reference-guide/builder/ansible-playbook/#variables-mapping-reference">}})
@@ -112,12 +112,12 @@ code:
   driver: docker
   options:
   context:
-    path: .
+    path: /src/my-app
   dockerfile: build/Dockerfile
 {{</highlight >}}
 
 ### Docker driver using git context
-The following example demonstrates how to define a builder that uses Docker as the driver, with a remote Git repository as the build context and a Dockerfile located at `build/Dockerfile`. In this example, the Git repository `https://github.com/apenella/simple-go-helloworld.git` is used as the build context with the reference `v0.0.0`.
+The following example demonstrates how to define a builder that uses Docker as the driver, with a remote Git repository as the build context and a Dockerfile located at `build/Dockerfile`. In this example, the Git repository `https://github.com/apenella/simple-go-helloworld.git` is used as the build context with the reference `v1.2.3`.
 {{<highlight yaml "linenos=table">}}
 code:
   driver: docker
@@ -125,7 +125,7 @@ code:
     context:
       git: 
         repository: https://github.com/apenella/simple-go-helloworld.git
-        reference: v0.0.0
+        reference: v1.2.3
     dockerfile: build/Dockerfile
 {{</highlight >}}
 

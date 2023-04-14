@@ -57,14 +57,16 @@ Stevedore enables you to obtain authorization from a Git server using basic auth
 
 You can provide the necessary information for obtaining authorization either by directly setting the `auth` attribute or by specifying a credential ID, in which case the information will be retrieved from the credential store.
 
+For security concerns, the recommendation is to use the credentials store or the SSH agent rather than set the credentials directly in the builder.
+
 |Keyword|Type|Description|Value|
 |---|:---:|---|---|
-|**username**| string | This attribute provides the username for the basic authentication method. | - |
-|**password**| string | This attribute provides the password for the basic authentication method. | - |
-|**git_ssh_user**| string | The username to use when authenticating. | git |
-|**private_key_file**| string | The private_key_file attribute is used to provide the path to the private key file. | - |
-|**private_key_password**| string | Holds the password for the private key file. | - |
-|**credentials_id**| string | Is the ID of the credential used to retrieve the authorization information from the credentials store. | - |
+|**username**| string | This attribute provides the username for the basic authentication method.<br><font color="#AA0088">*optional*</font> | - |
+|**password**| string | This attribute provides the password for the basic authentication method.<br><font color="#AA0088">*optional*</font> | - |
+|**git_ssh_user**| string | The username to use when authenticating.<br><font color="#AA0088">*optional*</font> | git |
+|**private_key_file**| string | The private_key_file attribute is used to provide the path to the private key file.<br><font color="#AA0088">*optional*</font> | - |
+|**private_key_password**| string | Holds the password for the private key file.<br><font color="#AA0088">*optional*</font> | - |
+|**credentials_id**| string | Is the ID of the credential used to retrieve the authorization information from the credentials store.<br><font color="#AA0088">*optional*</font> | - |
 
 ##### Git context example
 The goal of that example is to show you all the configuration options for the git context, including the various authentication mechanisms that can be used to access a Git repository.
@@ -103,7 +105,7 @@ Docker driver passes `variables mapping` to Docker API as build arguments and ea
 ## Docker driver example
 The following example is provided for illustrative purposes only and should not be copied and pasted into your configuration.
 
-The goal of the following example is to show you all the configuration options for the Docker driver.
+The goal of the following example is to show you all the configuration options for a builder which uses the `docker` driver.
 
 {{<highlight yaml "linenos=table">}}
 builder:

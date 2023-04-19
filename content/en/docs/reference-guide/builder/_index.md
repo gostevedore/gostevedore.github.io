@@ -15,7 +15,7 @@ In-line builders, on the other hand, are defined within the image definition its
 ## Global builder
 A global builder must be defined under the `builders` block inside the Stevedore configuration. It means that Stevedore looks for the `builders` block within the file defined in [builders_path]({{<ref "/docs/getting-started/configuration/#builders_path">}}) configuration parameter.
 
-You can also set a directory on the [builders_path]({{<ref "/docs/getting-started/configuration/#builders_path">}}). There you can define several files with the `builders` block defined on them. In that case, Stevedore loads all the builders.
+You can also set a directory on the [builders_path]({{<ref "/docs/getting-started/configuration/#builders_path">}}). There you can create several files with the `builders` block defined on them. In that case, Stevedore loads the builders found within all files.
 
 {{< highlight Yaml "linenos=table" >}}
 builders:
@@ -35,7 +35,7 @@ builders:
       playbook: my-apps-base/site.yml
       inventory: my-apps-base/all
 {{</highlight >}}
-The previous example defines three builders: `builder1`, `builder2` and `builder3`, all of them are defined within the `builders` block.
+The previous example defines three builders: `builder1`, `builder2` and `builder3`, all of them are defined under the `builders` block.
 
 Through Stevedore [CLI]({{<ref "/docs/reference-guide/cli/">}}) command, you can retrieve the value of the [builders_path]({{<ref "/docs/getting-started/configuration/#builders_path">}}) configuration parameter.
 ```bash
@@ -92,7 +92,9 @@ Builder options are defined in a YAML data structure, and each driver has its ow
 ### Variables-mapping reference
 Stevedore always sends a set of parameters to the driver when building a Docker image. These parameters are organized in a key-value data structure called `variables_mapping`. Importantly, these parameters are sent to the driver by Stevedore regardless of whether they have been explicitly specified in the [image]({{<ref "/docs/reference-guide/image/">}}) definition or as a [CLI]({{<ref "/docs/reference-guide/cli/">}}) flag.
 
-When Stevedore sets a driver parameter based on the `variables_mapping`, it searches for the corresponding _argument-name_ in the `variables_mapping` block of the builder's definition. Users can override the default name of the argument by providing a new name for that argument in the same `variables_mapping` block.
+When Stevedore sets a parameter to the driver that comes from the `variables_mapping`, it searches for the corresponding _argument-name_ in the `variables_mapping` dictionary in the builder's definition. Users can override the default name of the argument by providing a new name for that argument in the same `variables_mapping` block.
+
+For example, Stevedore sends the parent name and version to the driver even if the user doesn't request them. These parameters are then passed as build arguments to Docker, making them available in the Dockerfile.
 
 It's important to understand the concepts within the variables-mapping context, such as the _key name_, _argument name_, and _argument value_:
 
@@ -117,7 +119,7 @@ code:
 {{</highlight >}}
 
 ### Docker driver using git context
-The following example demonstrates how to define a builder that uses Docker as the driver, with a remote Git repository as the build context and a Dockerfile located at `build/Dockerfile`. In this example, the Git repository `https://github.com/apenella/simple-go-helloworld.git` is used as the build context with the reference `v1.2.3`.
+The following example demonstrates how to define a builder that uses Docker as the driver, with a remote Git repository as the build context and a Dockerfile located at `build/Dockerfile`. Besides, the Git repository `https://github.com/apenella/simple-go-helloworld.git` is used as the build context with the reference `v1.2.3`.
 {{<highlight yaml "linenos=table">}}
 code:
   driver: docker

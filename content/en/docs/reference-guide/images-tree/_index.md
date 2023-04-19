@@ -7,61 +7,97 @@ description: >
   Add your images definition into Stevedore's images-tree and create a relationship among them
 ---
 
-The images-tree is a map of maps data structure that contains the definitions of the images, as well as the relationships between them. It follows the following rules:
+The _images-tree_ is a data structure that contains the definitions of the images, as well as the relationships between them. It is defined in a [YAML](https://en.wikipedia.org/wiki/YAML) format containing a main key named `images`, which is a map of maps data structure.
 
-1. You define the images-tree in [YAML](https://en.wikipedia.org/wiki/YAML) structure. Stevedore looks for the images-tree in the file specified on the [tree_path]({{< ref "/docs/getting-started/configuration/#tree_path" >}}) configuration parameter.
-2. The main key containing the tree definition is named `images_tree`. The value is a map of maps data structure.
-3. You place all the image names that belong to the images-tree under "images_tree" block. Each image's name is a first-level key.
-4. You place the second-level keys under each image name key to identify the image versions.
-5. You define the [image]({{<ref "/docs/reference-guide/image/">}}) version's value as the image definition for that specific version.
-6. Images can be related to each other, and these relationships are defined using the parent name and version in the image definition.
-7. Images in the images-tree can be built using Stevedore’s build command, which will build the image and any of its descendants.
+Under the `images` block, you place all the image names, and each image’s name is a first-level key. For each image name, you have to define a second level of keys that identifies the image versions, with the value of each version being the [image definition]({{<ref "/docs/reference-guide/image/">}}) for that specific name and version. 
 
-{{% pageinfo color="secondary" %}}
-In case an image name or image version contains a `.` (_dot_), you must quote it to avoid the YAML parser failing {{% /pageinfo %}}
+Note that in case an image name or image version contains a `.` (_dot_), you must quote it to avoid the YAML parser failing. This is a common issue that can be easily solved by wrapping the name or version in quotes.
 
+Images can be related to each other, and these relationships are defined using their name and version in the [image definition]({{<ref "/docs/reference-guide/image/">}}). The [images reference guide]({{<ref "/docs/reference-guide/image/">}}) provides more information about how to set the images’ relationship. 
+
+To know which images can be built, Stevedore searches for the _images-tree_ in the file specified on the [images_tree]({{< ref "/docs/getting-started/configuration/#images_tree" >}}) configuration parameter, or in a directory specified by the same parameter. In the latter case, Stevedore loads the image definitions found within all the files in the directory. 
+
+Finally, Stevedore's [build]({{<ref "/docs/reference-guide/cli/#build">}}) command can be used to build images in the _images-tree_, including their descendants.
 
 ## Example
-The following example specifies an images-tree that provides multiple image definitions for the _ubuntu_, _php-fpm_, and _php-cli_ images. The _ubuntu_ image has two versions defined, _18.04_ and _20.04_, each with its image definition. The value of these versions is the image definition for each one of them. 
-
-Please note that if an image name or version contains a `.` (_dot_), it should be enclosed in quotes to prevent the YAML parser from failing.
+The following example specifies an _images-tree_ that provides multiple image definitions for the _busybox_, _php-fpm_, _php-cli_ and _my-app_ images.
 
 {{<highlight Yaml "linenos=table">}}
-images_tree:
-  ubuntu:
-    "18.04":
+images:
+  root:
+    latest:
+      persistent_labels:
+        created_at: "{{ .DateRFC3339Nano }}"
+
+  busybox:
+    "1.35":
       builder: global-infr-builder
-      children:
-      - php-fpm:
-        - "8.0"
-    "20.04":
+      parents:
+        root:
+          - latest
+    "1.36":
       builder: global-infr-builder
-      children:
-      - php-fpm:
-        - "8.1"
-      - php-cli:
-        - "8.1"
+      parents:
+        root:
+          - latest
   php-fpm:
     "8.0":
+      version: "{{ .Version }}-{{ .Parent.Version }}"
       builder:
         driver: docker
         context:
           path: php-fpm
-        vars:
-          version: "{{ .Version }}"
+      parents:
+        busybox:
+          - "1.35"
     "8.1":
+      version: "{{ .Version }}-{{ .Parent.Version }}"
       builder:
         driver: docker
         context:
           path: php-fpm
-        vars:
-          version: "{{ .Version }}"
+      parents:
+        busybox:
+          - "1.35"
+          - "1.36"
   php-cli:
     "8.1":
+      version: "{{ .Version }}-{{ .Parent.Version }}"
       builder:
         driver: docker
         context:
-          path: php-fpm
-        vars:
-          version: "{{ .Version }}"
+          path: php-cli
+      parents:
+        busybox:
+          - "1.35"
+          - "1.36"
+  my-app:
+    "*":
+      version: "{{ .Version }}-{{ .Parent.Version }}"
+      builder:
+        driver: docker
+        context:
+          git:
+            repository: git@gitserver.stevedore.test:/git/repos/my-app.git
+            reference: "{{ .Version }}"
+            auth:
+              credentials_id: mygit.stevedore.test
+      parents:
+        php-fpm:
+          - "8.1"
+{{</highlight>}}
+
+You can check the previously defined images-tree by executing `stevedore get images --tree`.
+{{<highlight shell "linenos=table">}}
+$ stevedore get images --tree
+├─── root:latest
+│  ├─── busybox:1.35
+│  │  ├─── php-fpm:8.0-1.35
+│  │  ├─── php-fpm:8.1-1.35
+│  │  │  ├─── my-app:{{ .Version }}-{{ .Parent.Version }}
+│  │  ├─── php-cli:8.1-1.35
+│  ├─── busybox:1.36
+│  │  ├─── php-fpm:8.1-1.36
+│  │  ├─── php-cli:8.1-1.36
+
 {{</highlight>}}

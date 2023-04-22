@@ -9,15 +9,13 @@ description: >
 
 The _images-tree_ is a data structure that contains the definitions of the images, as well as the relationships between them. It is defined in a [YAML](https://en.wikipedia.org/wiki/YAML) format containing a main key named `images`, which is a map of maps data structure.
 
-Under the `images` block, you place all the image names, and each image’s name is a first-level key. For each image name, you have to define a second level of keys that identifies the image versions, with the value of each version being the [image definition]({{<ref "/docs/reference-guide/image/">}}) for that specific name and version. 
+Under the `images` block, you place all the image names, and each image’s name is a first-level key. For each image name, you have to define a second level of keys that identifies the image versions. The value of each version is the [image definition]({{<ref "/docs/reference-guide/image/">}}) for that specific name and version.
 
 Note that in case an image name or image version contains a `.` (_dot_), you must quote it to avoid the YAML parser failing. This is a common issue that can be easily solved by wrapping the name or version in quotes.
 
-Images can be related to each other, and these relationships are defined using their name and version in the [image definition]({{<ref "/docs/reference-guide/image/">}}). The [images reference guide]({{<ref "/docs/reference-guide/image/">}}) provides more information about how to set the images’ relationship. 
+Images can be related to each other, and these relationships are defined using their name and version. The relationships can be established from the image to its parents or its children. The [images reference guide]({{<ref "/docs/reference-guide/image/">}}) provides more information about how to set the images’ relationship.
 
 To know which images can be built, Stevedore searches for the _images-tree_ in the file specified on the [images_tree]({{< ref "/docs/getting-started/configuration/#images_tree" >}}) configuration parameter, or in a directory specified by the same parameter. In the latter case, Stevedore loads the image definitions found within all the files in the directory. 
-
-Finally, Stevedore's [build]({{<ref "/docs/reference-guide/cli/#build">}}) command can be used to build images in the _images-tree_, including their descendants.
 
 ## Example
 The following example specifies an _images-tree_ that provides multiple image definitions for the _busybox_, _php-fpm_, _php-cli_ and _my-app_ images.

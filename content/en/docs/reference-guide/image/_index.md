@@ -11,6 +11,7 @@ Stevedore represents a Docker image by an image definition, therefore an _image_
 Note that an _image_ by itself has no sense, it must be defined within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}).
 
 ## Keywords reference
+That section conveys the description of the attributes that you can use to define an image.
 
 |Keyword|Type|Description|Value|
 |---|:---:|---|---|

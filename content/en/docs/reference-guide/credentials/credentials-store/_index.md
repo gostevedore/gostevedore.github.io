@@ -7,9 +7,9 @@ description: >
   Store and retrieve credentials
 ---
 
-The credential store in Stevedore allows users to securely persist and retrieve credentials during the Docker images building process.
+The credential store in Stevedore allows users to securely persist and retrieve credentials during the Docker image building process.
 
-Credentials would be used either to pull parent images or to push the outgoing image after the build. Another use case for the credentials is when you want to get authorized to a Git server to use a repository as Docker build context.
+Credentials would be used either to pull parent images or to push the outcome image after the build. Another use case for the credentials is when you want to get authorized to a Git server to use a repository as Docker build context.
 
 ## Storage type
 Stevedore offers two types of storage for credentials: [local storage]({{<ref "/docs/reference-guide/credentials/credentials-store/#local-storage">}}), which persists the credentials on the user's local disk, and [envvars storage]({{<ref "/docs/reference-guide/credentials/credentials-store/#envvars-storage">}}), which stores the credentials as environment variables.

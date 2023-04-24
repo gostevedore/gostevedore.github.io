@@ -29,7 +29,7 @@ If you would like to contribute code to Stevedore, please follow these steps:
 2. Make your changes.
 3. Submit a pull request.
 
-Please ensure that your code adheres to our coding standards and that all tests pass before submitting a pull request.
+Please ensure that your code adheres to our coding standards, that all tests pass before submitting a pull request, and you update the project [README](https://github.com/gostevedore/stevedore/blob/main/README.md), the [documentation](https://github.com/gostevedore/gostevedore.github.io), and the [RELEASE_NOTES](https://github.com/gostevedore/stevedore/blob/main/RELEASE_NOTES.md).
 
 ## Coding Standards
 When contributing code to Stevedore, please adhere to the following coding standards:
@@ -43,7 +43,7 @@ When contributing code to Stevedore, please adhere to the following coding stand
 We use GitHub to manage issues and feature requests. To report a bug or request a feature, please create a new issue on our GitHub repository.
 
 ## Documentation
-Documentation is an important part of the Stevedore project, and we rely on contributions from our community to keep it up-to-date. If your contribution involves changes to the behaviour of the Stevedore project, please make sure to update the documentation accordingly. This could include updating the README file, adding or modifying usage examples, or creating new documentation pages as needed. We encourage all contributors to participate in improving the documentation, as it helps ensure that the project is accessible and useful to as many people as possible.
+Documentation is an important part of the Stevedore project, and we rely on contributions from our community to keep it up-to-date. If your contribution involves changes to the behaviour of the Stevedore project, please make sure to update the documentation accordingly. This could include updating the [README](https://github.com/gostevedore/stevedore/blob/main/README.md) file, adding or modifying usage examples, or creating new [documentation](https://github.com/gostevedore/gostevedore.github.io) pages as needed. We encourage all contributors to participate in improving the documentation, as it helps ensure that the project is accessible and useful to as many people as possible.
 
 ## Thank You
 Thank you for your interest in contributing to Stevedore! All contributions are appreciated.

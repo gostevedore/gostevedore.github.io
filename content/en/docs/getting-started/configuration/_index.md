@@ -13,7 +13,7 @@ Stevedore can load its configuration either from a local configuration file or e
 ### Configuration from environment variables
 When you want to use environment variables to define a Stevedore configuration parameter, you must create an environment variable with the same name as the parameter, and prefix it with `STEVEDORE_`. The environment variables must be uppercased.
 
-For example, to define the [tree_path]({{<ref "/docs/getting-started/configuration/#tree_path">}}) parameter as an environment variable, you must create the `STEVEDORE_TREE_PATH` variable.
+For example, to define the [images_path]({{<ref "/docs/getting-started/configuration/#images_path">}}) parameter as an environment variable, you must create the `STEVEDORE_IMAGES_PATH` variable.
 
 ### Configuration from local configuration file
 Stevedore looks for the user configuration on the listed files, and it does following order that appears in the list:
@@ -87,7 +87,7 @@ This parameter sets the number of workers that Stevedore creates to build Docker
 
 ### **credentials**
 The credentials configuration block defines the credentials store used to authenticate with external Docker registries or a git server.
-You can set following parameters to for the credentials store:
+You can set the following parameters to for the credentials store:
 #### encryption_key
 The encryption_key parameter specifies the secret key used to encrypt and decrypt credentials. It is required to provide an encryption key when using `envvars` as the storage type for credentials.
 

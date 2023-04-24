@@ -9,7 +9,9 @@ description: >
 To create a Docker image using the ansible-playbook driver you need an Ansible playbook to carry out that task.
 Since Stevedore executes the ansible-playbook command, you must install the Ansible tool set before building an image.
 
-The driver prepares the parameters on the builder's [variables-mapping]({{<ref "/docs/docs-v0.11/getting-started/concepts/#variables-mapping">}}), the image [vars]({{<ref "/docs/docs-v0.11/reference-guide/image/#keywords-reference-for-image-configuration">}}) and the image [persistent_vars]({{<ref "/docs/docs-v0.11/reference-guide/image/#keywords-reference-for-image-configuration">}}) and passed them as Ansible _extra-vars_. It then utilizes the [go-ansible](https://github.com/apenella/go-ansible) library to execute the corresponding ansible-playbook commands.
+The driver prepares the parameters on the builder's [variables-mapping]({{<ref "/docs/docs-v0.11/getting-started/concepts/#variables-mapping">}}), the image [vars]({{<ref "/docs/docs-v0.11/reference-guide/image/#keywords-reference-for-image-configuration">}}) and the image [persistent_vars]({{<ref "/docs/docs-v0.11/reference-guide/image/#keywords-reference-for-image-configuration">}}) and passed them as Ansible _extra-vars_. 
+
+Stevedore utilizes the [go-ansible](https://github.com/apenella/go-ansible) library to execute the corresponding ansible-playbook commands.
 
 ## Driver configuration
 The configuration of the driver is done through the builder. There you can set the path of the _playbook_ and _inventory_ as well as the variables-mapping.

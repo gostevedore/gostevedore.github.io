@@ -112,13 +112,13 @@ github_project_repo = "https://github.com/gostevedore/stevedore"
 # github_branch= "master"
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "d72aa9b2712488cc3"
+# gcs_engine_id = "d72aa9b2712488cc3"
 
 # Enable Algolia DocSearch
 algolia_docsearch = false
 
 # Enable Lunr.js offline search
-offlineSearch = false
+offlineSearch = true
 
 # Enable syntax highlighting and copy buttons on code blocks with Prism
 prism_syntax_highlighting = false
@@ -167,10 +167,16 @@ prism_syntax_highlighting = true
   # replacements = "github.com/google/docsy -> ../../docsy"
   [module.hugoVersion]
     extended = true
-    min = "0.75.0"
+    min = "0.109.0"
   [[module.imports]]
     path = "github.com/google/docsy"
     disable = false
   [[module.imports]]
     path = "github.com/google/docsy/dependencies"
     disable = false    
+
+[[menu.main]]
+    name = "v0.11.0"
+    pre = "<i class='fa-brands fa-github'></i>"
+    url = "https://github.com/gostevedore/stevedore/tree/v0.11.0"
+    weight = 1

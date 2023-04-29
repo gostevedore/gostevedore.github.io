@@ -21,7 +21,7 @@
 &lt;li>Make your changes.&lt;/li>
 &lt;li>Submit a pull request.&lt;/li>
 &lt;/ol>
-&lt;p>Please ensure that your code adheres to our coding standards and that all tests pass before submitting a pull request.&lt;/p>
+&lt;p>Please ensure that your code adheres to our coding standards, that all tests pass before submitting a pull request, and you update the project &lt;a href="https://github.com/gostevedore/stevedore/blob/main/README.md">README&lt;/a>, the &lt;a href="https://github.com/gostevedore/gostevedore.github.io">documentation&lt;/a>, and the &lt;a href="https://github.com/gostevedore/stevedore/blob/main/RELEASE_NOTES.md">RELEASE_NOTES&lt;/a>.&lt;/p>
 &lt;h2 id="coding-standards">Coding Standards&lt;/h2>
 &lt;p>When contributing code to Stevedore, please adhere to the following coding standards:&lt;/p>
 &lt;ul>
@@ -33,6 +33,6 @@
 &lt;h2 id="issue-management">Issue Management&lt;/h2>
 &lt;p>We use GitHub to manage issues and feature requests. To report a bug or request a feature, please create a new issue on our GitHub repository.&lt;/p>
 &lt;h2 id="documentation">Documentation&lt;/h2>
-&lt;p>Documentation is an important part of the Stevedore project, and we rely on contributions from our community to keep it up-to-date. If your contribution involves changes to the behavior of the Stevedore project, please make sure to update the documentation accordingly. This could include updating the README file, adding or modifying usage examples, or creating new documentation pages as needed. We encourage all contributors to participate in improving the documentation, as it helps ensure that the project is accessible and useful to as many people as possible.&lt;/p>
+&lt;p>Documentation is an important part of the Stevedore project, and we rely on contributions from our community to keep it up-to-date. If your contribution involves changes to the behaviour of the Stevedore project, please make sure to update the documentation accordingly. This could include updating the &lt;a href="https://github.com/gostevedore/stevedore/blob/main/README.md">README&lt;/a> file, adding or modifying usage examples, or creating new &lt;a href="https://github.com/gostevedore/gostevedore.github.io">documentation&lt;/a> pages as needed. We encourage all contributors to participate in improving the documentation, as it helps ensure that the project is accessible and useful to as many people as possible.&lt;/p>
 &lt;h2 id="thank-you">Thank You&lt;/h2>
 &lt;p>Thank you for your interest in contributing to Stevedore! All contributions are appreciated.&lt;/p></description></item></channel></rss>

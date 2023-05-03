@@ -30,7 +30,7 @@ Build your Docker images in a standardized way. Create a Dockerfile and reuse it
 Automate the building of related Docker images by defining their relationships and dependencies
 
 ### Credentials
-Store credentials to log in to your Docker registry, AWS Elastic Container Registry or git a server
+Store credentials to log in to your Docker registry, AWS Elastic Container Registry or a Git server
 
 ### Promote
 Easily promote or copy Docker images from one registry to another using Stevedore's image promotion feature

@@ -26,7 +26,7 @@ Build your Docker images in a standardized way. Create a Dockerfile and reuse it
 Define Docker images relationship and build the relatives images automatically
 
 ### Credentials
-Store credentials to log in to your Docker registry, AWS Elastic Container Registry or git a server
+Store credentials to log in to your Docker registry, AWS Elastic Container Registry or a Git server
 
 ### Promote
 Promote or copy images among Docker registries. Promote from and to AWS Elastic Container Registry is also supported

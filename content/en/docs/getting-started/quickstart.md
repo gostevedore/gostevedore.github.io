@@ -4,6 +4,8 @@ title: "Quickstart"
 linkTitle: "Quickstart"
 date: 2017-01-05
 weight: 3
+aliases:
+  - /documentation/getting-started/quick-start
 description: >
   Get started with Stevedore by building your first set of Docker images with just a few steps
 ---

@@ -20,7 +20,8 @@
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: Examples</title><link>https://gostevedore.github.io/docs/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/examples/</guid><description>
-&lt;p>These examples provide hands-on experience and serve as valuable references for building and managing Docker images with Stevedore. Each example focuses on a specific scenario or use-case, guiding you through the necessary steps to achieve the desired outcome. These examples will help you gain a deeper understanding of Stevedore&amp;rsquo;s features and empower you to leverage its power in your projects.&lt;/p>
+&lt;p>Explore a variety of practical examples that demonstrate the capabilities and usage of Stevedore. These examples provide a cumulative learning experience, building upon one another to deepen your knowledge of Stevedore.&lt;/p>
+&lt;p>Each example focuses on a specific scenario or use case, guiding you through the necessary steps to achieve the desired outcome. By working through these examples, you will gain hands-on experience and valuable insights into building and managing Docker images with Stevedore. They will empower you to leverage Stevedore&amp;rsquo;s powerful features and enhance your projects with confidence.&lt;/p>
 &lt;h2 id="list-of-examples">List of examples&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -32,7 +33,11 @@
 &lt;tbody>
 &lt;tr>
 &lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/01-basic-example">01-basic-example&lt;/a>&lt;/td>
-&lt;td>This example aims to introduce you to Stevedore and its basic concepts and commands. It follows the &lt;a href="https://gostevedore.github.io/docs/getting-started/quickstart/">quickstart guide&lt;/a> from the documentation, which serves as a starting point to get familiar with Stevedore&lt;/td>
+&lt;td>This example aims to introduce you to Stevedore and its basic concepts and commands. It follows the &lt;a href="https://gostevedore.github.io/docs/getting-started/quickstart/">quickstart guide&lt;/a> from the documentation, which serves as a starting point to get familiar with Stevedore.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/02-wildcard-version-example">02-wildcard-version-example&lt;/a>&lt;/td>
+&lt;td>This example serves as an introduction to the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#wildcard-version">wildcard version&lt;/a> feature in Stevedore.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item></channel></rss>

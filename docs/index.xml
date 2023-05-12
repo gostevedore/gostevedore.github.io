@@ -442,7 +442,28 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>registry.stevedore.test/my-app:3.2.1-busybox1.36 ‣ b64792c17e4a: Pushed
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>registry.stevedore.test/my-app:3.2.1-busybox1.36 ‣ 3.2.1-busybox1.36: digest: sha256:b1aa5de2f4bf9c031a2047a87fb5c556d0d436123316cad81078462648e58d4b size: &lt;span style="color:#0000cf;font-weight:bold">528&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Examples</title><link>https://gostevedore.github.io/docs/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/examples/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Examples</title><link>https://gostevedore.github.io/docs/docs-v0.11/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/examples/</guid><description>
+&lt;p>Explore a variety of practical examples that demonstrate the capabilities and usage of Stevedore. These examples provide a cumulative learning experience, building upon one another to deepen your knowledge of Stevedore.&lt;/p>
+&lt;p>Each example focuses on a specific scenario or use case, guiding you through the necessary steps to achieve the desired outcome. By working through these examples, you will gain hands-on experience and valuable insights into building and managing Docker images with Stevedore. They will empower you to leverage Stevedore&amp;rsquo;s powerful features and enhance your projects with confidence.&lt;/p>
+&lt;h2 id="list-of-examples">List of examples&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/01-basic-example">01-basic-example&lt;/a>&lt;/td>
+&lt;td>This example aims to introduce you to Stevedore and its basic concepts and commands. It follows the &lt;a href="https://gostevedore.github.io/docs/getting-started/quickstart/">quickstart guide&lt;/a> from the documentation, which serves as a starting point to get familiar with Stevedore.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/02-wildcard-version-example">02-wildcard-version-example&lt;/a>&lt;/td>
+&lt;td>This example serves as an introduction to the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#wildcard-version">wildcard version&lt;/a> feature in Stevedore.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Examples</title><link>https://gostevedore.github.io/docs/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/examples/</guid><description>
 &lt;p>These examples provide hands-on experience and serve as valuable references for building and managing Docker images with Stevedore. Each example focuses on a specific scenario or use-case, guiding you through the necessary steps to achieve the desired outcome. These examples will help you gain a deeper understanding of Stevedore&amp;rsquo;s features and empower you to leverage its power in your projects.&lt;/p>
 &lt;h2 id="list-of-examples">List of examples&lt;/h2>
 &lt;table>

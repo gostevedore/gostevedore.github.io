@@ -1,4 +1,25 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Stevedore – Documentation v0.11</title><link>https://gostevedore.github.io/docs/docs-v0.11/</link><description>Recent content in Documentation v0.11 on Stevedore</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://gostevedore.github.io/docs/docs-v0.11/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Getting Started</title><link>https://gostevedore.github.io/docs/docs-v0.11/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/getting-started/</guid><description/></item><item><title>Docs: Reference guide</title><link>https://gostevedore.github.io/docs/docs-v0.11/reference-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/reference-guide/</guid><description/></item><item><title>Docs: Contribution Guidelines</title><link>https://gostevedore.github.io/docs/docs-v0.11/contribution-guidelines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/contribution-guidelines/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Stevedore – Documentation v0.11</title><link>https://gostevedore.github.io/docs/docs-v0.11/</link><description>Recent content in Documentation v0.11 on Stevedore</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://gostevedore.github.io/docs/docs-v0.11/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Getting Started</title><link>https://gostevedore.github.io/docs/docs-v0.11/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/getting-started/</guid><description/></item><item><title>Docs: Reference guide</title><link>https://gostevedore.github.io/docs/docs-v0.11/reference-guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/reference-guide/</guid><description/></item><item><title>Docs: Examples</title><link>https://gostevedore.github.io/docs/docs-v0.11/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/examples/</guid><description>
+&lt;p>Explore a variety of practical examples that demonstrate the capabilities and usage of Stevedore. These examples provide a cumulative learning experience, building upon one another to deepen your knowledge of Stevedore.&lt;/p>
+&lt;p>Each example focuses on a specific scenario or use case, guiding you through the necessary steps to achieve the desired outcome. By working through these examples, you will gain hands-on experience and valuable insights into building and managing Docker images with Stevedore. They will empower you to leverage Stevedore&amp;rsquo;s powerful features and enhance your projects with confidence.&lt;/p>
+&lt;h2 id="list-of-examples">List of examples&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/01-basic-example">01-basic-example&lt;/a>&lt;/td>
+&lt;td>This example aims to introduce you to Stevedore and its basic concepts and commands. It follows the &lt;a href="https://gostevedore.github.io/docs/getting-started/quickstart/">quickstart guide&lt;/a> from the documentation, which serves as a starting point to get familiar with Stevedore.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/02-wildcard-version-example">02-wildcard-version-example&lt;/a>&lt;/td>
+&lt;td>This example serves as an introduction to the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#wildcard-version">wildcard version&lt;/a> feature in Stevedore.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Contribution Guidelines</title><link>https://gostevedore.github.io/docs/docs-v0.11/contribution-guidelines/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/contribution-guidelines/</guid><description>
 &lt;h1 id="contributing-to-stevedore">Contributing to Stevedore&lt;/h1>
 &lt;p>Thank you for your interest in contributing to Stevedore! All contributions are welcome, whether they are bug reports, feature requests, or code contributions.&lt;/p>
 &lt;h2 id="getting-started">Getting Started&lt;/h2>

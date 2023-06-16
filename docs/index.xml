@@ -499,7 +499,7 @@
 &lt;td>This example highlights the image promotion feature in Stevedore, demonstrating how to promote Docker images from one Docker registry to another.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/2-copy-images-from-dockerhub-example">12-copy-images-from-dockerhub-example&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/12-copy-images-from-dockerhub-example">12-copy-images-from-dockerhub-example&lt;/a>&lt;/td>
 &lt;td>This example illustrates how to copy Docker images from Docker Hub to your local Docker registry using Stevedore, allowing you to have a local copy of the desired images for offline or restricted environments.&lt;/td>
 &lt;/tr>
 &lt;/tbody>

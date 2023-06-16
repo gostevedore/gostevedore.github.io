@@ -18,6 +18,46 @@
 &lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/02-wildcard-version-example">02-wildcard-version-example&lt;/a>&lt;/td>
 &lt;td>This example serves as an introduction to the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#wildcard-version">wildcard version&lt;/a> feature in Stevedore.&lt;/td>
 &lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/03-envvars-credentials-store-example">03-envvars-credentials-store-example&lt;/a>&lt;/td>
+&lt;td>This example demonstrates how to use environment variables as the &lt;a href="https://gostevedore.github.io/docs/reference-guide/credentials/credentials-store/">credentials store&lt;/a> in Stevedore.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/04-multiple-apps-example">04-define-multiple-apps-example&lt;/a>&lt;/td>
+&lt;td>This example showcases how to define and manage multiple applications in Stevedore, allowing you to build and push their Docker images.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/05-build-on-cascade-example">05-build-on-cascade-example&lt;/a>&lt;/td>
+&lt;td>This example demonstrates the concept of building images on a cascade in Stevedore. It showcases how to create a foundational image with a common configuration and then build multiple applications using that image as a base, streamlining the image building process and ensuring consistency across the applications.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/06-git-build-context-example">06-git-build-context-example&lt;/a>&lt;/td>
+&lt;td>This example illustrates how to utilize the &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/docker/#git-context">Git build context&lt;/a> feature in Stevedore. It demonstrates the ability to specify a Git repository as the build context, allowing you to directly build images from a specific branch, tag, or commit.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/07-inject-dockerfile-example">07-inject-dockerfile-example&lt;/a>&lt;/td>
+&lt;td>This example showcases the capability of creating a unique build context from separate sources. One of those sources is used to inject a Dockerfile used to build the Docker image.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/08-create-semver-tags-automatically-example">08-create-semver-tags-automatically-example&lt;/a>&lt;/td>
+&lt;td>This example showcases how to use the SemVer specification to create automatically new image tags for a Docker image.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/09-custom-variables-mapping-example">09-custom-variables-mapping-example&lt;/a>&lt;/td>
+&lt;td>This example demonstrates the usage of custom variables mapping in Stevedore, allowing for flexible configuration and customization of build arguments provided to the Dockerfile.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/10-use-ansible-playbook-driver-example">10-use-ansible-playbook-driver-example&lt;/a>&lt;/td>
+&lt;td>This example demonstrates the usage of the &lt;a href="https://gostevedore.github.io/docs/reference-guide/driver/ansible-playbook/">Ansible playbook driver&lt;/a> in Stevedore, enabling you to build and publish Docker images using Ansible playbooks.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/11-promote-images-example">11-promote-images-example&lt;/a>&lt;/td>
+&lt;td>This example highlights the image promotion feature in Stevedore, demonstrating how to promote Docker images from one Docker registry to another.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/2-copy-images-from-dockerhub-example">12-copy-images-from-dockerhub-example&lt;/a>&lt;/td>
+&lt;td>This example illustrates how to copy Docker images from Docker Hub to your local Docker registry using Stevedore, allowing you to have a local copy of the desired images for offline or restricted environments.&lt;/td>
+&lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: Examples</title><link>https://gostevedore.github.io/docs/examples/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/examples/</guid><description>
 &lt;p>Explore a variety of practical examples that demonstrate the capabilities and usage of Stevedore. These examples provide a cumulative learning experience, building upon one another to deepen your knowledge of Stevedore.&lt;/p>
@@ -38,6 +78,46 @@
 &lt;tr>
 &lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/02-wildcard-version-example">02-wildcard-version-example&lt;/a>&lt;/td>
 &lt;td>This example serves as an introduction to the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#wildcard-version">wildcard version&lt;/a> feature in Stevedore.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/03-envvars-credentials-store-example">03-envvars-credentials-store-example&lt;/a>&lt;/td>
+&lt;td>This example demonstrates how to use environment variables as the &lt;a href="https://gostevedore.github.io/docs/reference-guide/credentials/credentials-store/">credentials store&lt;/a> in Stevedore.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/04-multiple-apps-example">04-define-multiple-apps-example&lt;/a>&lt;/td>
+&lt;td>This example showcases how to define and manage multiple applications in Stevedore, allowing you to build and push their Docker images.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/05-build-on-cascade-example">05-build-on-cascade-example&lt;/a>&lt;/td>
+&lt;td>This example demonstrates the concept of building images on a cascade in Stevedore. It showcases how to create a foundational image with a common configuration and then build multiple applications using that image as a base, streamlining the image building process and ensuring consistency across the applications.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/06-git-build-context-example">06-git-build-context-example&lt;/a>&lt;/td>
+&lt;td>This example illustrates how to utilize the &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/docker/#git-context">Git build context&lt;/a> feature in Stevedore. It demonstrates the ability to specify a Git repository as the build context, allowing you to directly build images from a specific branch, tag, or commit.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/07-inject-dockerfile-example">07-inject-dockerfile-example&lt;/a>&lt;/td>
+&lt;td>This example showcases the capability of creating a unique build context from separate sources. One of those sources is used to inject a Dockerfile used to build the Docker image.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/08-create-semver-tags-automatically-example">08-create-semver-tags-automatically-example&lt;/a>&lt;/td>
+&lt;td>This example showcases how to use the SemVer specification to create automatically new image tags for a Docker image.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/09-custom-variables-mapping-example">09-custom-variables-mapping-example&lt;/a>&lt;/td>
+&lt;td>This example demonstrates the usage of custom variables mapping in Stevedore, allowing for flexible configuration and customization of build arguments provided to the Dockerfile.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/10-use-ansible-playbook-driver-example">10-use-ansible-playbook-driver-example&lt;/a>&lt;/td>
+&lt;td>This example demonstrates the usage of the &lt;a href="https://gostevedore.github.io/docs/reference-guide/driver/ansible-playbook/">Ansible playbook driver&lt;/a> in Stevedore, enabling you to build and publish Docker images using Ansible playbooks.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/11-promote-images-example">11-promote-images-example&lt;/a>&lt;/td>
+&lt;td>This example highlights the image promotion feature in Stevedore, demonstrating how to promote Docker images from one Docker registry to another.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/gostevedore/stevedore/tree/main/examples/2-copy-images-from-dockerhub-example">12-copy-images-from-dockerhub-example&lt;/a>&lt;/td>
+&lt;td>This example illustrates how to copy Docker images from Docker Hub to your local Docker registry using Stevedore, allowing you to have a local copy of the desired images for offline or restricted environments.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item></channel></rss>

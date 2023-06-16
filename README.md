@@ -1,6 +1,6 @@
 # gostevedore.github.io
 
-![Website publish status](https://github.com/gostevedore/gostevedore.github.io/actions/workflows/publish/badge.svg)
+![Website publish status](https://github.com/gostevedore/gostevedore.github.io/actions/workflows/publish.yml/badge.svg)
 
 This repository holds the Stevedore site's source code. To visit the site click [here](https://gostevedore.github.io/)
 

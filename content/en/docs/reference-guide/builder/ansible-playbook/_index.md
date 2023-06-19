@@ -7,6 +7,7 @@ description: >
 ---
 
 ## Keywords reference for Ansible Playbook driver
+
 The following table describes the attributes that can be configured on the Ansible playbook driver.
 
 |Keyword|Type|Description|Value|
@@ -15,11 +16,14 @@ The following table describes the attributes that can be configured on the Ansib
 |**inventory**|*string*|It is the  ansible-playbook inventory<br><font color="#AA0088">*mandatory*</font>|It can be either an inventory file or and adhoc inventory, such `127.0.0.1,`|
 
 ## Variables-mapping reference
+
 The `ansible-playbook` driver provides to ansible-playbook the variables-mapping entries as [extra-vars](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables).
 
 |Key name|Description|Default<br>argument-name|Default<br>argument-value|
 |---|---|---|---|
 |**image_builder_label_key**|This is the argument-name to set the name of the intermediate container that is used to create the Docker image using the ansible-playbook driver|image_builder_label|The argument-value is set as the full qualified name of the image|
+|**image_fully_qualified_name**|This is the argument-name that you can use to set the fully-qualified image name of of the image that you are building.<br>Introduced in v0.11.1. | image_fully_qualified_name |This is the argument-name that provides you with fully-qualified image name. |
+|**image_from_fully_qualified_name**|This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.<br>Introduced in v0.11.1.| image_from_fully_qualified_name |This is the argument-name that provides you with fully-qualified parent image name. |
 |**image_from_name_key**|This is the argument-name to set the name of the parent image from which the new image will be built using the ansible-playbook driver|image_from_name|The argument-value is set as the parent image's name within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}})|
 |**image_from_registry_host_key**|This is the argument-name to set the parent image's registry host when creating a Docker image using the ansible-playbook driver|image_from_registry_host|The argument-value is set as the parent image's registry host within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}})|
 |**image_from_registry_namespace_key**|This is the argument-name to set the parent image's namespace within the registry when creating a Docker image using the ansible-playbook driver|image_from_registry_namespace|The argument-value is set as the parent image's namespace within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}})|
@@ -32,6 +36,7 @@ The `ansible-playbook` driver provides to ansible-playbook the variables-mapping
 |**push_image_key**|Use this argument-name to specify a variable that controls whether the Docker image should be automatically pushed after it's built|push_image|The argument-value is set as _false_|
 
 ## Ansible-playbook driver example
+
 The goal of the following example is to show you all the configuration options for a builder which uses the ansible-playbook driver.
 
 {{<highlight yaml "linenos=table">}}

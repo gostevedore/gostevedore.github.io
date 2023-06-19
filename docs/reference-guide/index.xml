@@ -331,7 +331,7 @@ The previous example defines three builders: &lt;code>builder1&lt;/code>, &lt;co
 &lt;/ul>
 &lt;h2 id="examples">Examples&lt;/h2>
 &lt;h3 id="docker-driver-using-path-context">Docker driver using path context&lt;/h3>
-&lt;p>The following example demonstrates how to define a builder that uses Docker as the driver, with a local build context and a Dockerfile located at &lt;code>build/Dockerfile&lt;/code>:
+&lt;p>The following example demonstrates how to define a builder that uses Docker as the driver, with a local build context and a Dockerfile located at &lt;code>build/Dockerfile&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -349,9 +349,9 @@ The previous example defines three builders: &lt;code>builder1&lt;/code>, &lt;co
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">path&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">/src/my-app&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">dockerfile&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">build/Dockerfile&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;/p>
+&lt;/div>
 &lt;h3 id="docker-driver-using-git-context">Docker driver using git context&lt;/h3>
-&lt;p>The following example demonstrates how to define a builder that uses Docker as the driver, with a remote Git repository as the build context and a Dockerfile located at &lt;code>build/Dockerfile&lt;/code>. Besides, the Git repository &lt;code>https://github.com/apenella/simple-go-helloworld.git&lt;/code> is used as the build context with the reference &lt;code>v1.2.3&lt;/code>.
+&lt;p>The following example demonstrates how to define a builder that uses Docker as the driver, with a remote Git repository as the build context and a Dockerfile located at &lt;code>build/Dockerfile&lt;/code>. Besides, the Git repository &lt;code>https://github.com/apenella/simple-go-helloworld.git&lt;/code> is used as the build context with the reference &lt;code>v1.2.3&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -373,7 +373,7 @@ The previous example defines three builders: &lt;code>builder1&lt;/code>, &lt;co
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reference&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">v1.2.3&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">dockerfile&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">build/Dockerfile&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;/p>
+&lt;/div>
 &lt;h3 id="ansible-playbook-driver">Ansible playbook driver&lt;/h3>
 &lt;p>The following example shows how to define a builder that uses the ansible-playbook driver. In this example, the builder optiosn defines the ansible inventory and playbook, pointing to the Ansible inventory file located at inventory/all and the playbook file located at build_applications.yml.&lt;/p>
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">

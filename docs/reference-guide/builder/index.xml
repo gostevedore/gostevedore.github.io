@@ -44,6 +44,18 @@
 &lt;td>The argument-value is set as the full qualified name of the image&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td>&lt;strong>image_fully_qualified_name&lt;/strong>&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified image name of of the image that you are building.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>image_fully_qualified_name&lt;/td>
+&lt;td>This is the argument-name that provides you with fully-qualified image name.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>image_from_fully_qualified_name&lt;/strong>&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>image_from_fully_qualified_name&lt;/td>
+&lt;td>This is the argument-name that provides you with fully-qualified parent image name.&lt;/td>
+&lt;/tr>
+&lt;tr>
 &lt;td>&lt;strong>image_from_name_key&lt;/strong>&lt;/td>
 &lt;td>This is the argument-name to set the name of the parent image from which the new image will be built using the ansible-playbook driver&lt;/td>
 &lt;td>image_from_name&lt;/td>
@@ -376,6 +388,12 @@
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>image_from_fully_qualified_name&lt;/strong>&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>image_from_fully_qualified_name&lt;/td>
+&lt;td>This is the argument-name that provides you with fully-qualified parent image name.&lt;/td>
+&lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_from_name_key&lt;/strong>&lt;/td>
 &lt;td>This is the argument-name that you can use to set the name of the base image that you want to use as a starting point for your Docker image.&lt;/td>

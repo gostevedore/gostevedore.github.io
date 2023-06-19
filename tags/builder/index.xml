@@ -147,43 +147,55 @@
 &lt;td>&lt;strong>image_builder_label_key&lt;/strong>&lt;/td>
 &lt;td>This is the argument-name to set the name of the intermediate container that is used to create the Docker image using the ansible-playbook driver&lt;/td>
 &lt;td>image_builder_label&lt;/td>
-&lt;td>The argument-value is set as the full qualified name of the image&lt;/td>
+&lt;td>The argument-value is set as the full qualified name of the image.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>image_fully_qualified_name&lt;/strong>&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified image name of of the image that you are building.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>image_fully_qualified_name&lt;/td>
+&lt;td>This is the argument-name that provides you with fully-qualified image name.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>image_from_fully_qualified_name&lt;/strong>&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>image_from_fully_qualified_name&lt;/td>
+&lt;td>This is the argument-name that provides you with fully-qualified parent image name.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_from_name_key&lt;/strong>&lt;/td>
 &lt;td>This is the argument-name to set the name of the parent image from which the new image will be built using the ansible-playbook driver&lt;/td>
 &lt;td>image_from_name&lt;/td>
-&lt;td>The argument-value is set as the parent image&amp;rsquo;s name within the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#images-tree">images-tree&lt;/a>&lt;/td>
+&lt;td>The argument-value is set as the parent image&amp;rsquo;s name within the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#images-tree">images-tree&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_from_registry_host_key&lt;/strong>&lt;/td>
 &lt;td>This is the argument-name to set the parent image&amp;rsquo;s registry host when creating a Docker image using the ansible-playbook driver&lt;/td>
 &lt;td>image_from_registry_host&lt;/td>
-&lt;td>The argument-value is set as the parent image&amp;rsquo;s registry host within the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#images-tree">images-tree&lt;/a>&lt;/td>
+&lt;td>The argument-value is set as the parent image&amp;rsquo;s registry host within the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#images-tree">images-tree&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_from_registry_namespace_key&lt;/strong>&lt;/td>
 &lt;td>This is the argument-name to set the parent image&amp;rsquo;s namespace within the registry when creating a Docker image using the ansible-playbook driver&lt;/td>
 &lt;td>image_from_registry_namespace&lt;/td>
-&lt;td>The argument-value is set as the parent image&amp;rsquo;s namespace within the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#images-tree">images-tree&lt;/a>&lt;/td>
+&lt;td>The argument-value is set as the parent image&amp;rsquo;s namespace within the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#images-tree">images-tree&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_from_tag_key&lt;/strong>&lt;/td>
 &lt;td>This is the argument-name to set the parent image&amp;rsquo;s tag when creating a Docker image using the ansible-playbook driver.&lt;/td>
 &lt;td>image_from_tag&lt;/td>
-&lt;td>The argument-value is set as the parent image&amp;rsquo;s version within the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#images-tree">images-tree&lt;/a>&lt;/td>
+&lt;td>The argument-value is set as the parent image&amp;rsquo;s version within the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#images-tree">images-tree&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_name_key&lt;/strong>&lt;/td>
 &lt;td>This is the argument-name to set the name of the new Docker image that will be built using the ansible-playbook driver&lt;/td>
 &lt;td>image_name&lt;/td>
-&lt;td>If not specified, the argument-value for the image name will be derived from the name of the image within the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#images-tree">images-tree&lt;/a>&lt;/td>
+&lt;td>If not specified, the argument-value for the image name will be derived from the name of the image within the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#images-tree">images-tree&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_tag_key&lt;/strong>&lt;/td>
 &lt;td>This is the argument-name to set the tag for the new Docker image that will be built using the ansible-playbook driver&lt;/td>
 &lt;td>image_tag&lt;/td>
-&lt;td>If not specified, the argument-value for the default tag will be the version of the image within the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#images-tree">images-tree&lt;/a>&lt;/td>
+&lt;td>If not specified, the argument-value for the default tag will be the version of the image within the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#images-tree">images-tree&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_registry_namespace_key&lt;/strong>&lt;/td>
@@ -296,6 +308,18 @@
 &lt;td>This is the argument-name to set the name of the intermediate container that is used to create the Docker image using the ansible-playbook driver&lt;/td>
 &lt;td>image_builder_label&lt;/td>
 &lt;td>The argument-value is set as the full qualified name of the image&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>image_fully_qualified_name&lt;/strong>&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified image name of of the image that you are building.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>image_fully_qualified_name&lt;/td>
+&lt;td>This is the argument-name that provides you with fully-qualified image name.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;strong>image_from_fully_qualified_name&lt;/strong>&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>image_from_fully_qualified_name&lt;/td>
+&lt;td>This is the argument-name that provides you with fully-qualified parent image name.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_from_name_key&lt;/strong>&lt;/td>
@@ -962,7 +986,7 @@ The previous example defines three builders: &lt;code>builder1&lt;/code>, &lt;co
 &lt;/ul>
 &lt;h2 id="examples">Examples&lt;/h2>
 &lt;h3 id="docker-driver-using-path-context">Docker driver using path context&lt;/h3>
-&lt;p>The following example demonstrates how to define a builder that uses Docker as the driver, with a local build context and a Dockerfile located at &lt;code>build/Dockerfile&lt;/code>:
+&lt;p>The following example demonstrates how to define a builder that uses Docker as the driver, with a local build context and a Dockerfile located at &lt;code>build/Dockerfile&lt;/code>:&lt;/p>
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -980,9 +1004,9 @@ The previous example defines three builders: &lt;code>builder1&lt;/code>, &lt;co
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">path&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">/src/my-app&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">dockerfile&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">build/Dockerfile&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;/p>
+&lt;/div>
 &lt;h3 id="docker-driver-using-git-context">Docker driver using git context&lt;/h3>
-&lt;p>The following example demonstrates how to define a builder that uses Docker as the driver, with a remote Git repository as the build context and a Dockerfile located at &lt;code>build/Dockerfile&lt;/code>. Besides, the Git repository &lt;code>https://github.com/apenella/simple-go-helloworld.git&lt;/code> is used as the build context with the reference &lt;code>v1.2.3&lt;/code>.
+&lt;p>The following example demonstrates how to define a builder that uses Docker as the driver, with a remote Git repository as the build context and a Dockerfile located at &lt;code>build/Dockerfile&lt;/code>. Besides, the Git repository &lt;code>https://github.com/apenella/simple-go-helloworld.git&lt;/code> is used as the build context with the reference &lt;code>v1.2.3&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -1004,7 +1028,7 @@ The previous example defines three builders: &lt;code>builder1&lt;/code>, &lt;co
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">reference&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">v1.2.3&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">dockerfile&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">build/Dockerfile&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;/p>
+&lt;/div>
 &lt;h3 id="ansible-playbook-driver">Ansible playbook driver&lt;/h3>
 &lt;p>The following example shows how to define a builder that uses the ansible-playbook driver. In this example, the builder optiosn defines the ansible inventory and playbook, pointing to the Ansible inventory file located at inventory/all and the playbook file located at build_applications.yml.&lt;/p>
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -1933,7 +1957,7 @@ Reference guide provides more detailed information about the &lt;a href="https:/
 &lt;td>&lt;strong>context&lt;/strong>&lt;/td>
 &lt;td style="text-align:center">map/list(map)&lt;/td>
 &lt;td>The Docker build context is a set of files required to build a Docker image. It can be located on a local &lt;code>path&lt;/code> or in a &lt;code>git&lt;/code> repository.&lt;br>Starting from Stevedore v0.11, you can define a list of contexts that get merged to create the ultimate Docker build context.&lt;br>&lt;font color="#AA0088">&lt;em>mandatory&lt;/em>&lt;/font>&lt;/td>
-&lt;td>Each context type has its own specifications.&lt;br> Refer to the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/builder/docker/#docker-build-contexts">Docker build contexts&lt;/a> section for a detailed description of how to configure each context.&lt;/td>
+&lt;td>Each context type has its own specifications.&lt;br> Refer to the &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/docker/#docker-build-contexts">Docker build contexts&lt;/a> section for a detailed description of how to configure each context.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>dockerfile&lt;/strong>&lt;/td>
@@ -1944,7 +1968,7 @@ Reference guide provides more detailed information about the &lt;a href="https:/
 &lt;/tbody>
 &lt;/table>
 &lt;h3 id="docker-build-contexts">Docker build contexts&lt;/h3>
-&lt;p>Stevedore supports two kinds of Docker build context. The &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/builder/docker/#path-context">path context&lt;/a>, which uses a local folder to create the Docker build context, and the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/builder/docker/#git-context">git context&lt;/a>, which creates the Docker build context from a git repository.&lt;/p>
+&lt;p>Stevedore supports two kinds of Docker build context. The &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/docker/#path-context">path context&lt;/a>, which uses a local folder to create the Docker build context, and the &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/docker/#git-context">git context&lt;/a>, which creates the Docker build context from a git repository.&lt;/p>
 &lt;h4 id="path-context">Path context&lt;/h4>
 &lt;table>
 &lt;thead>
@@ -1964,7 +1988,7 @@ Reference guide provides more detailed information about the &lt;a href="https:/
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>&lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/builder/docker/#path-context-example">Here&lt;/a> you have an example where you can see all the options of the path context.&lt;/p>
+&lt;p>&lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/docker/#path-context-example">Here&lt;/a> you have an example where you can see all the options of the path context.&lt;/p>
 &lt;h5 id="path-context-example">Path context example&lt;/h5>
 &lt;p>The goal of the following example is to show you all the configuration options for the path context.&lt;/p>
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -1999,12 +2023,12 @@ Reference guide provides more detailed information about the &lt;a href="https:/
 &lt;tr>
 &lt;td>&lt;strong>git&lt;/strong>&lt;/td>
 &lt;td style="text-align:center">map&lt;/td>
-&lt;td>It is the keyword under which are defined the git repository details.&lt;br>Refer &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/builder/docker/#git-attributes">here&lt;/a> to know the accepted attributes.&lt;br>&lt;font color="#AA0088">&lt;em>mandatory&lt;/em>&lt;/font>&lt;/td>
+&lt;td>It is the keyword under which are defined the git repository details.&lt;br>Refer &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/docker/#git-attributes">here&lt;/a> to know the accepted attributes.&lt;br>&lt;font color="#AA0088">&lt;em>mandatory&lt;/em>&lt;/font>&lt;/td>
 &lt;td>-&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;p>&lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/builder/docker/#git-context-example">Here&lt;/a> you have an example where you can see all the options of the git context.&lt;/p>
+&lt;p>&lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/docker/#git-context-example">Here&lt;/a> you have an example where you can see all the options of the git context.&lt;/p>
 &lt;h5 id="git-attributes">Git attributes&lt;/h5>
 &lt;table>
 &lt;thead>
@@ -2019,7 +2043,7 @@ Reference guide provides more detailed information about the &lt;a href="https:/
 &lt;tr>
 &lt;td>&lt;strong>auth&lt;/strong>&lt;/td>
 &lt;td style="text-align:center">map&lt;/td>
-&lt;td>You can provide authorization mechanisms over a Git server to achive the Docker build context from there.&lt;br>Refer &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/builder/docker/#git-authorization">here&lt;/a> to know more about the available auth mechanisms.&lt;br>&lt;font color="#AA0088">&lt;em>optional&lt;/em>&lt;/font>&lt;/td>
+&lt;td>You can provide authorization mechanisms over a Git server to achive the Docker build context from there.&lt;br>Refer &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/docker/#git-authorization">here&lt;/a> to know more about the available auth mechanisms.&lt;br>&lt;font color="#AA0088">&lt;em>optional&lt;/em>&lt;/font>&lt;/td>
 &lt;td>-&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -2147,28 +2171,34 @@ Reference guide provides more detailed information about the &lt;a href="https:/
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
+&lt;td>&lt;strong>image_from_fully_qualified_name&lt;/strong>&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>image_from_fully_qualified_name&lt;/td>
+&lt;td>This is the argument-name that provides you with fully-qualified parent image name.&lt;/td>
+&lt;/tr>
+&lt;tr>
 &lt;td>&lt;strong>image_from_name_key&lt;/strong>&lt;/td>
 &lt;td>This is the argument-name that you can use to set the name of the base image that you want to use as a starting point for your Docker image.&lt;/td>
 &lt;td>image_from_name&lt;/td>
-&lt;td>The argument-value is set as the parent image’s name within the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#images-tree">images-tree&lt;/a>.&lt;/td>
+&lt;td>The argument-value is set as the parent image’s name within the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#images-tree">images-tree&lt;/a>.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_from_registry_host_key&lt;/strong>&lt;/td>
 &lt;td>This is the argument-name that you can use to set the Docker registry host where the base image is located.&lt;/td>
 &lt;td>image_from_registry_host&lt;/td>
-&lt;td>The argument-value is set as the parent image’s registry host within the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#images-tree">images-tree&lt;/a>.&lt;/td>
+&lt;td>The argument-value is set as the parent image’s registry host within the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#images-tree">images-tree&lt;/a>.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_from_registry_namespace_key&lt;/strong>&lt;/td>
 &lt;td>This is the argument-name that you can use to set the namespace of the Docker registry where the base image is located.&lt;/td>
 &lt;td>image_from_registry_namespace&lt;/td>
-&lt;td>The argument-value is set as the parent image’s namespace within the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#images-tree">images-tree&lt;/a>.&lt;/td>
+&lt;td>The argument-value is set as the parent image’s namespace within the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#images-tree">images-tree&lt;/a>.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_from_tag_key&lt;/strong>&lt;/td>
 &lt;td>This is the argument-name that you can use to set the tag of the base image that you want to use as a starting point for your Docker image.&lt;/td>
 &lt;td>image_from_tag&lt;/td>
-&lt;td>The argument-value is set as the parent image’s version within the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#images-tree">images-tree&lt;/a>.&lt;/td>
+&lt;td>The argument-value is set as the parent image’s version within the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#images-tree">images-tree&lt;/a>.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2473,6 +2503,12 @@ Reference guide provides more detailed information about the &lt;a href="https:/
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
+&lt;tr>
+&lt;td>&lt;strong>image_from_fully_qualified_name&lt;/strong>&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>image_from_fully_qualified_name&lt;/td>
+&lt;td>This is the argument-name that provides you with fully-qualified parent image name.&lt;/td>
+&lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_from_name_key&lt;/strong>&lt;/td>
 &lt;td>This is the argument-name that you can use to set the name of the base image that you want to use as a starting point for your Docker image.&lt;/td>

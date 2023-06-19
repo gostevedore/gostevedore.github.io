@@ -13,6 +13,7 @@ There are two types of builders: _global_ and _in-line_. Global builders are def
 In-line builders, on the other hand, are defined within the image definition itself.
 
 ## Global builder
+
 A global builder must be defined under the `builders` block inside the Stevedore configuration. It means that Stevedore looks for the `builders` block within the file defined in [builders_path]({{<ref "/docs/getting-started/configuration/#builders_path">}}) configuration parameter.
 
 You can also set a directory on the [builders_path]({{<ref "/docs/getting-started/configuration/#builders_path">}}). There you can create several files with the `builders` block defined on them. In that case, Stevedore loads the builders found within all files.
@@ -38,6 +39,7 @@ builders:
 The previous example defines three builders: `builder1`, `builder2` and `builder3`, all of them are defined under the `builders` block.
 
 Through Stevedore [CLI]({{<ref "/docs/reference-guide/cli/">}}) command, you can retrieve the value of the [builders_path]({{<ref "/docs/getting-started/configuration/#builders_path">}}) configuration parameter.
+
 ```bash
 $ stevedore get configuration
 
@@ -57,6 +59,7 @@ $ stevedore get configuration
 ```
 
 ## In-line builder
+
 When you want to create an image using an ad-hoc builder, you can provide it in the [image definition]({{<ref "docs/reference-guide/image/">}}) itself. In that case, the builder is known as an in-line builder.
 
 In-line builders are defined following the [Keywords reference]({{<ref "/docs/reference-guide/builder/#keywords-reference">}}) for builders' configuration as well.
@@ -107,8 +110,11 @@ Each driver receives a distinct set of parameters coming from variables-mapping.
 - [**Variables-mapping for Docker driver**]({{<ref "/docs/reference-guide/builder/docker/#variables-mapping-reference">}})
 
 ## Examples
+
 ### Docker driver using path context
+
 The following example demonstrates how to define a builder that uses Docker as the driver, with a local build context and a Dockerfile located at `build/Dockerfile`:
+
 {{<highlight yaml "linenos=table">}}
 code:
   driver: docker
@@ -119,7 +125,9 @@ code:
 {{</highlight >}}
 
 ### Docker driver using git context
+
 The following example demonstrates how to define a builder that uses Docker as the driver, with a remote Git repository as the build context and a Dockerfile located at `build/Dockerfile`. Besides, the Git repository `https://github.com/apenella/simple-go-helloworld.git` is used as the build context with the reference `v1.2.3`.
+
 {{<highlight yaml "linenos=table">}}
 code:
   driver: docker
@@ -132,6 +140,7 @@ code:
 {{</highlight >}}
 
 ### Ansible playbook driver
+
 The following example shows how to define a builder that uses the ansible-playbook driver. In this example, the builder optiosn defines the ansible inventory and playbook, pointing to the Ansible inventory file located at inventory/all and the playbook file located at build_applications.yml.
 
 {{<highlight yaml "linenos=table">}}

@@ -19,24 +19,27 @@ Installing Stevedore is easy thanks to the provided installation script. Simply 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/gostevedore/stevedore/main/scripts/install.sh)"
 ```
 
-You can customize your installation passing options to the installation script. Those arguments can be provided to the script as positional arguments, as it is done with the `-h` in the following example.
+To customize your installation, you can pass options to the installation script. These arguments can be provided as positional arguments to the script.
+The following example demonstrates how to set your desired location for the binary and the directory where a located the release files.
 
 ```sh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/gostevedore/stevedore/main/scripts/install.sh)" -- -h
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/gostevedore/stevedore/main/scripts/install.sh)" -- -b "${HOME}/tools/bin/stevedore" -d "${HOME}/opt/stevedore"
+ Ensuring directory /home/user/opt/stevedore/v0.11.1 exist...
+ Ensuring directory /home/user/tools/bin exist...
+ Installing Stevedore v0.11.1 using the artefact stevedore_0.11.1_Linux_arm64.tar.gz...
+ Downloading artefact from https://github.com/gostevedore/stevedore/releases/download/v0.11.1/stevedore_0.11.1_Linux_arm64.tar.gz
+ Extracting artefact to /home/user/opt/stevedore/v0.11.1...
 
- Usage: -- [-f] [-h|?] [-b <binary-path>] [-d <releases-directory>] [-v <version>]
+ Installation completed successfully! The binary is available in /home/user/tools/bin/stevedore.
 
-  -b: Specifies the path to the Stevedore binary file [default: /usr/local/bin/stevedore]
-  -d: Specifies the directory to install the Stevedore release packages [default: /opt/stevedore]
-  -f: Forces the installation of the binary
-  -h: Shows the usage command
-  -v: Defines the Stevedore version to install [default: the latest]
-  -x: Sets the execution mode to debug
+Stevedore 0.11.1 Commit: 45f8d10 linux/arm64 BuildDate: 2023-06-24T14:35:33Z
+
+ Cleanup directory /tmp/tmp.GbgojK...
 ```
 
 ## Install from tarball
 
-To install Stevedore using a tarball, simply download it directly from Github releases and follow these installation steps:
+To install Stevedore using a tarball, simply download it directly from GitHub releases and follow these installation steps:
 
 - Go to the Stevedore Github releases page and download the latest tarball
 

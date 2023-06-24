@@ -446,41 +446,55 @@
 &lt;p>Installing Stevedore is a straightforward process, and you have a few options to choose from. You can install using the provided installation script, which will take care of everything for you. Alternatively, you can download and install from a tarball or install from source if you prefer. This gives you more flexibility and control over the installation process.&lt;/p>
 &lt;h2 id="using-the-install-script">Using the install script&lt;/h2>
 &lt;p>Installing Stevedore is easy thanks to the provided installation script. Simply run the following command to install Stevedore:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>curl -fsSL https://raw.githubusercontent.com/gostevedore/stevedore/main/scripts/install.sh &lt;span style="color:#000;font-weight:bold">|&lt;/span> sudo bash -
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>&lt;strong>Note:&lt;/strong> Before running the above command, make sure you have the &amp;lsquo;curl&amp;rsquo; and &amp;lsquo;bash&amp;rsquo; utilities installed on your machine.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Note:&lt;/strong> Before running the above command, make sure you have the &amp;lsquo;curl&amp;rsquo; and &amp;lsquo;sh&amp;rsquo; utilities installed on your machine.&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="install-from-tarball">Install from tarball&lt;/h2>
-&lt;p>To install Stevedore using a tarball, simply download it directly from Github releases and follow these installation steps:&lt;/p>
-&lt;ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sh -c &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl -fsSL https://raw.githubusercontent.com/gostevedore/stevedore/main/scripts/install.sh&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To customize your installation, you can pass options to the installation script. These arguments can be provided as positional arguments to the script.
+The following example demonstrates how to set your desired location for the binary and the directory where a located the release files.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sh -c &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl -fsSL https://raw.githubusercontent.com/gostevedore/stevedore/main/scripts/install.sh&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -- -b &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">HOME&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">/tools/bin/stevedore&amp;#34;&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">HOME&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">/opt/stevedore&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Ensuring directory /home/user/opt/stevedore/v0.11.1 exist...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Ensuring directory /home/user/tools/bin exist...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Installing Stevedore v0.11.1 using the artefact stevedore_0.11.1_Linux_arm64.tar.gz...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Downloading artefact from https://github.com/gostevedore/stevedore/releases/download/v0.11.1/stevedore_0.11.1_Linux_arm64.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Extracting artefact to /home/user/opt/stevedore/v0.11.1...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Installation completed successfully! The binary is available in /home/user/tools/bin/stevedore.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Stevedore 0.11.1 Commit: 45f8d10 linux/arm64 BuildDate: 2023-06-24T14:35:33Z
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Cleanup directory /tmp/tmp.GbgojK...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="install-from-tarball">Install from tarball&lt;/h2>
+&lt;p>To install Stevedore using a tarball, simply download it directly from GitHub releases and follow these installation steps:&lt;/p>
+&lt;ul>
 &lt;li>Go to the Stevedore Github releases page and download the latest tarball&lt;/li>
-&lt;/ol>
+&lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>curl -fsSLO https://github.com/gostevedore/stevedore/releases/download/v0.11.0/stevedore_v0.11.0_Linux-x86_64.tar.gz
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>Extract the contents of the tarball to a directory of your choice&lt;/li>
-&lt;/ol>
+&lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>tar xzfv stevedore_v0.11.0_Linux-x86_64.tar.gz
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>Add the Stevedore executable to your system path or create a symlink&lt;/li>
-&lt;/ol>
+&lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>ln -sf &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">PWD&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>/stevedore /usr/local/bin/stevedore
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="install-from-source">Install from source&lt;/h2>
 &lt;p>If you prefer to install Stevedore from source, you can clone the GitHub repository and build it manually. Here are the steps to follow:&lt;/p>
-&lt;ol>
+&lt;ul>
 &lt;li>Clone the Stevedore repository using Git:&lt;/li>
-&lt;/ol>
+&lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git clone https://github.com/gostevedore/stevedore.git
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>Change the working directory to the cloned repository:&lt;/li>
-&lt;/ol>
+&lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">cd&lt;/span> stevedore
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>Build Stevedore using the Makefile&lt;/li>
-&lt;/ol>
+&lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>make build
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>Add the Stevedore executable to your system path or create a symlink&lt;/li>
-&lt;/ol>
+&lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>cp dist/stevedore /usr/local/bin/stevedore
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can run &lt;code>make tar&lt;/code> to generate a tarball within the &lt;code>dist&lt;/code> folder.&lt;/p>
 &lt;h3 id="use-goreleaser-to-create-a-snapshot">Use Goreleaser to create a snapshot&lt;/h3>
@@ -492,19 +506,22 @@
 &lt;p>&lt;strong>Note:&lt;/strong> Before running the above command, make sure you have the &amp;lsquo;curl&amp;rsquo; and &amp;lsquo;sh&amp;rsquo; utilities installed on your machine.&lt;/p>
 &lt;/blockquote>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sh -c &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl -fsSL https://raw.githubusercontent.com/gostevedore/stevedore/main/scripts/install.sh&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can customize your installation passing options to the installation script. Those arguments can be provided to the script as positional arguments, as it is done with the &lt;code>-h&lt;/code> in the following example.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sh -c &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl -fsSL https://raw.githubusercontent.com/gostevedore/stevedore/main/scripts/install.sh&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -- -h
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To customize your installation, you can pass options to the installation script. These arguments can be provided as positional arguments to the script.
+The following example demonstrates how to set your desired location for the binary and the directory where a located the release files.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sh -c &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl -fsSL https://raw.githubusercontent.com/gostevedore/stevedore/main/scripts/install.sh&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -- -b &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">HOME&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">/tools/bin/stevedore&amp;#34;&lt;/span> -d &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">HOME&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">/opt/stevedore&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Ensuring directory /home/user/opt/stevedore/v0.11.1 exist...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Ensuring directory /home/user/tools/bin exist...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Installing Stevedore v0.11.1 using the artefact stevedore_0.11.1_Linux_arm64.tar.gz...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Downloading artefact from https://github.com/gostevedore/stevedore/releases/download/v0.11.1/stevedore_0.11.1_Linux_arm64.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Extracting artefact to /home/user/opt/stevedore/v0.11.1...
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Usage: -- &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-f&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-h&lt;span style="color:#000;font-weight:bold">|&lt;/span>?&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-b &amp;lt;binary-path&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-d &amp;lt;releases-directory&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>-v &amp;lt;version&amp;gt;&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Installation completed successfully! The binary is available in /home/user/tools/bin/stevedore.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -b: Specifies the path to the Stevedore binary file &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default: /usr/local/bin/stevedore&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -d: Specifies the directory to install the Stevedore release packages &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default: /opt/stevedore&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -f: Forces the installation of the binary
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h: Shows the usage &lt;span style="color:#204a87">command&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -v: Defines the Stevedore version to install &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>default: the latest&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -x: Sets the execution mode to debug
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Stevedore 0.11.1 Commit: 45f8d10 linux/arm64 BuildDate: 2023-06-24T14:35:33Z
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Cleanup directory /tmp/tmp.GbgojK...
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="install-from-tarball">Install from tarball&lt;/h2>
-&lt;p>To install Stevedore using a tarball, simply download it directly from Github releases and follow these installation steps:&lt;/p>
+&lt;p>To install Stevedore using a tarball, simply download it directly from GitHub releases and follow these installation steps:&lt;/p>
 &lt;ul>
 &lt;li>Go to the Stevedore Github releases page and download the latest tarball&lt;/li>
 &lt;/ul>

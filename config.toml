@@ -93,7 +93,7 @@ archived_version = false
 # The version number for the version of the docs represented in this doc set.
 # Used in the "version-banner" partial to display a version number for the 
 # current doc set.
-version = "v0.10"
+version = "v0.11"
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
@@ -173,7 +173,7 @@ prism_syntax_highlighting = true
     disable = false    
 
 [[menu.main]]
-    name = "v0.11.1"
+    name = "v0.11.2"
     pre = "<i class='fa-brands fa-github'></i>"
-    url = "https://github.com/gostevedore/stevedore/tree/v0.11.1"
+    url = "https://github.com/gostevedore/stevedore/tree/v0.11.2"
     weight = 1

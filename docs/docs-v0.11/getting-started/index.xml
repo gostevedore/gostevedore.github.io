@@ -2,10 +2,10 @@
 &lt;h3 id="build">Build&lt;/h3>
 &lt;p>The process to generate a Docker image.&lt;/p>
 &lt;h3 id="builder">Builder&lt;/h3>
-&lt;p>A Builder arranges a set of parameters to build a Docker image. Among those parameters, you can define the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#driver">driver&lt;/a> to perform the build, the Docker build context or the Dockerfile location.&lt;/p>
+&lt;p>A Builder arranges a set of parameters to build a Docker image. Among those parameters, you can define the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#driver">driver&lt;/a> to perform the build, the Docker build context or the Dockerfile location.&lt;/p>
 &lt;p>You can define a builder as a &lt;strong>global builder&lt;/strong> or an &lt;strong>in-line builder&lt;/strong>.&lt;/p>
-&lt;p>Global builders are defined within a folder location specified in the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#builders_path">configuration&lt;/a> and can be used by any image definition.&lt;/p>
-&lt;p>On the snipped below there are defined two global builders: &lt;code>code&lt;/code>, at &lt;em>line 2&lt;/em> and &lt;code>global-infr-builder&lt;/code>, at &lt;em>line 7&lt;/em>.
+&lt;p>Global builders are defined within a folder location specified in the &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#builders_path">configuration&lt;/a> and can be used by any image definition.&lt;/p>
+&lt;p>On the snipped below there are defined two global builders: &lt;code>code&lt;/code>, at &lt;em>line 2&lt;/em>, and &lt;code>global-infr-builder&lt;/code>, at &lt;em>line 7&lt;/em>.
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -67,19 +67,19 @@
 &lt;/div>
 &lt;/div>&lt;/p>
 &lt;h3 id="credentials">Credentials&lt;/h3>
-&lt;p>Credentials allow users to securely store authentication information, such as access keys, tokens, passwords, and SSH keys. These credentials can be used to authenticate with Docker registries and Git servers, allowing users to push and pull images and code securely and with ease. Refer to the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/credentials/">reference guide&lt;/a> to know more about the credentials details.&lt;/p>
+&lt;p>Credentials allow users to securely store authentication information, such as access keys, tokens, passwords, and SSH keys. These credentials can be used to authenticate with Docker registries and Git servers, allowing users to push and pull images and code securely and with ease. Refer to the &lt;a href="https://gostevedore.github.io/docs/reference-guide/credentials/">reference guide&lt;/a> to know more about the credentials details.&lt;/p>
 &lt;h3 id="credentials-store">Credentials store&lt;/h3>
-&lt;p>The credential store in Stevedore allows users to securely store and retrieve credentials needed during the Docker images building process. Refer to the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/credentials/credentials-store/">reference guide&lt;/a> to know more about the credentials store.&lt;/p>
+&lt;p>The credential store in Stevedore allows users to securely store and retrieve credentials needed during the Docker images&amp;rsquo; building process. Refer to the &lt;a href="https://gostevedore.github.io/docs/reference-guide/credentials/credentials-store/">reference guide&lt;/a> to know more about the credentials store.&lt;/p>
 &lt;h3 id="driver">Driver&lt;/h3>
 &lt;p>Stevedore relies on existing tools designed for building Docker images rather than implementing its mechanism. The driver plays a crucial role in this process by preparing the build parameters based on the image and builder definitions and triggering the request to build the image.&lt;/p>
 &lt;p>As of today, Stevedore supports the following drivers:&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>docker&lt;/strong> driver that uses the Docker API. When a builder is defined to use the docker driver, it must provide at least the context, along with other parameters such as Dockerfiles location. For further information refer to &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/driver/docker/">reference guide&lt;/a>.&lt;/li>
-&lt;li>&lt;strong>ansible-playbook&lt;/strong> driver builds Docker images by executing ansible playbooks. When a builder is defined to use an ansible-playbook driver, it must provide the playbook location as well as the Ansible inventory. For further information refer to &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/driver/ansible-playbook/">reference guide&lt;/a>.&lt;/li>
+&lt;li>&lt;strong>docker&lt;/strong> driver that uses the Docker API. When a builder is defined to use the docker driver, it must provide at least the context, along with other parameters such as Dockerfile location. For further information refer to &lt;a href="https://gostevedore.github.io/docs/reference-guide/driver/docker/">reference guide&lt;/a>.&lt;/li>
+&lt;li>&lt;strong>ansible-playbook&lt;/strong> driver builds Docker images by executing ansible playbooks. When a builder is defined to use the ansible-playbook driver, it must provide the playbook location as well as the Ansible inventory. For further information refer to &lt;a href="https://gostevedore.github.io/docs/reference-guide/driver/ansible-playbook/">reference guide&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;h3 id="image">Image&lt;/h3>
-&lt;p>An image definition, which is also known as &lt;em>image&lt;/em> in Stevedore&amp;rsquo;s context, defines the Docker image you want to build, how to build it and the relationship with its parents or children images.&lt;/p>
-&lt;p>An image must be defined within the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#images-tree">Images-tree&lt;/a>, and you can refer to it by its name and version. For further information refer to &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/image/">reference guide&lt;/a>.&lt;/p>
+&lt;p>An image definition, which is also known as &lt;em>image&lt;/em> in Stevedore&amp;rsquo;s context, defines the Docker image you want to build, how to build it, and the relationship with its parents or children images.&lt;/p>
+&lt;p>An image must be defined within the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#images-tree">Images-tree&lt;/a>, and you can refer to it by its name and version. For further information refer to &lt;a href="https://gostevedore.github.io/docs/reference-guide/image/">reference guide&lt;/a>.&lt;/p>
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -102,10 +102,10 @@
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 &lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Yaml" data-lang="Yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">my-image-base&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0.0.1&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.my-domain.cat &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.my-domain.cat&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespace&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">library&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">tags&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">latest &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">latest&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">parents&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">busybox&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#4e9a06">&amp;#34;1.36&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -119,8 +119,8 @@
 &lt;/div>
 &lt;/div>
 &lt;h3 id="images-tree">Images-tree&lt;/h3>
-&lt;p>The Images-tree is a data structure containing the definition of the images, as well as the relationship among them.
-Reference guide provides more detailed information about the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/images-tree/">images-tree&lt;/a>.&lt;/p>
+&lt;p>The &lt;em>images-tree&lt;/em> is a data structure containing the definition of the images, as well as the relationship among them.
+Reference guide provides more detailed information about the &lt;a href="https://gostevedore.github.io/docs/reference-guide/images-tree/">images-tree&lt;/a>.&lt;/p>
 &lt;p>On the snipped below you can see three images defined within the Images-tree: &lt;code>my-image-base&lt;/code>, at line 2, &lt;code>my-ms1&lt;/code>, at line 13, and &lt;code>my-ms2&lt;/code>, at line 35.
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -178,7 +178,7 @@ Reference guide provides more detailed information about the &lt;a href="https:/
 &lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Yaml" data-lang="Yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">images&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">my-image-base&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;stable&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespace&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">library&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">tags&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">latest&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -189,13 +189,13 @@ Reference guide provides more detailed information about the &lt;a href="https:/
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">path&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-image-base&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">my-ms1&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0.0.1&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespace&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">library&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">parents&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">my-image-base&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">stable&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">devel&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespace&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">library&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">version&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;{{ .Version }}-{{ .Parent.Name }}{{ .Parent.Version }}&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">parents&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -203,7 +203,7 @@ Reference guide provides more detailed information about the &lt;a href="https:/
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">stable&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">devel&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;*&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespace&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">library&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">version&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;{{ .Version }}&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">parents&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -211,14 +211,14 @@ Reference guide provides more detailed information about the &lt;a href="https:/
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">stable&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">my-ms2&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0.1.5&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespace&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">library&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">version&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;{{ .Version }}-{{ .Parent.Name }}{{ .Parent.Version }}&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">parents&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">my-image-base&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#000">stable&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;*&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespace&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">library&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">version&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;{{ .Version }}&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">parents&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -248,24 +248,24 @@ Reference guide provides more detailed information about the &lt;a href="https:/
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 &lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Yaml" data-lang="Yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">my-app&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;0.1.5&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespace&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">library&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;*&amp;#34;&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">registry&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">my-registry.example.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">namespace&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">library&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">version&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#4e9a06">&amp;#34;{{ .Version }}&amp;#34;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/p>
 &lt;h3 id="variables-mapping">Variables mapping&lt;/h3>
 &lt;p>Variables mapping, also known as varmap or varmapping, is a builder&amp;rsquo;s optional attribute that defines the name of those variables that are always generated by Stevedore and passed to the driver to perform the request to build an image.&lt;/p>
-&lt;p>Each driver defines its variables mapping. For further information refer to &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/builder/#variables-mapping-reference">variables mapping&lt;/a> reference guide.&lt;/p></description></item><item><title>Docs: Configuration</title><link>https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/</guid><description>
+&lt;p>Each driver defines its variables mapping. For further information refer to &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/#variables-mapping-reference">variables mapping&lt;/a> reference guide.&lt;/p></description></item><item><title>Docs: Configuration</title><link>https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/</guid><description>
 &lt;h2 id="stevedore-configuration">Stevedore configuration&lt;/h2>
 &lt;p>Stevedore can load its configuration either from a local configuration file or environment variables.&lt;/p>
 &lt;h3 id="configuration-from-environment-variables">Configuration from environment variables&lt;/h3>
 &lt;p>When you want to use environment variables to define a Stevedore configuration parameter, you must create an environment variable with the same name as the parameter, and prefix it with &lt;code>STEVEDORE_&lt;/code>. The environment variables must be uppercased.&lt;/p>
-&lt;p>For example, to define the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#images_path">images_path&lt;/a> parameter as an environment variable, you must create the &lt;code>STEVEDORE_TREE_PATH&lt;/code> variable.&lt;/p>
+&lt;p>For example, to define the &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#images_path">images_path&lt;/a> parameter as an environment variable, you must create the &lt;code>STEVEDORE_IMAGES_PATH&lt;/code> variable.&lt;/p>
 &lt;h3 id="configuration-from-local-configuration-file">Configuration from local configuration file&lt;/h3>
-&lt;p>Stevedore looks for the user configuration on the listed files, and it does following order that appears in the list:&lt;/p>
+&lt;p>Stevedore looks for the user configuration on the listed files, and it does the following order that appears in the list:&lt;/p>
 &lt;ol>
 &lt;li>./stevedore.yaml&lt;/li>
 &lt;li>~/.config/stevedore/stevedore.yaml&lt;/li>
@@ -277,25 +277,25 @@ Reference guide provides more detailed information about the &lt;a href="https:/
 The command &lt;code>stevedore init&lt;/code>, is an alias from the create configuration subcommand that is also available to generate the configuration file.&lt;/p>
 &lt;p>When you use the CLI to generate the configuration file, the outcome configuration is created at &lt;code>./stevedore.yaml&lt;/code> but you can indicate your desired location by the &lt;code>--config&lt;/code> flag.&lt;/p>
 &lt;h3 id="stevedore-credentials">Stevedore credentials&lt;/h3>
-&lt;p>Stevedore could store your Docker registry&amp;rsquo;s credentials and use them on your behalf during the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#build">building&lt;/a> or &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#promote">promoting&lt;/a> processes.&lt;/p>
-&lt;p>The default folder to store the credentials is &lt;code>~/.config/stevedore/credentials&lt;/code>. Nevertheless, you can define where to store the credentials by setting the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#docker_registry_credentials_dir">docker_registry_credentials_dir&lt;/a> parameter.&lt;/p>
+&lt;p>Stevedore could store your Docker registry&amp;rsquo;s credentials and use them on your behalf during the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#build">building&lt;/a> or &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#promote">promoting&lt;/a> processes.&lt;/p>
+&lt;p>The default folder to store the credentials is &lt;code>~/.config/stevedore/credentials&lt;/code>. Nevertheless, you can define where to store the credentials by setting the &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#docker_registry_credentials_dir">docker_registry_credentials_dir&lt;/a> parameter.&lt;/p>
 &lt;p>In case you use the CLI to create Stevedore&amp;rsquo;s configuration, you can also request to create Docker&amp;rsquo;s registry credentials.&lt;/p>
 &lt;p>Finally, with the CLI command &lt;code>stevedore create credentials&lt;/code>, you can create as many credentials as you need.&lt;/p>
 &lt;h2 id="configuration-parameters">Configuration parameters&lt;/h2>
-&lt;p>In the coming section are described all the Stevedore configuration parameters.&lt;/p>
+&lt;p>The coming section describes all the Stevedore configuration parameters.&lt;/p>
 &lt;h3 id="builder_path">&lt;strong>builder_path&lt;/strong>&lt;/h3>
 &lt;p>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>Desprecated configuration parameter, it will be removed on version 0.12.0. Please use &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#builders_path">builders_path&lt;/a> instead.&lt;/p>
+&lt;p>Desprecated configuration parameter, will be removed on version 0.12.0. Please use &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#builders_path">builders_path&lt;/a> instead.&lt;/p>
 &lt;/div>
-It specifies the file that Stevedore uses to look for the definition of the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#builder">builders&lt;/a>.&lt;/p>
+It specifies the file that Stevedore uses to look for the definition of the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#builder">builders&lt;/a>.&lt;/p>
 &lt;ul>
 &lt;li>Environment variable: &lt;code>STEVEDORE_BUILDER_PATH&lt;/code>&lt;/li>
 &lt;li>Default value:&lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">builder_path&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">stevedore.yaml&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="builders_path">&lt;strong>builders_path&lt;/strong>&lt;/h3>
-&lt;p>It specifies the location path where Stevedore looks for the definition of the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#builder">builders&lt;/a>.&lt;/p>
+&lt;p>It specifies the location path where Stevedore looks for the definition of the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#builder">builders&lt;/a>.&lt;/p>
 &lt;p>This can be a file or directory. If you configure a directory, Stevedore loads the builders defined in each file within the directory.&lt;/p>
 &lt;ul>
 &lt;li>Environment variable: &lt;code>STEVEDORE_BUILDERS_PATH&lt;/code>&lt;/li>
@@ -303,15 +303,15 @@ It specifies the file that Stevedore uses to look for the definition of the &lt;
 &lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">builders_path&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">stevedore.yaml&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="builders">&lt;strong>builders&lt;/strong>&lt;/h3>
-&lt;p>The &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#builder">builders&lt;/a> block contains the global builders definition.&lt;/p>
-&lt;p>The location of the builder definitions is specified in &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#builders_path">builders_path&lt;/a>. Stevedore looks for the builder definitions in the file or directory specified by builders_path. For more details, please see the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/builder/#global-builder">reference guide&lt;/a>.&lt;/p>
+&lt;p>The &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#builder">builders&lt;/a> block contains the global builders definition.&lt;/p>
+&lt;p>The location of the builder definitions is specified in &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#builders_path">builders_path&lt;/a>. Stevedore looks for the builder definitions in the file or directory specified by builders_path. For more details, please see the &lt;a href="https://gostevedore.github.io/docs/reference-guide/builder/#global-builder">reference guide&lt;/a>.&lt;/p>
 &lt;ul>
 &lt;li>Environment variable: &lt;code>STEVEDORE_BUILDERS&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;h3 id="build_on_cascade">&lt;strong>build_on_cascade&lt;/strong>&lt;/h3>
 &lt;p>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>Desprecated configuration parameter, it will be removed on version 0.12.0. To build an image on cascade, please use the &lt;code>--cascade&lt;/code> flag in the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/cli/#build">build&lt;/a> command.&lt;/p>
+&lt;p>Desprecated configuration parameter, will be removed on version 0.12.0. To build an image on cascade, please use the &lt;code>--cascade&lt;/code> flag in the &lt;a href="https://gostevedore.github.io/docs/reference-guide/cli/#build">build&lt;/a> command.&lt;/p>
 &lt;/div>
 On build command, indicates whether to start to build children&amp;rsquo;s images once the image build finishes.&lt;/p>
 &lt;ul>
@@ -326,8 +326,8 @@ On build command, indicates whether to start to build children&amp;rsquo;s image
 &lt;li>Default value: is the rounded integer value of the result of dividing the total number of CPUs by 4. For example, if the system has 16 CPUs, the default value would be 4.&lt;/li>
 &lt;/ul>
 &lt;h3 id="credentials">&lt;strong>credentials&lt;/strong>&lt;/h3>
-&lt;p>The credentials configuration block defines the credentials store used to authenticate with external Docker registries or a git server.
-You can set the following parameters to for the credentials store:&lt;/p>
+&lt;p>The credentials configuration block defines the credentials store used to authenticate with external Docker registries or a Git server.
+You can set the following parameters for the credentials store:&lt;/p>
 &lt;h4 id="encryption_key">encryption_key&lt;/h4>
 &lt;p>The encryption_key parameter specifies the secret key used to encrypt and decrypt credentials. It is required to provide an encryption key when using &lt;code>envvars&lt;/code> as the storage type for credentials.&lt;/p>
 &lt;ul>
@@ -355,7 +355,7 @@ You can set the following parameters to for the credentials store:&lt;/p>
 &lt;h3 id="docker_registry_credentials_dir">&lt;strong>docker_registry_credentials_dir&lt;/strong>&lt;/h3>
 &lt;p>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>Desprecated configuration parameter, it will be removed on version 0.12.0. Refer to the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#credentials">credentials&lt;/a> configuration block to know more about how to define the credentials parameters.&lt;/p>
+&lt;p>Desprecated configuration parameter, will be removed on version 0.12.0. Refer to the &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#credentials">credentials&lt;/a> configuration block to know more about how to define the credentials parameters.&lt;/p>
 &lt;/div>
 This option specifies the directory where Docker registry credentials are stored for persistence.&lt;/p>
 &lt;ul>
@@ -364,7 +364,7 @@ This option specifies the directory where Docker registry credentials are stored
 &lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">docker_registry_credentials_dir&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">~/.config/stevedore/credentials&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="images_path">&lt;strong>images_path&lt;/strong>&lt;/h3>
-&lt;p>It is the configuration parameter that specifies the location where Stevedore searches for &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#image">images definition&lt;/a>.&lt;/p>
+&lt;p>It is the configuration parameter that specifies the location where Stevedore searches for &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#image">images definition&lt;/a>.&lt;/p>
 &lt;p>It can be set to either a file or directory. When the &lt;code>images_path&lt;/code> configuration parameter is set to a directory, Stevedore loads the definitions from all files within that directory&lt;/p>
 &lt;ul>
 &lt;li>Environment variable: &lt;code>STEVEDORE_IMAGES_PATH&lt;/code>&lt;/li>
@@ -374,16 +374,16 @@ This option specifies the directory where Docker registry credentials are stored
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="images_tree">&lt;strong>images_tree&lt;/strong>&lt;/h3>
 &lt;p>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>Desprecated configuration parameter, it will be removed on version 0.12.0. Please use &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#images">images&lt;/a> instead..&lt;/p>
+&lt;p>Desprecated configuration parameter, will be removed on version 0.12.0. Please use &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#images">images&lt;/a> instead..&lt;/p>
 &lt;/div>
-The &lt;code>images_tree&lt;/code> block contains the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/concepts/#images-tree">images-tree&lt;/a>, where are placed the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/image/">images definition&lt;/a>.&lt;/p>
-&lt;p>Stevedore looks for the images on the file set at &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#images_path">images_path&lt;/a> and loads the images defined under the &lt;code>images_tree&lt;/code> key. For further information see the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/images-tree/">reference guide&lt;/a>.&lt;/p>
+The &lt;code>images_tree&lt;/code> block contains the &lt;a href="https://gostevedore.github.io/docs/getting-started/concepts/#images-tree">images-tree&lt;/a>, where are placed the &lt;a href="https://gostevedore.github.io/docs/reference-guide/image/">images definition&lt;/a>.&lt;/p>
+&lt;p>Stevedore looks for the images on the file set at &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#images_path">images_path&lt;/a> and loads the images defined under the &lt;code>images_tree&lt;/code> key. For further information see the &lt;a href="https://gostevedore.github.io/docs/reference-guide/images-tree/">reference guide&lt;/a>.&lt;/p>
 &lt;ul>
 &lt;li>Environment variable: &lt;code>STEVEDORE_IMAGES_TREE&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;h3 id="images">&lt;strong>images&lt;/strong>&lt;/h3>
 &lt;p>The &lt;code>images&lt;/code> block in the Stevedore configuration contains the image definitions.&lt;/p>
-&lt;p>Stevedore looks for these definitions in the file or directory set at &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#images_path">images_path&lt;/a>, and loads any images defined under the &lt;code>images&lt;/code> key. For more information, please refer to the Stevedore &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/reference-guide/images-tree/">reference guide&lt;/a>.&lt;/p>
+&lt;p>Stevedore looks for these definitions in the file or directory set at &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#images_path">images_path&lt;/a>, and loads any images defined under the &lt;code>images&lt;/code> key. For more information, please refer to the Stevedore &lt;a href="https://gostevedore.github.io/docs/reference-guide/images-tree/">reference guide&lt;/a>.&lt;/p>
 &lt;ul>
 &lt;li>Environment variable: &lt;code>STEVEDORE_IMAGES&lt;/code>&lt;/li>
 &lt;/ul>
@@ -396,9 +396,9 @@ The &lt;code>images_tree&lt;/code> block contains the &lt;a href="https://gostev
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">log_path&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">/dev/null&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="num_workers">&lt;strong>num_workers&lt;/strong>&lt;/h3>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>Desprecated configuration parameter, it will be removed on version 0.12.0. Please use &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#concurrency">concurrency&lt;/a> instead.&lt;/p>
+&lt;p>Desprecated configuration parameter, will be removed on version 0.12.0. Please use &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#concurrency">concurrency&lt;/a> instead.&lt;/p>
 &lt;/div>
-&lt;p>It defines the amount of workers to create to build images. That corresponds to the number of images that can be build concurrently.&lt;/p>
+&lt;p>It defines the amount of workers to create to build images. That corresponds to the number of images that can be built concurrently.&lt;/p>
 &lt;ul>
 &lt;li>Environment variable: &lt;code>STEVEDORE_NUM_WORKERS&lt;/code>&lt;/li>
 &lt;li>Default value: is the rounded integer value of the result of dividing the total number of CPUs by 4. For example, if the system has 16 CPUs, the default value would be 4.&lt;/li>
@@ -418,7 +418,7 @@ The &lt;code>images_tree&lt;/code> block contains the &lt;a href="https://gostev
 &lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">semantic_version_tags_enabled&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">false&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="semantic_version_tags_templates">&lt;strong>semantic_version_tags_templates&lt;/strong>&lt;/h3>
-&lt;p>It is a list of templates that are used to generate additional tags when the &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#semantic_version_tags_enabled">semantic_version_tags_enabled&lt;/a> configuration parameter is enabled and the main image tag is semver 2.0.0 compliant.&lt;/p>
+&lt;p>It is a list of templates that are used to generate additional tags when the &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#semantic_version_tags_enabled">semantic_version_tags_enabled&lt;/a> configuration parameter is enabled and the main image tag is semver 2.0.0 compliant.&lt;/p>
 &lt;ul>
 &lt;li>Environment variable: &lt;code>STEVEDORE_SEMANTIC_VERSION_TAGS_TEMPLATES&lt;/code>&lt;/li>
 &lt;li>Default value:&lt;/li>
@@ -427,9 +427,9 @@ The &lt;code>images_tree&lt;/code> block contains the &lt;a href="https://gostev
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>- &lt;span style="color:#4e9a06">&amp;#34;{{ .Major }}.{{ .Minor }}.{{ .Patch }}&amp;#34;&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="tree_path">&lt;strong>tree_path&lt;/strong>&lt;/h3>
 &lt;div class="pageinfo pageinfo-primary">
-&lt;p>Desprecated configuration parameter, it will be removed on version 0.12.0. Please use &lt;a href="https://gostevedore.github.io/docs/docs-v0.11/getting-started/configuration/#images_path">images_path&lt;/a> instead.&lt;/p>
+&lt;p>Desprecated configuration parameter, will be removed on version 0.12.0. Please use &lt;a href="https://gostevedore.github.io/docs/getting-started/configuration/#images_path">images_path&lt;/a> instead.&lt;/p>
 &lt;/div>
-&lt;p>Is the images tree location path.&lt;/p>
+&lt;p>Is the images&amp;rsquo; tree location path.&lt;/p>
 &lt;ul>
 &lt;li>Environment variable: &lt;code>STEVEDORE_TREE_PATH&lt;/code>&lt;/li>
 &lt;li>Default value:&lt;/li>
@@ -480,7 +480,6 @@ The &lt;code>images_tree&lt;/code> block contains the &lt;a href="https://gostev
 &lt;p>We create a configuration file for this guide, but it can be also defined on environment variables.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>/ $ &lt;span style="color:#204a87">cd&lt;/span> /docker
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/docker $ stevedore initialize --builders-path builders --credentials-storage-type &lt;span style="color:#204a87">local&lt;/span> --generate-credentials-encryption-key --images-path images --log-path-file /dev/null
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2023-02-03 21:57:20 INFO Executing &lt;span style="color:#204a87">command&lt;/span> &lt;span style="color:#4e9a06">&amp;#39;stevedore [COMMAND] [OPTIONS] initialize&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After running this command, you can validate the configuration by using the &lt;em>get configuration&lt;/em> subcommand.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>/docker $ stevedore get configuration
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -566,7 +565,7 @@ The &lt;code>images_tree&lt;/code> block contains the &lt;a href="https://gostev
 &lt;p>Stevedore uses Go&amp;rsquo;s &lt;a href="https://pkg.go.dev/text/template">text/template&lt;/a> package to render the image definitions.&lt;/p>
 &lt;/div>
 &lt;ul>
-&lt;li>Specify the images definitions for the application.&lt;/li>
+&lt;li>Specify the image definitions for the application.&lt;/li>
 &lt;/ul>
 &lt;p>In this step, we define two versions of the application &lt;code>my-app&lt;/code> in the &lt;code>applications.yaml&lt;/code> file, version &lt;code>2.1.0&lt;/code> and &lt;code>3.2.1&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>/docker/images $ cat &lt;span style="color:#4e9a06">&amp;lt;&amp;lt; EOF &amp;gt; applications.yaml
@@ -591,7 +590,7 @@ The &lt;code>images_tree&lt;/code> block contains the &lt;a href="https://gostev
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> - &amp;#34;1.36&amp;#34;
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">EOF&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;em>name&lt;/em> is set to &lt;code>{{ .Name }}&lt;/code> which will be replaced by the actual name of the image. The &lt;em>version&lt;/em> is set to &lt;code>{{ .Version }}-{{ .Parent.Name }}{{ .Parent.Version }}&lt;/code> which will be replaced by the actual version of the image and its parent name and version. The &lt;em>builder&lt;/em> is set to &lt;code>my-app&lt;/code>, which is the &lt;em>global-builder&lt;/em> previously defined in the &lt;code>/docker/builders/apps.yaml&lt;/code> file. The &lt;em>parents&lt;/em> are set to &lt;code>busybox:1.35&lt;/code> for &lt;code>2.1.0&lt;/code> version, &lt;code>busybox:1.35&lt;/code> and &lt;code>busybox:1.36&lt;/code> for the &lt;code>3.2.1&lt;/code> version.&lt;/p>
-&lt;p>You can use the following comand to ensure that images are already defined.&lt;/p>
+&lt;p>You can use the following command to ensure that images are already defined.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>/ $ &lt;span style="color:#204a87">cd&lt;/span> /docker
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/docker $ stevedore get images --tree
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├─── busybox:1.35
@@ -687,7 +686,7 @@ The &lt;code>images_tree&lt;/code> block contains the &lt;a href="https://gostev
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>registry.stevedore.test/my-app:3.2.1-busybox1.36 ‣ b64792c17e4a: Pushed
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>registry.stevedore.test/my-app:3.2.1-busybox1.36 ‣ 3.2.1-busybox1.36: digest: sha256:b1aa5de2f4bf9c031a2047a87fb5c556d0d436123316cad81078462648e58d4b size: &lt;span style="color:#0000cf;font-weight:bold">528&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Installation</title><link>https://gostevedore.github.io/docs/docs-v0.11/getting-started/install/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/getting-started/install/</guid><description>
-&lt;p>Installing Stevedore is a straightforward process, and you have a few options to choose from. You can install using the provided installation script, which will take care of everything for you. Alternatively, you can download and install from a tarball or install from source if you prefer. This gives you more flexibility and control over the installation process.&lt;/p>
+&lt;p>Installing Stevedore is a straightforward process, and you have a few options to choose from. You can install using the provided installation script, which will take care of everything for you. Alternatively, you can download and install from a tarball or install from the source if you prefer. This gives you more flexibility and control over the installation process.&lt;/p>
 &lt;h2 id="using-the-install-script">Using the install script&lt;/h2>
 &lt;p>Installing Stevedore is easy thanks to the provided installation script. Simply run the following command to install Stevedore:&lt;/p>
 &lt;blockquote>
@@ -713,17 +712,17 @@ The following example demonstrates how to set your desired location for the bina
 &lt;ul>
 &lt;li>Go to the Stevedore Github releases page and download the latest tarball&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>curl -fsSLO https://github.com/gostevedore/stevedore/releases/download/v0.11.0/stevedore_v0.11.0_Linux-x86_64.tar.gz
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>curl -fsSLO https://github.com/gostevedore/stevedore/releases/download/v0.11.2/stevedore_v0.11.2_Linux-x86_64.tar.gz
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>Extract the contents of the tarball to a directory of your choice&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>tar xzfv stevedore_v0.11.0_Linux-x86_64.tar.gz
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>tar xzfv stevedore_v0.11.2_Linux-x86_64.tar.gz
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>Add the Stevedore executable to your system path or create a symlink&lt;/li>
 &lt;/ul>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>ln -sf &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">PWD&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>/stevedore /usr/local/bin/stevedore
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="install-from-source">Install from source&lt;/h2>
-&lt;p>If you prefer to install Stevedore from source, you can clone the GitHub repository and build it manually. Here are the steps to follow:&lt;/p>
+&lt;p>If you prefer to install Stevedore from the source, you can clone the GitHub repository and build it manually. Here are the steps to follow:&lt;/p>
 &lt;ul>
 &lt;li>Clone the Stevedore repository using Git:&lt;/li>
 &lt;/ul>

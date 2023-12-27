@@ -702,13 +702,13 @@ Note that an &lt;em>image&lt;/em> by itself has no sense, it must be defined wit
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_fully_qualified_name&lt;/strong>&lt;/td>
-&lt;td>This is the argument-name that you can use to set the fully-qualified image name of of the image that you are building.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified image name of of the image that you are building.&lt;br>Introduced in v0.11.2.&lt;/td>
 &lt;td>image_fully_qualified_name&lt;/td>
 &lt;td>This is the argument-name that provides you with fully-qualified image name.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_from_fully_qualified_name&lt;/strong>&lt;/td>
-&lt;td>This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.&lt;br>Introduced in v0.11.2.&lt;/td>
 &lt;td>image_from_fully_qualified_name&lt;/td>
 &lt;td>This is the argument-name that provides you with fully-qualified parent image name.&lt;/td>
 &lt;/tr>
@@ -775,7 +775,7 @@ Note that an &lt;em>image&lt;/em> by itself has no sense, it must be defined wit
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="ansible-playbook-driver-example">Ansible-playbook driver example&lt;/h2>
-&lt;p>The goal of the following example is to show you all the configuration options for a builder which uses the ansible-playbook driver.&lt;/p>
+&lt;p>The goal of the following example is to show you all the configuration options for a builder that uses the ansible-playbook driver.&lt;/p>
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -862,13 +862,13 @@ Note that an &lt;em>image&lt;/em> by itself has no sense, it must be defined wit
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_fully_qualified_name&lt;/strong>&lt;/td>
-&lt;td>This is the argument-name that you can use to set the fully-qualified image name of of the image that you are building.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified image name of of the image that you are building.&lt;br>Introduced in v0.11.2.&lt;/td>
 &lt;td>image_fully_qualified_name&lt;/td>
 &lt;td>This is the argument-name that provides you with fully-qualified image name.&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;strong>image_from_fully_qualified_name&lt;/strong>&lt;/td>
-&lt;td>This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.&lt;br>Introduced in v0.11.2.&lt;/td>
 &lt;td>image_from_fully_qualified_name&lt;/td>
 &lt;td>This is the argument-name that provides you with fully-qualified parent image name.&lt;/td>
 &lt;/tr>
@@ -1911,7 +1911,7 @@ The previous example defines three builders: &lt;code>builder1&lt;/code>, &lt;co
 &lt;/tbody>
 &lt;/table>
 &lt;h5 id="git-context-example">Git context example&lt;/h5>
-&lt;p>The goal of that example is to show you all the configuration options for the git context, including the various authentication mechanisms that can be used to access a Git repository.&lt;/p>
+&lt;p>The goal of that example is to show you all the configuration options for the Git context, including the various authentication mechanisms that can be used to access a Git repository.&lt;/p>
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -1964,7 +1964,7 @@ The previous example defines three builders: &lt;code>builder1&lt;/code>, &lt;co
 &lt;tbody>
 &lt;tr>
 &lt;td>&lt;strong>image_from_fully_qualified_name&lt;/strong>&lt;/td>
-&lt;td>This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.&lt;br>Introduced in v0.11.2.&lt;/td>
 &lt;td>image_from_fully_qualified_name&lt;/td>
 &lt;td>This is the argument-name that provides you with fully-qualified parent image name.&lt;/td>
 &lt;/tr>
@@ -1996,7 +1996,7 @@ The previous example defines three builders: &lt;code>builder1&lt;/code>, &lt;co
 &lt;/table>
 &lt;h2 id="docker-driver-example">Docker driver example&lt;/h2>
 &lt;p>The following example is provided for illustrative purposes only and should not be copied and pasted into your configuration.&lt;/p>
-&lt;p>The goal of the following example is to show you all the configuration options for a builder which uses the &lt;code>docker&lt;/code> driver.&lt;/p>
+&lt;p>The goal of the following example is to show you all the configuration options for a builder that uses the `docker`` driver.&lt;/p>
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
 &lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -2297,7 +2297,7 @@ The previous example defines three builders: &lt;code>builder1&lt;/code>, &lt;co
 &lt;tbody>
 &lt;tr>
 &lt;td>&lt;strong>image_from_fully_qualified_name&lt;/strong>&lt;/td>
-&lt;td>This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.&lt;br>Introduced in v0.11.1.&lt;/td>
+&lt;td>This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.&lt;br>Introduced in v0.11.2.&lt;/td>
 &lt;td>image_from_fully_qualified_name&lt;/td>
 &lt;td>This is the argument-name that provides you with fully-qualified parent image name.&lt;/td>
 &lt;/tr>

@@ -8,7 +8,7 @@ description: >
   Learn about the different methods available to install Stevedore
 ---
 
-Installing Stevedore is a straightforward process, and you have a few options to choose from. You can install using the provided installation script, which will take care of everything for you. Alternatively, you can download and install from a tarball or install from source if you prefer. This gives you more flexibility and control over the installation process.
+Installing Stevedore is a straightforward process, and you have a few options to choose from. You can install using the provided installation script, which will take care of everything for you. Alternatively, you can download and install from a tarball or install from the source if you prefer. This gives you more flexibility and control over the installation process.
 
 ## Using the install script
 
@@ -44,13 +44,13 @@ To install Stevedore using a tarball, simply download it directly from GitHub re
 - Go to the Stevedore Github releases page and download the latest tarball
 
 ```sh
-curl -fsSLO https://github.com/gostevedore/stevedore/releases/download/v0.11.0/stevedore_v0.11.0_Linux-x86_64.tar.gz
+curl -fsSLO https://github.com/gostevedore/stevedore/releases/download/v0.11.2/stevedore_v0.11.2_Linux-x86_64.tar.gz
 ```
 
 - Extract the contents of the tarball to a directory of your choice
 
 ```sh
-tar xzfv stevedore_v0.11.0_Linux-x86_64.tar.gz
+tar xzfv stevedore_v0.11.2_Linux-x86_64.tar.gz
 ```
 
 - Add the Stevedore executable to your system path or create a symlink
@@ -61,7 +61,7 @@ ln -sf ${PWD}/stevedore /usr/local/bin/stevedore
 
 ## Install from source
 
-If you prefer to install Stevedore from source, you can clone the GitHub repository and build it manually. Here are the steps to follow:
+If you prefer to install Stevedore from the source, you can clone the GitHub repository and build it manually. Here are the steps to follow:
 
 - Clone the Stevedore repository using Git:
 

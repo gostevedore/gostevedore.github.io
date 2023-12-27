@@ -76,7 +76,7 @@ For security concerns, the recommendation is to use the credentials store or the
 
 ##### Git context example
 
-The goal of that example is to show you all the configuration options for the git context, including the various authentication mechanisms that can be used to access a Git repository.
+The goal of that example is to show you all the configuration options for the Git context, including the various authentication mechanisms that can be used to access a Git repository.
 
 {{<highlight yaml "linenos=table">}}
 builder:
@@ -103,7 +103,7 @@ Docker driver passes `variables mapping` to Docker API as build arguments and ea
 
 |Key name|Description|Default<br>argument-name|Default<br>argument-value|
 |---|---|---|---|
-|**image_from_fully_qualified_name**|This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.<br>Introduced in v0.11.1.| image_from_fully_qualified_name |This is the argument-name that provides you with fully-qualified parent image name. |
+|**image_from_fully_qualified_name**|This is the argument-name that you can use to set the fully-qualified name of the base image that you want to use as a starting point for your Docker image.<br>Introduced in v0.11.2.| image_from_fully_qualified_name |This is the argument-name that provides you with fully-qualified parent image name. |
 |**image_from_name_key**|This is the argument-name that you can use to set the name of the base image that you want to use as a starting point for your Docker image. | image_from_name | The argument-value is set as the parent image’s name within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}). |
 |**image_from_registry_host_key**|This is the argument-name that you can use to set the Docker registry host where the base image is located. | image_from_registry_host |The argument-value is set as the parent image’s registry host within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}). |
 |**image_from_registry_namespace_key**|This is the argument-name that you can use to set the namespace of the Docker registry where the base image is located. | image_from_registry_namespace | The argument-value is set as the parent image’s namespace within the [images-tree]({{<ref "/docs/getting-started/concepts/#images-tree">}}). |
@@ -113,7 +113,7 @@ Docker driver passes `variables mapping` to Docker API as build arguments and ea
 
 The following example is provided for illustrative purposes only and should not be copied and pasted into your configuration.
 
-The goal of the following example is to show you all the configuration options for a builder which uses the `docker` driver.
+The goal of the following example is to show you all the configuration options for a builder that uses the `docker`` driver.
 
 {{<highlight yaml "linenos=table">}}
 builder:

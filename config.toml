@@ -173,7 +173,7 @@ prism_syntax_highlighting = true
     disable = false    
 
 [[menu.main]]
-    name = "v0.11.2"
+    name = "v0.11.4"
     pre = "<i class='fa-brands fa-github'></i>"
-    url = "https://github.com/gostevedore/stevedore/tree/v0.11.2"
+    url = "https://github.com/gostevedore/stevedore/tree/v0.11.4"
     weight = 1

@@ -716,7 +716,67 @@ The following example demonstrates how to set your desired location for the bina
 &lt;h3 id="dont-engage-in-disruptive-behaviour">Don&amp;rsquo;t engage in disruptive behaviour&lt;/h3>
 &lt;p>Disruptive behaviour, such as spamming, trolling, or other malicious behaviour, will not be tolerated. We want to maintain a positive and productive environment for everyone.&lt;/p>
 &lt;h2 id="acknowledgments">Acknowledgments&lt;/h2>
-&lt;p>This Code of Conduct is adapted from the Contributor Covenant, version 2.0, available at &lt;a href="https://www.contributor-covenant.org/version/2/0/code_of_conduct.html">https://www.contributor-covenant.org/version/2/0/code_of_conduct.html&lt;/a>.&lt;/p></description></item><item><title>Docs: Quickstart</title><link>https://gostevedore.github.io/docs/docs-v0.10/getting-started/quickstart/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.10/getting-started/quickstart/</guid><description>
+&lt;p>This Code of Conduct is adapted from the Contributor Covenant, version 2.0, available at &lt;a href="https://www.contributor-covenant.org/version/2/0/code_of_conduct.html">https://www.contributor-covenant.org/version/2/0/code_of_conduct.html&lt;/a>.&lt;/p></description></item><item><title>Docs: Maintainers</title><link>https://gostevedore.github.io/docs/contribution-guidelines/maintainers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/contribution-guidelines/maintainers/</guid><description>
+&lt;h1 id="stevedore-maintainers">Stevedore Maintainers&lt;/h1>
+&lt;p>The Stevedore project is maintained by the following individuals:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Role&lt;/th>
+&lt;th style="text-align:left">Email&lt;/th>
+&lt;th style="text-align:center">GitHub&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Aleix Penella&lt;/td>
+&lt;td>Maintainer&lt;/td>
+&lt;td style="text-align:left">&lt;a href="mailto:aleix.penella@gmail.com">aleix.penella@gmail.com&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://github.com/apenella">apenella&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Maintainers</title><link>https://gostevedore.github.io/docs/docs-v0.10/contribution-guidelines/maintainers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.10/contribution-guidelines/maintainers/</guid><description>
+&lt;h1 id="stevedore-maintainers">Stevedore Maintainers&lt;/h1>
+&lt;p>The Stevedore project is maintained by the following individuals:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Role&lt;/th>
+&lt;th style="text-align:left">Email&lt;/th>
+&lt;th style="text-align:center">GitHub&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Aleix Penella&lt;/td>
+&lt;td>Maintainer&lt;/td>
+&lt;td style="text-align:left">&lt;a href="mailto:aleix.penella@gmail.com">aleix.penella@gmail.com&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://github.com/apenella">apenella&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Maintainers</title><link>https://gostevedore.github.io/docs/docs-v0.11/contribution-guidelines/maintainers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.11/contribution-guidelines/maintainers/</guid><description>
+&lt;h1 id="stevedore-maintainers">Stevedore Maintainers&lt;/h1>
+&lt;p>The Stevedore project is maintained by the following individuals:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Role&lt;/th>
+&lt;th style="text-align:left">Email&lt;/th>
+&lt;th style="text-align:center">GitHub&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Aleix Penella&lt;/td>
+&lt;td>Maintainer&lt;/td>
+&lt;td style="text-align:left">&lt;a href="mailto:aleix.penella@gmail.com">aleix.penella@gmail.com&lt;/a>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://github.com/apenella">apenella&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Quickstart</title><link>https://gostevedore.github.io/docs/docs-v0.10/getting-started/quickstart/</link><pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate><guid>https://gostevedore.github.io/docs/docs-v0.10/getting-started/quickstart/</guid><description>
 &lt;h2 id="download-and-install-stevedore">Download and install stevedore&lt;/h2>
 &lt;div class="pageinfo pageinfo-secondary">
 &lt;p>Stevedore has been developed and tested on amd64 architecture and Linux os, for that reason the only available tarball is for amd64-Linux tarball.
